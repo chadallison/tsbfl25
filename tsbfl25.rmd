@@ -485,6 +485,9 @@ ___
 ```{r echo = F}
 x = opt |>
   group_by(team_name, week) |>
+  mutate(rn = row_number()) |>
+  filter(rn <= 9) |>
+  group_by(team_name, week) |>
   mutate(pct = round(pts / sum(pts) * 100, 1),
          pctx = paste0(pct, "%")) |>
   ungroup() |>

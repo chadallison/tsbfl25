@@ -144,10 +144,10 @@ Travis Scott Burger Fantasy League 2025
 
 ### Past Week One Player Merchants
 
-- Cooper Kupp: 20.2% of total points for Antonio Brown’s Translator
-- Jayden Reed: 19.9% of total points for Super Lamario
-- Josh Allen: 19.2% of total points for DSM-5 All Stars
-- Saquon Barkley: 17.4% of total points for CeeDee Lamb’s Finsta
-- Jayden Daniels: 16.9% of total points for Stroud Nine
+- Cooper Kupp: 36.5% of total points for Antonio Brown’s Translator
+- Lamar Jackson: 25.4% of total points for Super Lamario
+- Tyreek Hill: 24.6% of total points for Dakshots
+- Joe Mixon: 23.8% of total points for Bearly Alive
+- Saquon Barkley: 23.7% of total points for CeeDee Lamb’s Finsta
 
 ------------------------------------------------------------------------
