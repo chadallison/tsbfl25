@@ -75,8 +75,26 @@ team_records = data.frame(team = all_teams) |>
          pct = round(wins / (wins + losses), 3),
          team_name = paste0(team, " (", manager, ")"))
 
+get_pts_scored = function(team) {
+  home = end_games |> filter(home_team == team) |> pull(home_score)
+  away = end_games |> filter(away_team == team) |> pull(away_score)
+  return(mean(c(home, away)))
+}
+
+pts_scored = data.frame(team = all_teams) |>
+  left_join(teams, by = c("team" = "team_name")) |>
+  separate(manager, into = c("manager", "last"), sep = " ") |>
+  transmute(team, team_name = paste0(team, " (", manager, ")")) |>
+  mutate(scored = sapply(team, get_pts_scored))
+
+standings_order = team_records |>
+  inner_join(distinct(pts_scored, team, scored), by = "team") |>
+  arrange(desc(pct), desc(scored)) |>
+  pull(team_name)
+
 team_records |>
-  ggplot(aes(reorder(team_name, pct), pct)) +
+  mutate(team_name = factor(team_name, levels = rev(standings_order))) |>
+  ggplot(aes(team_name, pct)) +
   geom_col(fill = "#90AC8D") +
   geom_text(aes(label = record), size = 3, hjust = -0.25) +
   coord_flip(ylim = c(0, max(team_records$pct * 1.05))) +
@@ -90,18 +108,6 @@ ___
 ### Points Scored Per Game
 
 ```{r echo = F}
-get_pts_scored = function(team) {
-  home = end_games |> filter(home_team == team) |> pull(home_score)
-  away = end_games |> filter(away_team == team) |> pull(away_score)
-  return(mean(c(home, away)))
-}
-
-pts_scored = data.frame(team = all_teams) |>
-  left_join(teams, by = c("team" = "team_name")) |>
-  separate(manager, into = c("manager", "last"), sep = " ") |>
-  transmute(team, team_name = paste0(team, " (", manager, ")")) |>
-  mutate(scored = sapply(team, get_pts_scored))
-
 pts_scored |>
   ggplot(aes(reorder(team_name, scored), scored)) +
   geom_col(aes(fill = scored), show.legend = F) +
