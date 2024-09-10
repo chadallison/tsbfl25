@@ -21,6 +21,7 @@ knit: (function(input, ...) { rmarkdown::render(input, output_file = "README.md"
 - [Closest Games]
 - [Most Points Scored by One Team]
 - [Fewest Points Scored by One Team]
+- [Past Week One Player Merchants]
 
 ```{r message = F, warning = F, echo = F}
 library(tidyverse)
@@ -479,10 +480,27 @@ few = weekly_scores |>
 
 ___
 
+### Past Week One Player Merchants
 
+```{r echo = F}
+x = opt |>
+  group_by(team_name, week) |>
+  mutate(pct = round(pts / sum(pts) * 100, 1),
+         pctx = paste0(pct, "%")) |>
+  ungroup() |>
+  mutate(player = str_remove_all(player, "\n.*"),
+         x = paste0(player, ": ", pctx, " of total points for ", team_name)) |>
+  slice_max(pct, n = 5, with_ties = F) |>
+  pull(x)
+```
 
+- `r x[1]`
+- `r x[2]`
+- `r x[3]`
+- `r x[4]`
+- `r x[5]`
 
-
+___
 
 
 

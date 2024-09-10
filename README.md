@@ -20,6 +20,7 @@ Travis Scott Burger Fantasy League 2025
 - [Closest Games](#closest-games)
 - [Most Points Scored by One Team](#most-points-scored-by-one-team)
 - [Fewest Points Scored by One Team](#fewest-points-scored-by-one-team)
+- [Past Week One Player Merchants](#past-week-one-player-merchants)
 
 ------------------------------------------------------------------------
 
@@ -138,5 +139,15 @@ Travis Scott Burger Fantasy League 2025
 - 91.13 (Shock Squad, Week 1)
 - 91.4 (Dakshots, Week 1)
 - 97.74 (He’s Litewally Gwiddying, Week 1)
+
+------------------------------------------------------------------------
+
+### Past Week One Player Merchants
+
+- Cooper Kupp: 20.2% of total points for Antonio Brown’s Translator
+- Jayden Reed: 19.9% of total points for Super Lamario
+- Josh Allen: 19.2% of total points for DSM-5 All Stars
+- Saquon Barkley: 17.4% of total points for CeeDee Lamb’s Finsta
+- Jayden Daniels: 16.9% of total points for Stroud Nine
 
 ------------------------------------------------------------------------
