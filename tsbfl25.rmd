@@ -155,7 +155,7 @@ scored_against = data.frame(team = all_teams) |>
 
 scored_against |>
   ggplot(aes(scored, against)) +
-  geom_point(aes(col = diff), size = 5, show.legend = F) +
+  geom_point(aes(col = diff), shape = "square", size = 5, show.legend = F) +
   ggrepel::geom_text_repel(aes(label = first), box.padding = 0.5, segment.alpha = 0) +
   geom_hline(yintercept = mean(scored_against$against), linetype = "dashed", alpha = 0.5) +
   geom_vline(xintercept = mean(scored_against$scored), linetype = "dashed", alpha = 0.5) +
@@ -316,6 +316,8 @@ ___
 
 ### Weekly Scoring Trends
 
+*Coming next week ...*
+
 ```{r echo = F}
 get_total_pts_scored = function(team) {
   home = end_games |> filter(home_team == team) |> pull(home_score) |> sum()
@@ -336,18 +338,18 @@ for (i in 1:length(all_teams)) {
   }
 }
 
-weekly_scores |>
-  mutate(total_score = sapply(team, get_total_pts_scored),
-         week_pct = round(score / total_score, 3),
-         team = paste0(team, "\n(", total_score, ")")) |>
-  ggplot(aes(week, week_pct)) +
-  geom_line(aes(col = total_score), linewidth = 2, show.legend = F) +
-  scale_color_gradient(low = "indianred3", high = "springgreen4") +
-  facet_wrap(vars(team)) +
-  scale_y_continuous(labels = scales::percent) +
-  labs(x = "Week Number", y = "Percent of Total Points Scored",
-       title = "Weekly Scoring Trends",
-       subtitle = "Line Color Indicates Total Points Scored")
+# weekly_scores |>
+#   mutate(total_score = sapply(team, get_total_pts_scored),
+#          week_pct = round(score / total_score, 3),
+#          team = paste0(team, "\n(", total_score, ")")) |>
+#   ggplot(aes(week, week_pct)) +
+#   geom_line(aes(col = total_score), linewidth = 2, show.legend = F) +
+#   scale_color_gradient(low = "indianred3", high = "springgreen4") +
+#   facet_wrap(vars(team)) +
+#   scale_y_continuous(labels = scales::percent) +
+#   labs(x = "Week Number", y = "Percent of Total Points Scored",
+#        title = "Weekly Scoring Trends",
+#        subtitle = "Line Color Indicates Total Points Scored")
 ```
 
 ___
