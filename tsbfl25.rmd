@@ -590,13 +590,12 @@ ___
 ```{r echo = F}
 chug |>
   mutate(xvar = paste0(manager, " (", week, ")")) |>
-  ggplot(aes(xvar, time)) +
+  ggplot(aes(reorder(xvar, -time), time)) +
   geom_col(fill = "saddlebrown") +
   geom_text(aes(label = paste0(time, "s")), size = 3, hjust = -0.25) +
   coord_flip() +
   labs(x = NULL, y = NULL,
-       title = "straight chugging it, and by it, let's justr say, well, my bervage",
-       subtitle = "Joshy boy is the only one right now so it will get less ugly when you other frauds do your duty") +
+       title = "straight chugging it, and by it, let's justr say, well, my bervage") +
   theme(axis.text.x = element_blank())
 ```
 
