@@ -22,6 +22,8 @@ knit: (function(input, ...) { rmarkdown::render(input, output_file = "README.md"
 - [Most Points Scored by One Team]
 - [Fewest Points Scored by One Team]
 - [Past Week One Player Merchants]
+- [Luckiest Teams This Past Week]
+- [Luckiest Teams Season Long]
 
 ```{r message = F, warning = F, echo = F}
 library(tidyverse)
@@ -44,6 +46,7 @@ teams = read_sheet(url, sheet = 1)
 games = read_sheet(url, sheet = 2)
 opt = read_sheet(url, sheet = 3)
 draft = read_sheet(url, sheet = 4)
+chug = read_sheet(url, sheet = 5)
 
 end_games = games |>
   filter(!is.na(away_score) & !is.na(home_score)) |>
@@ -505,9 +508,101 @@ x = opt |>
 
 ___
 
+### Luckiest Teams This Past Week
 
+```{r echo = F}
+team_pts_scored = end_games |>
+  group_by(team = home_team) |>
+  summarise(home_pts = sum(home_score)) |>
+  full_join(end_games |>
+  group_by(team = away_team) |>
+  summarise(away_pts = sum(away_score)), by = "team") |>
+  mutate(home_pts = coalesce(home_pts, 0),
+         away_pts = coalesce(away_pts, 0)) |>
+  transmute(team, pts = (home_pts + away_pts) / max(end_games$week))
 
+end_luck = end_games |>
+  inner_join(team_pts_scored, by = c("home_team" = "team")) |>
+  rename(home_ppg = pts) |>
+  inner_join(team_pts_scored, by = c("away_team" = "team")) |>
+  rename(away_ppg = pts) |>
+  mutate(home_luck = away_ppg - away_score,
+         away_luck = home_ppg - home_score)
 
+get_team_last_week_luck = function(tm) {
+  luck = end_luck |>
+    filter(week == max(end_games$week) & (home_team == tm | away_team == tm)) |>
+    mutate(my_luck = ifelse(home_team == tm, home_luck, away_luck)) |>
+    pull(my_luck)
+  
+  return(luck)
+}
+
+get_team_ovr_luck = function(tm) {
+  luck = end_luck |>
+    filter(home_team == tm | away_team == tm) |>
+    mutate(my_luck = ifelse(home_team == tm, home_luck, away_luck)) |>
+    summarise(luck = sum(my_luck)) |>
+    pull(luck)
+  
+  return(luck)
+}
+
+luckplot = data.frame(team = all_teams, week = max(end_games$week)) |>
+  mutate(luck = sapply(team, get_team_last_week_luck),
+         poslab = ifelse(luck >= 0, round(luck, 1), ""),
+         neglab = ifelse(luck < 0, round(luck, 1), ""))
+
+luckplot |>
+  ggplot(aes(reorder(team, luck), luck)) +
+  geom_col(aes(fill = luck), show.legend = F) +
+  geom_text(aes(label = poslab), size = 3, hjust = -0.25) +
+  geom_text(aes(label = neglab), size = 3, hjust = 1.25) +
+  coord_flip(ylim = c(min(luckplot$luck) * 1.1, max(luckplot$luck) * 1.1)) +
+  scale_fill_gradient(low = "indianred3", high = "springgreen4") +
+  labs(x = NULL, y = "Luck",
+       title = "Who were the luckiest and unluckiest teams this past week?")
+```
+
+___
+
+### Luckiest Teams Season Long
+
+```{r echo = F}
+luckplot = data.frame(team = all_teams) |>
+  mutate(luck = sapply(team, get_team_ovr_luck),
+         poslab = ifelse(luck >= 0, round(luck, 1), ""),
+         neglab = ifelse(luck < 0, round(luck, 1), ""))
+
+luckplot |>
+  ggplot(aes(reorder(team, luck), luck)) +
+  geom_col(aes(fill = luck), show.legend = F) +
+  geom_text(aes(label = poslab), size = 3, hjust = -0.25) +
+  geom_text(aes(label = neglab), size = 3, hjust = 1.25) +
+  coord_flip(ylim = c(min(luckplot$luck) * 1.1, max(luckplot$luck) * 1.1)) +
+  scale_fill_gradient(low = "indianred3", high = "springgreen4") +
+  labs(x = NULL, y = "Luck",
+       title = "Who are the luckiest and unluckiest teams season-long?")
+```
+
+___
+
+### Chug Analysis
+
+```{r echo = F}
+chug |>
+  mutate(xvar = paste0(manager, " (", week, ")")) |>
+  ggplot(aes(xvar, time)) +
+  geom_col(fill = "saddlebrown") +
+  geom_text(aes(label = paste0(time, "s")), size = 3, hjust = -0.25) +
+  coord_flip() +
+  labs(x = NULL, y = NULL,
+       title = "straight chugging it, and by it, let's justr say, well, my bervage",
+       subtitle = "Joshy boy is the only one right now so it will get less ugly when you other frauds do your duty") +
+  theme(axis.text.x = element_blank())
+```
+
+___
 
 
 
