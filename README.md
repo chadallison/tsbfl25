@@ -84,7 +84,7 @@ Travis Scott Burger Fantasy League 2025
 
 ### Weekly Scoring Trends
 
-*Coming next week …*
+![](README_files/figure-gfm/unnamed-chunk-10-1.png)<!-- -->
 
 ------------------------------------------------------------------------
 
