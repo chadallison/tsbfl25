@@ -64,21 +64,21 @@ Travis Scott Burger Fantasy League 2025
 
 ### Most Points Scored in a Loss
 
+- Week 3: Stroud Nine def. Super Lamario 136.12-122.98
 - Week 1: CeeDee Lamb’s Finsta def. cArOLinA pAntHErS 135.88-115.53
 - Week 2: Bearly Alive def. DSM-5 All Stars 127.85-115.24
 - Week 2: Shock Squad def. CeeDee Lamb’s Finsta 115.37-107.13
 - Week 1: Stroud Nine def. Bearly Alive 116.99-106.47
-- Week 2: Super Lamario def. Orthopedics PreOp 116.85-95.68
 
 ------------------------------------------------------------------------
 
 ### Fewest Points Scored in a Victory
 
 - Week 1: Dakshots def. Orthopedics PreOp 91.4-68.57
-- Week 1: He’s Litewally Gwiddying def. Super Lamario 97.74-88.21
-- Week 2: Shock Squad def. CeeDee Lamb’s Finsta 115.37-107.13
-- Week 2: Super Lamario def. Orthopedics PreOp 116.85-95.68
-- Week 1: Stroud Nine def. Bearly Alive 116.99-106.47
+- Week 3: Bearly Alive def. Shock Squad 97.73-93.26
+- Week 1: Love Hurts def. Super Lamario 97.74-88.21
+- Week 3: Dakshots def. Love Hurts 98.13-98.11
+- Week 3: Orthopedics PreOp def. CeeDee Lamb’s Finsta 103.08-99.47
 
 ------------------------------------------------------------------------
 
@@ -96,11 +96,11 @@ Travis Scott Burger Fantasy League 2025
 
 ### Highest Scoring Games
 
+- Week 3: Stroud Nine def. Super Lamario 136.12 to 122.98
 - Week 1: CeeDee Lamb’s Finsta def. cArOLinA pAntHErS 135.88 to 115.53
 - Week 2: Bearly Alive def. DSM-5 All Stars 127.85 to 115.24
+- Week 3: cArOLinA pAntHErS def. DSM-5 All Stars 122.3 to 103.15
 - Week 1: Stroud Nine def. Bearly Alive 116.99 to 106.47
-- Week 2: Shock Squad def. CeeDee Lamb’s Finsta 115.37 to 107.13
-- Week 2: cArOLinA pAntHErS def. Dakshots 137.81 to 82.82
 
 ------------------------------------------------------------------------
 
@@ -108,7 +108,7 @@ Travis Scott Burger Fantasy League 2025
 
 - Week 2: cArOLinA pAntHErS def. Dakshots 137.81 to 82.82
 - Week 1: DSM-5 All Stars def. Shock Squad 122.99 to 91.13
-- Week 2: He’s Litewally Gwiddying def. Stroud Nine 120.53 to 94.48
+- Week 2: Love Hurts def. Stroud Nine 120.53 to 94.48
 - Week 1: Dakshots def. Orthopedics PreOp 91.4 to 68.57
 - Week 2: Super Lamario def. Orthopedics PreOp 116.85 to 95.68
 
@@ -116,21 +116,21 @@ Travis Scott Burger Fantasy League 2025
 
 ### Closest Games
 
+- Week 3: Dakshots def. Love Hurts 98.13 to 98.11
+- Week 3: Orthopedics PreOp def. CeeDee Lamb’s Finsta 103.08 to 99.47
+- Week 3: Bearly Alive def. Shock Squad 97.73 to 93.26
 - Week 2: Shock Squad def. CeeDee Lamb’s Finsta 115.37 to 107.13
-- Week 1: He’s Litewally Gwiddying def. Super Lamario 97.74 to 88.21
-- Week 1: Stroud Nine def. Bearly Alive 116.99 to 106.47
-- Week 2: Bearly Alive def. DSM-5 All Stars 127.85 to 115.24
-- Week 1: CeeDee Lamb’s Finsta def. cArOLinA pAntHErS 135.88 to 115.53
+- Week 1: Love Hurts def. Super Lamario 97.74 to 88.21
 
 ------------------------------------------------------------------------
 
 ### Most Points Scored by One Team
 
 - 137.81 (cArOLinA pAntHErS, Week 2)
+- 136.12 (Stroud Nine, Week 3)
 - 135.88 (CeeDee Lamb’s Finsta, Week 1)
 - 127.85 (Bearly Alive, Week 2)
 - 122.99 (DSM-5 All Stars, Week 1)
-- 120.53 (He’s Litewally Gwiddying, Week 2)
 
 ------------------------------------------------------------------------
 
@@ -146,11 +146,11 @@ Travis Scott Burger Fantasy League 2025
 
 ### Past Week One Player Merchants
 
-- Cooper Kupp: 36.5% of total points for Orthopedics PreOp
-- James Cook: 33.8% of total points for Dakshots
-- Alvin Kamara: 31.2% of total points for cArOLinA pAntHErS
-- Lamar Jackson: 25.4% of total points for Super Lamario
-- Tyreek Hill: 24.6% of total points for Dakshots
+- Saquon Barkley: 31.8% of total points for CeeDee Lamb’s Finsta
+- Josh Allen: 27.4% of total points for DSM-5 All Stars
+- Dak Prescott: 26.6% of total points for Dakshots
+- Jonathan Taylor: 26.5% of total points for Love Hurts
+- Kyren Williams: 25% of total points for cArOLinA pAntHErS
 
 ------------------------------------------------------------------------
 

@@ -485,6 +485,7 @@ ___
 
 ```{r echo = F}
 x = opt |>
+  filter(week == max(end_games$week)) |>
   group_by(team_name, week) |>
   mutate(rn = row_number()) |>
   filter(rn <= 9) |>
