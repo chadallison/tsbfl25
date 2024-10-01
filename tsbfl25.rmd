@@ -24,6 +24,9 @@ knit: (function(input, ...) { rmarkdown::render(input, output_file = "README.md"
 - [Past Week One Player Merchants]
 - [Luckiest Teams This Past Week]
 - [Luckiest Teams Season Long]
+- [Past Week Full Luck]
+- [Season Long Full Luck]
+- [Chug Analysis]
 
 ```{r message = F, warning = F, echo = F}
 library(tidyverse)
@@ -586,6 +589,70 @@ luckplot |>
 
 ___
 
+### Past Week Full Luck
+
+```{r echo = F}
+end_luck_full = end_luck |>
+  mutate(home_self_luck = (home_score - home_ppg) * 0.5,
+         away_self_luck = (away_score - away_ppg) * 0.5,
+         home_full_luck = home_luck + home_self_luck,
+         away_full_luck = away_luck + away_self_luck)
+
+get_team_pw_full_luck = function(tm) {
+  home = end_luck_full |> filter(week == max(end_games$week) & home_team == tm) |> pull(home_full_luck)
+  away = end_luck_full |> filter(week == max(end_games$week) & away_team == tm) |> pull(away_full_luck)
+  return(round(sum(c(home, away)), 2))
+}
+
+get_team_full_luck = function(tm) {
+  home = end_luck_full |> filter(home_team == tm) |> pull(home_full_luck)
+  away = end_luck_full |> filter(away_team == tm) |> pull(away_full_luck)
+  return(round(sum(c(home, away)), 2))
+}
+
+past_week_full_luck = data.frame(team = all_teams) |>
+  mutate(pw_luck = sapply(team, get_team_pw_full_luck))
+
+ovr_full_luck = data.frame(team = all_teams) |>
+  mutate(luck = sapply(team, get_team_full_luck))
+
+past_week_full_luck |>
+  mutate(poslab = ifelse(pw_luck >= 0, pw_luck, ""),
+         neglab = ifelse(pw_luck < 0, pw_luck, "")) |>
+  ggplot(aes(reorder(team, pw_luck), pw_luck)) +
+  geom_col(aes(fill = pw_luck), show.legend = F) +
+  geom_text(aes(label = poslab), size = 3, hjust = -0.25) +
+  geom_text(aes(label = neglab), size = 3, hjust = 1.25) +
+  coord_flip(ylim = c(min(past_week_full_luck$pw_luck) * 1.1, max(past_week_full_luck$pw_luck) * 1.1)) +
+  labs(x = NULL, y = "Full Luck",
+       title = "Luckiest teams, this past week",
+       subtitle = "Full luck, not just opponent luck") +
+  scale_fill_gradient(low = "indianred3", high = "springgreen4") +
+  scale_y_continuous(breaks = seq(-50, 50, by = 5))
+```
+
+___
+
+### Season Long Full Luck
+
+```{r echo = F}
+ovr_full_luck |>
+  mutate(poslab = ifelse(luck >= 0, luck, ""),
+         neglab = ifelse(luck < 0, luck, "")) |>
+  ggplot(aes(reorder(team, luck), luck)) +
+  geom_col(aes(fill = luck), show.legend = F) +
+  geom_text(aes(label = poslab), size = 3, hjust = -0.25) +
+  geom_text(aes(label = neglab), size = 3, hjust = 1.25) +
+  coord_flip(ylim = c(min(ovr_full_luck$luck) * 1.1, max(ovr_full_luck$luck) * 1.1)) +
+  labs(x = NULL, y = "Full Luck",
+       title = "Luckiest teams, season long",
+       subtitle = "Full luck, not just opponent luck") +
+  scale_fill_gradient(low = "indianred3", high = "springgreen4") +
+  scale_y_continuous(breaks = seq(-100, 100, by = 10))
+```
+
+___
+
 ### Chug Analysis
 
 ```{r echo = F}
@@ -599,12 +666,6 @@ chug |>
        title = "straight chugging it, and by it, let's justr say, well, my bervage") +
   theme(axis.text.x = element_blank())
 ```
-
-___
-
-
-
-
 
 
 

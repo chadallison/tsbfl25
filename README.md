@@ -23,6 +23,9 @@ Travis Scott Burger Fantasy League 2025
 - [Past Week One Player Merchants](#past-week-one-player-merchants)
 - [Luckiest Teams This Past Week](#luckiest-teams-this-past-week)
 - [Luckiest Teams Season Long](#luckiest-teams-season-long)
+- [Past Week Full Luck](#past-week-full-luck)
+- [Season Long Full Luck](#season-long-full-luck)
+- [Chug Analysis](#chug-analysis)
 
 ------------------------------------------------------------------------
 
@@ -166,8 +169,18 @@ Travis Scott Burger Fantasy League 2025
 
 ------------------------------------------------------------------------
 
-### Chug Analysis
+### Past Week Full Luck
 
 ![](README_files/figure-gfm/unnamed-chunk-20-1.png)<!-- -->
 
 ------------------------------------------------------------------------
+
+### Season Long Full Luck
+
+![](README_files/figure-gfm/unnamed-chunk-21-1.png)<!-- -->
+
+------------------------------------------------------------------------
+
+### Chug Analysis
+
+![](README_files/figure-gfm/unnamed-chunk-22-1.png)<!-- -->
