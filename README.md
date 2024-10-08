@@ -100,20 +100,20 @@ Travis Scott Burger Fantasy League 2025
 ### Highest Scoring Games
 
 - Week 4: Stroud Nine def. Orthopedics PreOp 162.54 to 118.23
+- Week 5: Crashee Rice def. Shock Squad 165.1 to 111.25
 - Week 3: Stroud Nine def. Crashee Rice 136.12 to 122.98
 - Week 1: CeeDee Lamb’s Finsta def. cArOLinA pAntHErS 135.88 to 115.53
 - Week 2: Bearly Alive def. DSM-5 All Stars 127.85 to 115.24
-- Week 4: Bearly Alive def. CeeDee Lamb’s Finsta 125.14 to 117.69
 
 ------------------------------------------------------------------------
 
 ### Biggest Blowouts
 
+- Week 5: Love Hurts def. Orthopedics PreOp 143.83 to 80.98
 - Week 2: cArOLinA pAntHErS def. Dakshots 137.81 to 82.82
+- Week 5: Crashee Rice def. Shock Squad 165.1 to 111.25
 - Week 4: Stroud Nine def. Orthopedics PreOp 162.54 to 118.23
-- Week 4: cArOLinA pAntHErS def. Shock Squad 132.41 to 94.31
-- Week 1: DSM-5 All Stars def. Shock Squad 122.99 to 91.13
-- Week 2: Love Hurts def. Stroud Nine 120.53 to 94.48
+- Week 5: Stroud Nine def. Dakshots 140.27 to 98.89
 
 ------------------------------------------------------------------------
 
@@ -129,11 +129,11 @@ Travis Scott Burger Fantasy League 2025
 
 ### Most Points Scored by One Team
 
+- 165.1 (Crashee Rice, Week 5)
 - 162.54 (Stroud Nine, Week 4)
+- 143.83 (Love Hurts, Week 5)
+- 140.27 (Stroud Nine, Week 5)
 - 137.81 (cArOLinA pAntHErS, Week 2)
-- 136.12 (Stroud Nine, Week 3)
-- 135.88 (CeeDee Lamb’s Finsta, Week 1)
-- 132.41 (cArOLinA pAntHErS, Week 4)
 
 ------------------------------------------------------------------------
 
@@ -142,18 +142,18 @@ Travis Scott Burger Fantasy League 2025
 - 68.57 (Orthopedics PreOp, Week 1)
 - 70.28 (Dakshots, Week 4)
 - 72.44 (Crashee Rice, Week 4)
-- 82.82 (Dakshots, Week 2)
-- 88.21 (Crashee Rice, Week 1)
+- 73.57 (cArOLinA pAntHErS, Week 5)
+- 80.98 (Orthopedics PreOp, Week 5)
 
 ------------------------------------------------------------------------
 
 ### Past Week One Player Merchants
 
-- Justin Fields: 30.6% of total points for Shock Squad
-- Lamar Jackson: 30.5% of total points for Crashee Rice
-- Nico Collins: 25.3% of total points for DSM-5 All Stars
-- Kenneth Walker III: 25.3% of total points for Bearly Alive
-- Baker Mayfield: 21.6% of total points for CeeDee Lamb’s Finsta
+- Ja’Marr Chase: 25.9% of total points for Stroud Nine
+- Vikings D/ST: 23.5% of total points for Orthopedics PreOp
+- DJ Moore: 22.5% of total points for Shock Squad
+- Tee Higgins: 22.4% of total points for CeeDee Lamb’s Finsta
+- Trevor Lawrence: 21.6% of total points for Orthopedics PreOp
 
 ------------------------------------------------------------------------
 
