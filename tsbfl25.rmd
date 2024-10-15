@@ -593,8 +593,8 @@ ___
 
 ```{r echo = F}
 end_luck_full = end_luck |>
-  mutate(home_self_luck = (home_score - home_ppg) * 0.75,
-         away_self_luck = (away_score - away_ppg) * 0.75,
+  mutate(home_self_luck = (home_score - home_ppg) * 1, # changed factor to 1
+         away_self_luck = (away_score - away_ppg) * 1,
          home_full_luck = home_luck + home_self_luck,
          away_full_luck = away_luck + away_self_luck)
 
@@ -666,7 +666,6 @@ chug |>
        title = "straight chugging it, and by it, let's justr say, well, my bervage") +
   theme(axis.text.x = element_blank())
 ```
-
 
 
 
