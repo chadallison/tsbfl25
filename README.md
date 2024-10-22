@@ -67,21 +67,21 @@ Travis Scott Burger Fantasy League 2025
 
 ### Most Points Scored in a Loss
 
-- Week 3: Stroud Nine def. Crashee Rice 136.12-122.98
-- Week 6: Shock Squad def. Love Hurts 143.83-120.26
-- Week 4: Stroud Nine def. Orthopedics PreOp 162.54-118.23
-- Week 4: Bearly Alive def. CeeDee Lamb’s Finsta 125.14-117.69
-- Week 1: CeeDee Lamb’s Finsta def. cArOLinA pAntHErS 135.88-115.53
+- Week 3: JP def. Adam 136.12-122.98
+- Week 6: David def. Hank 143.83-120.26
+- Week 4: JP def. Drew 162.54-118.23
+- Week 4: Matt def. Jerry 125.14-117.69
+- Week 1: Jerry def. Josh 135.88-115.53
 
 ------------------------------------------------------------------------
 
 ### Fewest Points Scored in a Victory
 
-- Week 4: Crashee Rice def. Dakshots 72.44-70.28
-- Week 1: Dakshots def. Orthopedics PreOp 91.4-68.57
-- Week 6: CeeDee Lamb’s Finsta def. Dakshots 97.64-62.4
-- Week 3: Bearly Alive def. Shock Squad 97.73-93.26
-- Week 1: Love Hurts def. Crashee Rice 97.74-88.21
+- Week 4: Adam def. Eric 72.44-70.28
+- Week 1: Eric def. Drew 91.4-68.57
+- Week 7: Chad def. Eric 91.6-62.88
+- Week 6: Jerry def. Eric 97.64-62.4
+- Week 3: Matt def. David 97.73-93.26
 
 ------------------------------------------------------------------------
 
@@ -99,61 +99,61 @@ Travis Scott Burger Fantasy League 2025
 
 ### Highest Scoring Games
 
-- Week 4: Stroud Nine def. Orthopedics PreOp 162.54 to 118.23
-- Week 5: Crashee Rice def. Shock Squad 165.1 to 111.25
-- Week 6: Shock Squad def. Love Hurts 143.83 to 120.26
-- Week 3: Stroud Nine def. Crashee Rice 136.12 to 122.98
-- Week 1: CeeDee Lamb’s Finsta def. cArOLinA pAntHErS 135.88 to 115.53
+- Week 4: JP def. Drew 162.54 to 118.23
+- Week 5: Adam def. David 165.1 to 111.25
+- Week 6: David def. Hank 143.83 to 120.26
+- Week 3: JP def. Adam 136.12 to 122.98
+- Week 7: Jerry def. JP 148.92 to 107.76
 
 ------------------------------------------------------------------------
 
 ### Biggest Blowouts
 
-- Week 5: Love Hurts def. Orthopedics PreOp 143.83 to 80.98
-- Week 6: DSM-5 All Stars def. Orthopedics PreOp 137.75 to 76.64
-- Week 2: cArOLinA pAntHErS def. Dakshots 137.81 to 82.82
-- Week 5: Crashee Rice def. Shock Squad 165.1 to 111.25
-- Week 6: Crashee Rice def. Bearly Alive 142.83 to 91.58
+- Week 5: Hank def. Drew 143.83 to 80.98
+- Week 6: Chad def. Drew 137.75 to 76.64
+- Week 2: Josh def. Eric 137.81 to 82.82
+- Week 5: Adam def. David 165.1 to 111.25
+- Week 6: Adam def. Matt 142.83 to 91.58
 
 ------------------------------------------------------------------------
 
 ### Closest Games
 
-- Week 3: Dakshots def. Love Hurts 98.13 to 98.11
-- Week 4: Crashee Rice def. Dakshots 72.44 to 70.28
-- Week 3: Orthopedics PreOp def. CeeDee Lamb’s Finsta 103.08 to 99.47
-- Week 3: Bearly Alive def. Shock Squad 97.73 to 93.26
-- Week 4: DSM-5 All Stars def. Love Hurts 107.04 to 102.47
+- Week 3: Eric def. Hank 98.13 to 98.11
+- Week 4: Adam def. Eric 72.44 to 70.28
+- Week 3: Drew def. Jerry 103.08 to 99.47
+- Week 3: Matt def. David 97.73 to 93.26
+- Week 4: Chad def. Hank 107.04 to 102.47
 
 ------------------------------------------------------------------------
 
 ### Most Points Scored by One Team
 
-- 165.1 (Crashee Rice, Week 5)
-- 162.54 (Stroud Nine, Week 4)
-- 143.83 (Love Hurts, Week 5)
-- 143.83 (Shock Squad, Week 6)
-- 142.83 (Crashee Rice, Week 6)
+- 165.1 (Adam, Week 5)
+- 162.54 (JP, Week 4)
+- 148.92 (Jerry, Week 7)
+- 143.83 (David, Week 6)
+- 143.83 (Hank, Week 5)
 
 ------------------------------------------------------------------------
 
 ### Fewest Points Scored by One Team
 
-- 62.4 (Dakshots, Week 6)
-- 68.57 (Orthopedics PreOp, Week 1)
-- 70.28 (Dakshots, Week 4)
-- 72.44 (Crashee Rice, Week 4)
-- 73.57 (cArOLinA pAntHErS, Week 5)
+- 62.4 (Eric, Week 6)
+- 62.88 (Eric, Week 7)
+- 68.57 (Drew, Week 1)
+- 70.28 (Eric, Week 4)
+- 72.44 (Adam, Week 4)
 
 ------------------------------------------------------------------------
 
 ### Past Week One Player Merchants
 
-- Chris Boswell: 27.2% of total points for Dakshots
-- Jared Goff: 23.4% of total points for cArOLinA pAntHErS
-- Baker Mayfield: 23.2% of total points for CeeDee Lamb’s Finsta
-- Brock Bowers: 22.2% of total points for Dakshots
-- George Kittle: 22.1% of total points for CeeDee Lamb’s Finsta
+- Jahmyr Gibbs: 27.8% of total points for JP
+- Russell Wilson: 27.1% of total points for Drew
+- Brock Bowers: 27% of total points for Eric
+- Derrick Henry: 22.9% of total points for JP
+- Lamar Jackson: 22.7% of total points for Adam
 
 ------------------------------------------------------------------------
 
