@@ -737,7 +737,19 @@ chug |>
 
 ```{r message = F, warning = F}
 library(tidyverse)
+library(tvthemes)
 library(ffscrapr)
+library(ggimage)
+library(glue)
+
+theme_custom = theme_avatar() +
+  theme(plot.title = element_text(hjust = 0.5),
+        plot.subtitle = element_text(hjust = 0.5, size = 9, vjust = 2.5, face = "italic"),
+        plot.caption = element_text(face = "italic"),
+        panel.grid.major = element_line(linewidth = 0.5, colour = "#DFDAD1"),
+        panel.grid.minor = element_line(linewidth = 0.5, colour = "#DFDAD1"))
+
+theme_set(theme_custom)
 
 conn = ff_connect(platform = "espn", league_id = "81518506", season = 2024)
 
@@ -953,10 +965,99 @@ x = end_games |>
 - `r x[4]`
 - `r x[5]`
 
+### fewest pts scored in a victory v2
 
+```{r}
+x = end_games |>
+  slice_min(win_score, n = 5, with_ties = F) |>
+  inner_join(team_name_to_name, by = c("win_team" = "franchise_name")) |>
+  rename(win_name = first) |>
+  inner_join(team_name_to_name, by = c("lose_team" = "franchise_name")) |>
+  rename(lose_name = first) |>
+  mutate(score = paste0(win_score, "-", lose_score)) |>
+  mutate(x = as.character(glue("Week {week}: {win_name} def. {lose_name} {score}"))) |>
+  pull(x)
+```
 
+- `r x[1]`
+- `r x[2]`
+- `r x[3]`
+- `r x[4]`
+- `r x[5]`
 
+### weekly scoring trends
 
+```{r}
+end_games |>
+  select(week, team = win_team, score = win_score) |>
+  rbind(end_games |>
+  select(week, team = lose_team, score = lose_score)) |>
+  group_by(team) |>
+  mutate(pct = score / sum(score)) |>
+  ungroup() |>
+  inner_join(team_records |>
+  distinct(team, pts_scored), by = "team") |>
+  inner_join(team_name_to_name, by = c("team" = "franchise_name")) |>
+  mutate(first = paste0(first, "\n(", pts_scored, ")")) |>
+  ggplot(aes(week, pct)) +
+  geom_line(aes(col = pts_scored), linewidth = 1.5, show.legend = F) +
+  scale_color_gradient(low = "indianred3", high = "springgreen4") +
+  facet_wrap(vars(first)) +
+  theme(axis.text = element_blank()) +
+  labs(x = "Week", y = "Percent of Total Points Scored",
+       title = "Weekly Scoring Trends",
+       subtitle = "Line color indicates total points scored")
+```
+
+### close games
+
+```{r}
+end_with_margins = end_games |>
+  mutate(margin = win_score - lose_score)
+
+get_team_avg_margin = function(tm) {
+  x = end_with_margins |> filter(win_team == tm | lose_team == tm) |> pull(margin)
+  return(round(mean(x), 2))
+}
+
+team_avg_margins = data.frame(team = all_teams) |>
+  mutate(avg_margin = sapply(team, get_team_avg_margin)) |>
+  inner_join(team_name_to_name, by = c("team" = "franchise_name"))
+
+team_avg_margins |>
+  ggplot(aes(reorder(first, -avg_margin), avg_margin)) +
+  geom_col(aes(fill = avg_margin), show.legend = F) +
+  coord_flip(ylim = c(0, max(team_avg_margins$avg_margin) * 1.05)) +
+  scale_fill_gradient(low = "indianred3", high = "springgreen4") +
+  geom_text(aes(label = avg_margin), size = 3, hjust = -0.25) +
+  labs(x = NULL, y = "Average game margin",
+       title = "Who is playing the closest games, on average?",
+       subtitle = "Without regard to winning or losing") +
+  scale_y_continuous(breaks = seq(0, 50, by = 5))
+```
+
+### Highest Scoring Games v2
+
+```{r}
+x = end_games |>
+  mutate(total = win_score + lose_score,
+         final = paste0(win_score, "-", lose_score)) |>
+  slice_max(total, n = 5, with_ties = F) |>
+  inner_join(team_name_to_name, by = c("win_team" = "franchise_name")) |>
+  rename(win_first = first) |>
+  inner_join(team_name_to_name, by = c("lose_team" = "franchise_name")) |>
+  rename(lose_first = first) |>
+  mutate(x = as.character(glue("Week {week}: {win_first} def. {lose_first} {final}"))) |>
+  pull(x)
+```
+
+- `r x[1]`
+- `r x[2]`
+- `r x[3]`
+- `r x[4]`
+- `r x[5]`
+
+### Biggest blowouts v2
 
 
 
