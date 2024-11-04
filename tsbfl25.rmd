@@ -575,7 +575,7 @@ get_team_last_week_luck = function(tm) {
     filter(week == max(end_games$week) & (home_team == tm | away_team == tm)) |>
     mutate(my_luck = ifelse(home_team == tm, home_luck, away_luck)) |>
     pull(my_luck)
-  
+
   return(luck)
 }
 
@@ -585,7 +585,7 @@ get_team_ovr_luck = function(tm) {
     mutate(my_luck = ifelse(home_team == tm, home_luck, away_luck)) |>
     summarise(luck = sum(my_luck)) |>
     pull(luck)
-  
+
   return(luck)
 }
 
@@ -1059,24 +1059,122 @@ x = end_games |>
 
 ### Biggest blowouts v2
 
+```{r}
+x = end_games |>
+  mutate(score = paste0(win_score, "-", lose_score),
+         diff = win_score - lose_score) |>
+  slice_max(diff, n = 5, with_ties = F) |>
+  mutate(x = as.character(glue("Week {week}: {win_team} def. {lose_team} {score}"))) |>
+  pull(x)
+```
 
+- `r x[1]`
+- `r x[2]`
+- `r x[3]`
+- `r x[4]`
+- `r x[5]`
 
+### closest games v2
 
+```{r}
+x = end_games |>
+  mutate(score = paste0(win_score, "-", lose_score),
+         diff = win_score - lose_score) |>
+  slice_min(diff, n = 5, with_ties = F) |>
+  mutate(x = as.character(glue("Week {week}: {win_team} def. {lose_team} {score}"))) |>
+  pull(x)
+```
 
+- `r x[1]`
+- `r x[2]`
+- `r x[3]`
+- `r x[4]`
+- `r x[5]`
 
+### most points scored by one team v2
 
+```{r}
+x = end_games |>
+  select(week, team = win_team, score = win_score) |>
+  rbind(end_games |>
+  select(week, team = lose_team, score = lose_score)) |>
+  slice_max(score, n = 5, with_ties = F) |>
+  inner_join(team_name_to_name, by = c("team" = "franchise_name")) |>
+  mutate(x = as.character(glue("{score} ({first}, Week {week})"))) |>
+  pull(x)
+```
 
+- `r x[1]`
+- `r x[2]`
+- `r x[3]`
+- `r x[4]`
+- `r x[5]`
 
+### fewest points scored by one team v2
 
+```{r}
+x = end_games |>
+  select(week, team = win_team, score = win_score) |>
+  rbind(end_games |>
+  select(week, team = lose_team, score = lose_score)) |>
+  slice_min(score, n = 5, with_ties = F) |>
+  inner_join(team_name_to_name, by = c("team" = "franchise_name")) |>
+  mutate(x = as.character(glue("{score} ({first}, Week {week})"))) |>
+  pull(x)
+```
 
+- `r x[1]`
+- `r x[2]`
+- `r x[3]`
+- `r x[4]`
+- `r x[5]`
 
+### past week one player merchants v2
 
+```{r}
+x = ff_starters(conn, week = max(end_games$week)) |>
+  filter(!lineup_slot %in% c("BE", "IR")) |>
+  mutate(pct = round(player_score / franchise_score * 100, 1)) |>
+  slice_max(pct, n = 5, with_ties = F) |>
+  inner_join(team_name_to_name, by = "franchise_name") |>
+  mutate(x = as.character(glue("{player_name}: {pct}% of total points for {first}"))) |>
+  pull(x)
+```
 
+- `r x[1]`
+- `r x[2]`
+- `r x[3]`
+- `r x[4]`
+- `r x[5]`
 
+### full season one player merchants
 
+```{r}
+x = ff_starters(conn, week = 1:max(end_games$week)) |>
+  filter(!lineup_slot %in% c("BE", "IR")) |>
+  group_by(franchise_name, player_name) |>
+  summarise(pts = sum(player_score),
+            .groups = "drop") |>
+  inner_join(team_records |>
+  select(team, first, pts_scored), by = c("franchise_name" = "team")) |>
+  mutate(pct = round(pts / pts_scored * 100, 2)) |>
+  slice_max(pct, n = 10, with_ties = F) |>
+  mutate(x = as.character(glue("{player_name}: {pct}% of total points for {first}"))) |>
+  pull(x)
+```
 
+- `r x[1]`
+- `r x[2]`
+- `r x[3]`
+- `r x[4]`
+- `r x[5]`
 
-### NEW STUFF
+### luckiest teams this past week
+
+```{r}
+
+```
+
 
 ```{r}
 true_proj_scores_weekly = ff_starters(conn, week = 1:max(end_games$week)) |>
@@ -1095,6 +1193,61 @@ end_with_proj = end_games |>
   mutate(win_score_over_proj = win_score - win_proj_score,
          lose_score_over_proj = lose_score - lose_proj_score)
 
+past_week_luck_data = end_with_proj |>
+  filter(week == max(end_games$week)) |>
+  transmute(team = win_team, luck = lose_score_over_proj * -1) |>
+  rbind(end_with_proj |>
+  filter(week == max(end_games$week)) |>
+  transmute(team = lose_team, luck = win_score_over_proj * -1)) |>
+  inner_join(team_name_to_name, by = c("team" = "franchise_name")) |>
+  mutate(poslab = ifelse(luck >= 0, round(luck, 1), ""),
+         neglab = ifelse(luck < 0, round(luck, 1), ""))
+
+past_week_luck_data |>
+  ggplot(aes(reorder(first, luck), luck)) +
+  geom_col(aes(fill = luck), show.legend = F) +
+  coord_flip(ylim = c(min(past_week_luck_data$luck) * 1.05,
+                      max(past_week_luck_data$luck) * 1.05)) +
+  scale_fill_gradient(low = "indianred3", high = "springgreen4") +
+  geom_text(aes(label = poslab), size = 3, hjust = -0.25) +
+  geom_text(aes(label = neglab), size = 3, hjust = 1.25) +
+  labs(x = NULL, y = "Luck",
+       title = "Who were the luckiest and unluckiest teams this past week?",
+       subtitle = "Opponent-based luck only") +
+  theme(axis.text.x = element_blank())
+```
+
+### luckiest teams season-long
+
+```{r}
+full_szn_luck = end_with_proj |>
+  transmute(team = win_team, luck = lose_score_over_proj * -1) |>
+  rbind(end_with_proj |>
+  transmute(team = lose_team, luck = win_score_over_proj * -1)) |>
+  inner_join(team_name_to_name, by = c("team" = "franchise_name")) |>
+  group_by(team, first) |>
+  summarise(luck = sum(luck),
+            .groups = "drop") |>
+  mutate(poslab = ifelse(luck >= 0, round(luck, 1), ""),
+         neglab = ifelse(luck < 0, round(luck, 1), ""))
+
+full_szn_luck |>
+  ggplot(aes(reorder(first, luck), luck)) +
+  geom_col(aes(fill = luck), show.legend = F) +
+  coord_flip(ylim = c(min(full_szn_luck$luck) * 1.05,
+                      max(full_szn_luck$luck) * 1.05)) +
+  scale_fill_gradient(low = "indianred3", high = "springgreen4") +
+  geom_text(aes(label = poslab), size = 3, hjust = -0.25) +
+  geom_text(aes(label = neglab), size = 3, hjust = 1.25) +
+  labs(x = NULL, y = "Luck",
+       title = "Who are the luckiest and unluckiest teams season-long?",
+       subtitle = "Opponent-based luck only") +
+  theme(axis.text.x = element_blank())
+```
+
+### self luck and opponent luck
+
+```{r}
 get_team_score_over_proj = function(tm) {
   w = end_with_proj |> filter(win_team == tm) |> pull(win_score_over_proj)
   l = end_with_proj |> filter(lose_team == tm) |> pull(lose_score_over_proj)
@@ -1106,9 +1259,6 @@ get_team_opp_score_over_proj = function(tm) {
   l = end_with_proj |> filter(lose_team == tm) |> pull(win_score_over_proj)
   return(sum(c(w, l ) * -1))
 }
-
-names_logos = ffscrapr::ff_franchises(conn) |>
-  distinct(franchise_name, logo)
 
 data.frame(team = all_teams) |>
   mutate(sop = sapply(team, get_team_score_over_proj),
@@ -1123,35 +1273,69 @@ data.frame(team = all_teams) |>
   geom_hline(yintercept = 0, linetype = "dashed", alpha = 0.5) +
   labs(x = "Scoring Over Expected",
        y = "Opponent Scoring Under Expected",
-       title = "Who is a ball knower and who is a luck merchant?") +
+       title = "Who is a ball knower and who is a luck merchant?",
+       subtitle = "Unless people request it, this is replacing the 'full luck' stuff") +
   scale_x_continuous(breaks = seq(-250, 250, by = 20)) +
   scale_y_continuous(breaks = seq(-250, 250, by = 20))
 ```
 
+### average weekly finishing position
 
 ```{r}
-library(ggimage)
+pos_data = select(end_games, week, team = win_team, score = win_score) |>
+  rbind(select(end_games, week, team = lose_team, score = lose_score)) |>
+  group_by(week) |>
+  mutate(pos = rank(-score)) |>
+  ungroup() |>
+  group_by(team) |>
+  summarise(avg_pos = round(mean(pos), 2)) |>
+  inner_join(team_name_to_name, by = c("team" = "franchise_name"))
 
-names_logos = ff_franchises(conn) |>
-  distinct(franchise_name, logo)
-
-data.frame(team = all_teams) |>
-  mutate(sop = sapply(team, get_team_score_over_proj),
-         luck = sapply(team, get_team_opp_score_over_proj),
-         total = sop + luck) |>
-  inner_join(team_name_to_name, by = c("team" = "franchise_name")) |>
-  inner_join(names_logos, by = c("team" = "franchise_name")) |>
-  ggplot(aes(sop, luck)) +
-  ggimage::geom_image(aes(image = logo), size = 0.2) +
-  scale_color_gradient(low = "indianred3", high = "springgreen4") +
-  geom_vline(xintercept = 0, linetype = "dashed", alpha = 0.5) +
-  geom_hline(yintercept = 0, linetype = "dashed", alpha = 0.5) +
-  labs(x = "Scoring Over Expected",
-       y = "Opponent Scoring Under Expected",
-       title = "Who is a ball knower and who is a luck merchant?") +
-  scale_x_continuous(breaks = seq(-250, 250, by = 20)) +
-  scale_y_continuous(breaks = seq(-250, 250, by = 20))
+pos_data |>
+  ggplot(aes(reorder(first, -avg_pos), avg_pos)) +
+  geom_col(aes(fill = avg_pos), show.legend = F) +
+  scale_fill_gradient(high = "indianred3", low = "springgreen4") +
+  coord_flip(ylim = c(0, max(pos_data$avg_pos) * 1.05)) +
+  geom_text(aes(label = avg_pos), size = 3, hjust = -0.25) +
+  labs(x = NULL, y = "Average weekly finishing position",
+       title = "Average weekly finishing position by team") +
+  scale_y_continuous(breaks = seq(0, 10, by = 1))
 ```
+
+For example: if Hank had the best score in the league, the third best score in the league, and the second best score in the league through three weeks, his average weekly finishing position would be (1 + 3 + 2) / 3 = 2. Closely related to points per game, but not the exact same.
+
+### chug analysis v2
+
+```{r}
+names = c("Josh", "Drew", "Hank", "David", "Josh")
+weeks = c(1, 1, 4, 6, 7)
+times = c(29, 13, 10, 9, 27)
+
+data.frame(name = names, week = weeks, time = times) |>
+  mutate(lab = paste0(name, " (Week ", week, ")"),
+         timelab = paste0(time, "s")) |>
+  ggplot(aes(reorder(lab, -time), time)) +
+  geom_col(fill = "saddlebrown") +
+  coord_flip(ylim = c(0, max(times) * 1.05)) +
+  geom_text(aes(label = timelab), size = 3, hjust = -0.25) +
+  labs(x = NULL, y = NULL,
+       title = "straight chugging it, and by it, let's justr say, well, my bervage") +
+  theme(axis.text.x = element_blank())
+```
+
+
+
+
+
+
+
+
+
+### work in progress, win pct by sos
+
+
+
+
 
 ```{r}
 get_opp_proj_scores = function(tm) {
