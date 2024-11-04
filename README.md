@@ -3,47 +3,73 @@ Travis Scott Burger Fantasy League 2025
 
 ### Contents
 
-Work in progress
+- [Team Standings](#team-standings)
+- [Points Scored per Game](#points-scored-per-game)
+- [Points Against per Game](#points-against-per-game)
+- [Points Scored and Against](#points-scored-and-against)
+- [Optimal Lineup Setting](#optimal-lineup-setting)
+- [Season Long Optimal Lineups](#season-long-optimal-lineups)
+- [Most Points Scored in a Loss](#most-points-scored-in-a-loss)
+- [Fewest Points Scored in a
+  Victory](#fewest-points-scored-in-a-victory)
+- [Weekly Scoring Trends](#weekly-scoring-trends)
+- [Close Games](#close-games)
+- [Highest Scoring Games](#highest-scoring-games)
+- [Biggest Blowouts](#biggest-blowouts)
+- [Closest Games](#closest-games)
+- [Most Points Scored by One Team](#most-points-scored-by-one-team)
+- [Fewest Points Scored by One Team](#fewest-points-scored-by-one-team)
+- [Past Week One Player Merchants](#past-week-one-player-merchants)
+- [Full Season One Player Merchants](#full-season-one-player-merchants)
+- [Luckiest Teams This Past Week](#luckiest-teams-this-past-week)
+- [Luckiest Teams Season Long](#luckiest-teams-season-long)
+- [Self Luck and Opponent Luck](#self-luck-and-opponent-luck)
+- [Average Weekly Finishing
+  Position](#average-weekly-finishing-position)
+- [Chug Analysis](#chug-analysis)
+- [Win Percentage by Strength of
+  Schedule](#win-percentage-by-strength-of-schedule)
+- [League Wide Optimal Scoring](#league-wide-optimal-scoring)
 
 ------------------------------------------------------------------------
 
-### Team Standings v2
+### Team Standings
 
 ![](README_files/figure-gfm/unnamed-chunk-2-1.png)<!-- -->
 
 ------------------------------------------------------------------------
 
-### Points Scored per Game v2
+### Points Scored per Game
 
 ![](README_files/figure-gfm/unnamed-chunk-3-1.png)<!-- -->
 
 ------------------------------------------------------------------------
 
-### Points Against per Game v2
+### Points Against per Game
 
 ![](README_files/figure-gfm/unnamed-chunk-4-1.png)<!-- -->
 
 ------------------------------------------------------------------------
 
-### Points Scored and Against v2
+### Points Scored and Against
 
 ![](README_files/figure-gfm/unnamed-chunk-5-1.png)<!-- -->
 
 ------------------------------------------------------------------------
 
-### optimal lineup setting v2
+### Optimal Lineup Setting
 
 ![](README_files/figure-gfm/unnamed-chunk-6-1.png)<!-- -->
 
 ------------------------------------------------------------------------
 
-### season long optimal lineups v2
+### Season Long Optimal Lineups
 
 ![](README_files/figure-gfm/unnamed-chunk-7-1.png)<!-- -->
 
 ------------------------------------------------------------------------
 
-### most pts scored in a loss v2
+### Most Points Scored in a Loss
 
 - Week 3: JP def. Adam 136.12-122.98
 - Week 8: Chad def. JP 136.84-122.03
@@ -53,7 +79,7 @@ Work in progress
 
 ------------------------------------------------------------------------
 
-### fewest pts scored in a victory v2
+### Fewest Points Scored in a Victory
 
 - Week 4: Adam def. Eric 72.44-70.28
 - Week 8: Andrew def. Matthew 90.23-82.87
@@ -63,19 +89,19 @@ Work in progress
 
 ------------------------------------------------------------------------
 
-### weekly scoring trends
+### Weekly Scoring Trends
 
 ![](README_files/figure-gfm/unnamed-chunk-10-1.png)<!-- -->
 
 ------------------------------------------------------------------------
 
-### close games
+### Close Games
 
 ![](README_files/figure-gfm/unnamed-chunk-11-1.png)<!-- -->
 
 ------------------------------------------------------------------------
 
-### Highest Scoring Games v2
+### Highest Scoring Games
 
 - Week 4: JP def. Andrew 162.54-118.23
 - Week 5: Adam def. David 165.1-111.25
@@ -85,7 +111,7 @@ Work in progress
 
 ------------------------------------------------------------------------
 
-### Biggest blowouts v2
+### Biggest Blowouts
 
 ------------------------------------------------------------------------
 
@@ -95,7 +121,7 @@ Work in progress
 - Week 5: Hank’s Ass def. Shock Squad 165.1-111.25
 - Week 6: Hank’s Ass def. Bearly Alive 142.83-91.58
 
-### closest games v2
+### Closest Games
 
 - Week 3: Dakshots def. Love Hurts 98.13-98.11
 - Week 4: Hank’s Ass def. Dakshots 72.44-70.28
@@ -105,7 +131,7 @@ Work in progress
 
 ------------------------------------------------------------------------
 
-### most points scored by one team v2
+### Most Points Scored by One Team
 
 - 165.1 (Adam, Week 5)
 - 162.54 (JP, Week 4)
@@ -115,7 +141,7 @@ Work in progress
 
 ------------------------------------------------------------------------
 
-### fewest points scored by one team v2
+### Fewest Points Scored by One Team
 
 - 62.28 (Eric, Week 7)
 - 62.4 (Eric, Week 6)
@@ -125,7 +151,7 @@ Work in progress
 
 ------------------------------------------------------------------------
 
-### past week one player merchants v2
+### Past Week One Player Merchants
 
 - De’Von Achane: 26.3% of total points for Andrew
 - CeeDee Lamb: 25.1% of total points for Jeremiah
@@ -135,7 +161,7 @@ Work in progress
 
 ------------------------------------------------------------------------
 
-### full season one player merchants
+### Full Season One Player Merchants
 
 - Lamar Jackson: 18.67% of total points for Adam
 - Baker Mayfield: 17.13% of total points for Jeremiah
@@ -145,42 +171,42 @@ Work in progress
 
 ------------------------------------------------------------------------
 
-### luckiest teams this past week
+### Luckiest Teams This Past Week
 
 ![](README_files/figure-gfm/unnamed-chunk-19-1.png)<!-- -->
 
 ------------------------------------------------------------------------
 
-### luckiest teams season-long
+### Luckiest Teams Season Long
 
 ![](README_files/figure-gfm/unnamed-chunk-20-1.png)<!-- -->
 
 ------------------------------------------------------------------------
 
-### self luck and opponent luck
+### Self Luck and Opponent Luck
 
 ![](README_files/figure-gfm/unnamed-chunk-21-1.png)<!-- -->
 
 ------------------------------------------------------------------------
 
-### average weekly finishing position
+### Average Weekly Finishing Position
 
 ![](README_files/figure-gfm/unnamed-chunk-22-1.png)<!-- -->
-
-------------------------------------------------------------------------
 
 For example: if Hank had the best score in the league, the third best
 score in the league, and the second best score in the league through
 three weeks, his average weekly finishing position would be (1 + 3 + 2)
 / 3 = 2. Closely related to points per game, but not the exact same.
 
-### chug analysis v2
+------------------------------------------------------------------------
+
+### Chug Analysis
 
 ![](README_files/figure-gfm/unnamed-chunk-23-1.png)<!-- -->
 
 ------------------------------------------------------------------------
 
-### work in progress, win pct by sos
+### Win Percentage by Strength of Schedule
 
 ``` r
 get_opp_proj_scores = function(tm) {
@@ -198,3 +224,11 @@ data.frame(team = all_teams) |>
 ```
 
 ![](README_files/figure-gfm/unnamed-chunk-24-1.png)<!-- -->
+
+------------------------------------------------------------------------
+
+### League Wide Optimal Scoring
+
+![](README_files/figure-gfm/unnamed-chunk-25-1.png)<!-- -->
+
+------------------------------------------------------------------------

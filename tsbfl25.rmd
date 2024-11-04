@@ -6,7 +6,30 @@ knit: (function(input, ...) { rmarkdown::render(input, output_file = "README.md"
 
 ### Contents
 
-Work in progress
+- [Team Standings]
+- [Points Scored per Game]
+- [Points Against per Game]
+- [Points Scored and Against]
+- [Optimal Lineup Setting]
+- [Season Long Optimal Lineups]
+- [Most Points Scored in a Loss]
+- [Fewest Points Scored in a Victory]
+- [Weekly Scoring Trends]
+- [Close Games]
+- [Highest Scoring Games]
+- [Biggest Blowouts]
+- [Closest Games]
+- [Most Points Scored by One Team]
+- [Fewest Points Scored by One Team]
+- [Past Week One Player Merchants]
+- [Full Season One Player Merchants]
+- [Luckiest Teams This Past Week]
+- [Luckiest Teams Season Long]
+- [Self Luck and Opponent Luck]
+- [Average Weekly Finishing Position]
+- [Chug Analysis]
+- [Win Percentage by Strength of Schedule]
+- [League Wide Optimal Scoring]
 
 ___
 
@@ -78,7 +101,7 @@ standings_vec = team_records$first
 all_teams = sort(unique(c(end_games$win_team, end_games$lose_team)))
 ```
 
-### Team Standings v2
+### Team Standings
 
 ```{r echo = F}
 team_records |>
@@ -96,7 +119,7 @@ team_records |>
 
 ___
 
-### Points Scored per Game v2
+### Points Scored per Game
 
 ```{r echo = F}
 ymax = max(team_records$pts_scored) / max(end_games$week)
@@ -115,7 +138,7 @@ team_records |>
 
 ___
 
-### Points Against per Game v2
+### Points Against per Game
 
 ```{r echo = F}
 ymax = max(team_records$pts_against) / max(end_games$week)
@@ -134,7 +157,7 @@ team_records |>
 
 ___
 
-### Points Scored and Against v2
+### Points Scored and Against
 
 ```{r echo = F}
 team_ppg_papg = team_records |>
@@ -157,7 +180,7 @@ team_records |>
 
 ___
 
-### optimal lineup setting v2
+### Optimal Lineup Setting
 
 ```{r echo = F}
 true_optimal_pts_weekly = espn_potentialpoints(conn, weeks = 1:max(end_games$week)) |>
@@ -197,7 +220,7 @@ vis_data |>
 
 ___
 
-### season long optimal lineups v2
+### Season Long Optimal Lineups
 
 ```{r echo = F}
 vis_data = true_optimal_pts_weekly |>
@@ -230,7 +253,7 @@ vis_data |>
 
 ___
 
-### most pts scored in a loss v2
+### Most Points Scored in a Loss
 
 ```{r echo = F}
 x = end_games |>
@@ -252,7 +275,7 @@ x = end_games |>
 
 ___
 
-### fewest pts scored in a victory v2
+### Fewest Points Scored in a Victory
 
 ```{r echo = F}
 x = end_games |>
@@ -274,7 +297,7 @@ x = end_games |>
 
 ___
 
-### weekly scoring trends
+### Weekly Scoring Trends
 
 ```{r echo = F}
 end_games |>
@@ -300,7 +323,7 @@ end_games |>
 
 ___
 
-### close games
+### Close Games
 
 ```{r echo = F}
 end_with_margins = end_games |>
@@ -329,7 +352,7 @@ team_avg_margins |>
 
 ___
 
-### Highest Scoring Games v2
+### Highest Scoring Games
 
 ```{r echo = F}
 x = end_games |>
@@ -352,7 +375,7 @@ x = end_games |>
 
 ___
 
-### Biggest blowouts v2
+### Biggest Blowouts
 
 ```{r echo = F}
 x = end_games |>
@@ -371,7 +394,7 @@ ___
 - `r x[4]`
 - `r x[5]`
 
-### closest games v2
+### Closest Games
 
 ```{r echo = F}
 x = end_games |>
@@ -390,7 +413,7 @@ x = end_games |>
 
 ___
 
-### most points scored by one team v2
+### Most Points Scored by One Team
 
 ```{r echo = F}
 x = end_games |>
@@ -411,7 +434,7 @@ x = end_games |>
 
 ___
 
-### fewest points scored by one team v2
+### Fewest Points Scored by One Team
 
 ```{r echo = F}
 x = end_games |>
@@ -432,7 +455,7 @@ x = end_games |>
 
 ___
 
-### past week one player merchants v2
+### Past Week One Player Merchants
 
 ```{r echo = F}
 x = ff_starters(conn, week = max(end_games$week)) |>
@@ -452,7 +475,7 @@ x = ff_starters(conn, week = max(end_games$week)) |>
 
 ___
 
-### full season one player merchants
+### Full Season One Player Merchants
 
 ```{r echo = F}
 x = ff_starters(conn, week = 1:max(end_games$week)) |>
@@ -476,7 +499,7 @@ x = ff_starters(conn, week = 1:max(end_games$week)) |>
 
 ___
 
-### luckiest teams this past week
+### Luckiest Teams This Past Week
 
 ```{r echo = F}
 true_proj_scores_weekly = ff_starters(conn, week = 1:max(end_games$week)) |>
@@ -521,7 +544,7 @@ past_week_luck_data |>
 
 ___
 
-### luckiest teams season-long
+### Luckiest Teams Season Long
 
 ```{r echo = F}
 full_szn_luck = end_with_proj |>
@@ -551,7 +574,7 @@ full_szn_luck |>
 
 ___
 
-### self luck and opponent luck
+### Self Luck and Opponent Luck
 
 ```{r echo = F}
 get_team_score_over_proj = function(tm) {
@@ -587,7 +610,7 @@ data.frame(team = all_teams) |>
 
 ___
 
-### average weekly finishing position
+### Average Weekly Finishing Position
 
 ```{r echo = F}
 pos_data = select(end_games, week, team = win_team, score = win_score) |>
@@ -610,11 +633,11 @@ pos_data |>
   scale_y_continuous(breaks = seq(0, 10, by = 1))
 ```
 
-___
-
 For example: if Hank had the best score in the league, the third best score in the league, and the second best score in the league through three weeks, his average weekly finishing position would be (1 + 3 + 2) / 3 = 2. Closely related to points per game, but not the exact same.
 
-### chug analysis v2
+___
+
+### Chug Analysis
 
 ```{r echo = F}
 names = c("Josh", "Drew", "Hank", "David", "Josh")
@@ -635,19 +658,7 @@ data.frame(name = names, week = weeks, time = times) |>
 
 ___
 
-
-
-
-
-
-
-
-
-### work in progress, win pct by sos
-
-
-
-
+### Win Percentage by Strength of Schedule
 
 ```{r}
 get_opp_proj_scores = function(tm) {
@@ -664,8 +675,49 @@ data.frame(team = all_teams) |>
   geom_line(stat = "smooth", formula = y ~ x, method = "lm", linetype = "dashed")
 ```
 
+___
 
+### League Wide Optimal Scoring
 
+```{r echo = F}
+league_week_opt = espn_potentialpoints(conn, weeks = 1:max(end_games$week)) |>
+  filter(!is.na(optimal_slot)) |>
+  group_by(week) |>
+  summarise(score = sum(player_score)) |>
+  inner_join(espn_potentialpoints(conn, weeks = 1:max(end_games$week)) |>
+  distinct(week, franchise_name, franchise_score) |>
+  group_by(week) |>
+  summarise(true = sum(franchise_score)), by = "week") |>
+  mutate(diff = score - true)
+
+league_week_opt_long = league_week_opt |>
+  pivot_longer(cols = c(score, true), names_to = "which", values_to = "pts") |>
+  mutate(which = ifelse(which == "score", "Optimal", "Actual"))
+
+midpoints = league_week_opt_long |>
+  pivot_wider(names_from = "which", values_from = "pts") |>
+  mutate(y_mid = (Optimal + Actual) / 2) |>
+  select(week, y_mid, diff)
+
+league_week_opt_long |>
+  mutate(which = factor(which, levels = c("Optimal", "Actual"))) |>
+  ggplot(aes(week, pts)) +
+  geom_line(aes(col = which), linewidth = 2) +
+  geom_text(data = midpoints, aes(x = week, y = y_mid, label = diff), size = 3.5) +
+  scale_color_manual(values = c("indianred3", "springgreen4")) +
+  labs(x = "Week", y = "Points", col = NULL,
+       title = "League-Wide Optimal vs. True Scoring",
+       subtitle = "Number between lines represents total points missed") +
+  scale_x_continuous(breaks = seq(1, 16, by = 1)) +
+  scale_y_continuous(breaks = seq(750, 1500, by = 50)) +
+  theme(legend.position = "right")
+```
+
+___
+
+```{r}
+
+```
 
 
 
