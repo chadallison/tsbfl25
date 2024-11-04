@@ -208,21 +208,6 @@ three weeks, his average weekly finishing position would be (1 + 3 + 2)
 
 ### Win Percentage by Strength of Schedule
 
-``` r
-get_opp_proj_scores = function(tm) {
-  w = end_with_proj |> filter(win_team == tm) |> pull(lose_proj_score)
-  l = end_with_proj |> filter(lose_team == tm) |> pull(win_proj_score)
-  return(round(mean(c(w, l)), 2))
-}
-
-data.frame(team = all_teams) |>
-  mutate(sos = sapply(team, get_opp_proj_scores)) |>
-  inner_join(team_records, by = "team") |>
-  ggplot(aes(sos, win_pct)) +
-  geom_text(aes(label = first), size = 4) +
-  geom_line(stat = "smooth", formula = y ~ x, method = "lm", linetype = "dashed")
-```
-
 ![](README_files/figure-gfm/unnamed-chunk-24-1.png)<!-- -->
 
 ------------------------------------------------------------------------

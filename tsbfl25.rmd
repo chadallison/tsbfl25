@@ -660,19 +660,31 @@ ___
 
 ### Win Percentage by Strength of Schedule
 
-```{r}
+```{r echo = F}
 get_opp_proj_scores = function(tm) {
   w = end_with_proj |> filter(win_team == tm) |> pull(lose_proj_score)
   l = end_with_proj |> filter(lose_team == tm) |> pull(win_proj_score)
   return(round(mean(c(w, l)), 2))
 }
 
-data.frame(team = all_teams) |>
+sos_pct_data = data.frame(team = all_teams) |>
   mutate(sos = sapply(team, get_opp_proj_scores)) |>
   inner_join(team_records, by = "team") |>
+  mutate(win_pct = win_pct / 100)
+
+sos_pct_data |>
   ggplot(aes(sos, win_pct)) +
-  geom_text(aes(label = first), size = 4) +
-  geom_line(stat = "smooth", formula = y ~ x, method = "lm", linetype = "dashed")
+  geom_point(aes(col = win_pct), size = 4, shape = "square", show.legend = F) +
+  ggrepel::geom_text_repel(aes(label = first), size = 3.5, max.overlaps = 10) +
+  geom_line(stat = "smooth", formula = y ~ x, method = "lm", linetype = "dashed") +
+  scale_color_gradient(low = "indianred3", high = "springgreen4") +
+  geom_vline(xintercept = mean(sos_pct_data$sos), linetype = "dotted", alpha = 0.5) +
+  geom_hline(yintercept = 0.5, linetype = "dotted", alpha = 0.5) +
+  labs(x = "Strength of Schedule Rating",
+       y = "Win Percentage",
+       title = "Win Percentage by Strength of Schedule") +
+  scale_x_continuous(breaks = seq(100, 130, by = 1)) +
+  scale_y_continuous(breaks = seq(0, 1, by = 0.1), labels = scales::percent)
 ```
 
 ___
