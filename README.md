@@ -30,6 +30,8 @@ Travis Scott Burger Fantasy League 2025
 - [Win Percentage by Strength of
   Schedule](#win-percentage-by-strength-of-schedule)
 - [League Wide Optimal Scoring](#league-wide-optimal-scoring)
+- [Top Three Scoring](#top-three-scoring)
+- [Average Scoring in Wins](#average-scoring-in-wins)
 
 ------------------------------------------------------------------------
 
@@ -220,5 +222,17 @@ scores of 100, 110, and 120, his SOS rating would be (100 + 110 + 120) /
 ### League Wide Optimal Scoring
 
 ![](README_files/figure-gfm/unnamed-chunk-25-1.png)<!-- -->
+
+------------------------------------------------------------------------
+
+### Top Three Scoring
+
+![](README_files/figure-gfm/unnamed-chunk-26-1.png)<!-- -->
+
+------------------------------------------------------------------------
+
+### Average Scoring in Wins
+
+![](README_files/figure-gfm/unnamed-chunk-27-1.png)<!-- -->
 
 ------------------------------------------------------------------------

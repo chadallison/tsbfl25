@@ -30,6 +30,8 @@ knit: (function(input, ...) { rmarkdown::render(input, output_file = "README.md"
 - [Chug Analysis]
 - [Win Percentage by Strength of Schedule]
 - [League Wide Optimal Scoring]
+- [Top Three Scoring]
+- [Average Scoring in Wins]
 
 ___
 
@@ -737,8 +739,63 @@ league_week_opt_long |>
 
 ___
 
+### Top Three Scoring
 
+```{r echo = F}
+ms_ref = select(end_games, week, team = win_team, score = win_score) |>
+  rbind(select(end_games, week, team = lose_team, score = lose_score)) |>
+  group_by(week) |>
+  mutate(rk = rank(-score)) |>
+  ungroup() |>
+  filter(rk <= 3) |>
+  group_by(team) |>
+  summarise(ms = mean(score))
 
+select(end_games, week, team = win_team, score = win_score) |>
+  rbind(select(end_games, week, team = lose_team, score = lose_score)) |>
+  group_by(week) |>
+  mutate(rk = rank(-score)) |>
+  ungroup() |>
+  filter(rk <= 3) |>
+  count(team) |>
+  arrange(desc(n)) |>
+  inner_join(team_name_to_name, by = c("team" = "franchise_name")) |>
+  inner_join(ms_ref, by = "team") |>
+  arrange(desc(n), desc(ms)) |>
+  mutate(rn = row_number()) |>
+  ggplot(aes(reorder(first, -rn), n)) +
+  geom_col(fill = "springgreen4") +
+  geom_text(aes(label = n), size = 3, hjust = -0.75) +
+  coord_flip() +
+  labs(x = NULL, y = "Count",
+       title = "Most times finishing with a top three score",
+       subtitle = "Ties ordered by average score in those games") +
+  theme(axis.text.x = element_blank())
+```
+
+___
+
+### Average Scoring in Wins
+
+```{r echo = F}
+end_games |>
+  group_by(win_team) |>
+  summarise(ws = mean(win_score),
+            ls = mean(lose_score)) |>
+  inner_join(team_name_to_name, by = c("win_team" = "franchise_name")) |>
+  ggplot(aes(ws, ls)) +
+  geom_point(aes(col = ws), size = 4, shape = "square", show.legend = F) +
+  ggrepel::geom_text_repel(aes(label = first), size = 3, max.overlaps = 10) +
+  geom_line(stat = "smooth", method = "lm", formula = y ~ x, linetype = "dashed") +
+  labs(x = "Average Score in Wins", y = "Average Opponent Score in Wins",
+       title = "Who needs their opponent to stink in order to win?",
+       subtitle = "I fear I'm not beating the allegations") +
+  scale_x_continuous(breaks = seq(50, 200, by = 5)) +
+  scale_y_continuous(breaks = seq(50, 200, by = 5)) +
+  scale_color_gradient(low = "indianred3", high = "springgreen4")
+```
+
+___
 
 
 
