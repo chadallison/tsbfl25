@@ -1,7 +1,9 @@
 Travis Scott Burger Fantasy League 2025
 ================
 
-*All data from [ffscrapr](https://ffscrapr.ffverse.com/) R library*
+*All data from
+<a href="https://ffscrapr.ffverse.com/" target="_blank">ffscrapr</a> R
+library*
 
 ------------------------------------------------------------------------
 
