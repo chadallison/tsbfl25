@@ -1,6 +1,10 @@
 Travis Scott Burger Fantasy League 2025
 ================
 
+*All data from [ffscrapr](https://ffscrapr.ffverse.com/) R library*
+
+------------------------------------------------------------------------
+
 ### Contents
 
 - [Team Standings](#team-standings)
