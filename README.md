@@ -71,11 +71,11 @@ Travis Scott Burger Fantasy League 2025
 
 ### Most Points Scored in a Loss
 
+- Week 9: Josh def. Jeremiah 132.51-132.24
 - Week 3: JP def. Adam 136.12-122.98
 - Week 8: Chad def. JP 136.84-122.03
 - Week 8: Jeremiah def. Adam 131.87-121.79
 - Week 6: David def. Hank 143.83-120.26
-- Week 4: JP def. Andrew 162.54-118.23
 
 ------------------------------------------------------------------------
 
@@ -105,9 +105,9 @@ Travis Scott Burger Fantasy League 2025
 
 - Week 4: JP def. Andrew 162.54-118.23
 - Week 5: Adam def. David 165.1-111.25
+- Week 9: Josh def. Jeremiah 132.51-132.24
 - Week 6: David def. Hank 143.83-120.26
 - Week 3: JP def. Adam 136.12-122.98
-- Week 8: Chad def. JP 136.84-122.03
 
 ------------------------------------------------------------------------
 
@@ -124,10 +124,10 @@ Travis Scott Burger Fantasy League 2025
 ### Closest Games
 
 - Week 3: Eric def. Hank 98.13-98.11
+- Week 9: Josh def. Jeremiah 132.51-132.24
+- Week 9: JP def. Andrew 108.65-108.25
+- Week 9: Eric def. Matthew 98.07-96.36
 - Week 4: Adam def. Eric 72.44-70.28
-- Week 3: Andrew def. Jeremiah 103.08-99.47
-- Week 3: Matthew def. David 97.73-93.26
-- Week 4: Chad def. Hank 107.04-102.47
 
 ------------------------------------------------------------------------
 
@@ -136,8 +136,8 @@ Travis Scott Burger Fantasy League 2025
 - 165.1 (Adam, Week 5)
 - 162.54 (JP, Week 4)
 - 148.92 (Jeremiah, Week 7)
+- 148.33 (Adam, Week 9)
 - 147.4 (Hank, Week 8)
-- 143.83 (Hank, Week 5)
 
 ------------------------------------------------------------------------
 
@@ -153,21 +153,21 @@ Travis Scott Burger Fantasy League 2025
 
 ### Past Week One Player Merchants
 
-- De’Von Achane: 26.3% of total points for Andrew
-- CeeDee Lamb: 25.1% of total points for Jeremiah
-- James Cook: 24.5% of total points for Eric
-- Kyler Murray: 23.1% of total points for Matthew
-- Jalen Hurts: 22.2% of total points for Hank
+- Jalen Hurts: 26.3% of total points for Hank
+- De’Von Achane: 26% of total points for Andrew
+- J.K. Dobbins: 24.4% of total points for Matthew
+- Derrick Henry: 23.7% of total points for JP
+- Saquon Barkley: 23.7% of total points for Jeremiah
 
 ------------------------------------------------------------------------
 
 ### Full Season One Player Merchants
 
-- Lamar Jackson: 18.67% of total points for Adam
-- Baker Mayfield: 17.13% of total points for Jeremiah
-- Derrick Henry: 16.99% of total points for JP
-- James Cook: 16.98% of total points for Eric
-- Kyler Murray: 15.26% of total points for Matthew
+- Lamar Jackson: 18.05% of total points for Adam
+- Derrick Henry: 17.64% of total points for JP
+- Baker Mayfield: 16.51% of total points for Jeremiah
+- James Cook: 16.04% of total points for Eric
+- Saquon Barkley: 15.45% of total points for Jeremiah
 
 ------------------------------------------------------------------------
 
