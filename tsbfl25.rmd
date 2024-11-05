@@ -382,7 +382,11 @@ x = end_games |>
   mutate(score = paste0(win_score, "-", lose_score),
          diff = win_score - lose_score) |>
   slice_max(diff, n = 5, with_ties = F) |>
-  mutate(x = as.character(glue("Week {week}: {win_team} def. {lose_team} {score}"))) |>
+  inner_join(team_name_to_name, by = c("win_team" = "franchise_name")) |>
+  rename(win_name = first) |>
+  inner_join(team_name_to_name, by = c("lose_team" = "franchise_name")) |>
+  rename(lose_name = first) |>
+  mutate(x = as.character(glue("Week {week}: {win_name} def. {lose_name} {score}"))) |>
   pull(x)
 ```
 
@@ -401,7 +405,11 @@ x = end_games |>
   mutate(score = paste0(win_score, "-", lose_score),
          diff = win_score - lose_score) |>
   slice_min(diff, n = 5, with_ties = F) |>
-  mutate(x = as.character(glue("Week {week}: {win_team} def. {lose_team} {score}"))) |>
+  inner_join(team_name_to_name, by = c("win_team" = "franchise_name")) |>
+  rename(win_name = first) |>
+  inner_join(team_name_to_name, by = c("lose_team" = "franchise_name")) |>
+  rename(lose_name = first) |>
+  mutate(x = as.character(glue("Week {week}: {win_name} def. {lose_name} {score}"))) |>
   pull(x)
 ```
 

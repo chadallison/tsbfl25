@@ -113,21 +113,21 @@ Travis Scott Burger Fantasy League 2025
 
 ### Biggest Blowouts
 
-- Week 5: Love Hurts def. Orthopedics PreOp 143.83-80.98
-- Week 6: DSM-5 All Stars def. Orthopedics PreOp 137.75-76.64
-- Week 2: cArOLinA pAntHErS def. Dakshots 137.81-82.82
-- Week 5: Hank’s Ass def. Shock Squad 165.1-111.25
-- Week 6: Hank’s Ass def. Bearly Alive 142.83-91.58
+- Week 5: Hank def. Andrew 143.83-80.98
+- Week 6: Chad def. Andrew 137.75-76.64
+- Week 2: Josh def. Eric 137.81-82.82
+- Week 5: Adam def. David 165.1-111.25
+- Week 6: Adam def. Matthew 142.83-91.58
 
 ------------------------------------------------------------------------
 
 ### Closest Games
 
-- Week 3: Dakshots def. Love Hurts 98.13-98.11
-- Week 4: Hank’s Ass def. Dakshots 72.44-70.28
-- Week 3: Orthopedics PreOp def. Tua’s Brain Scan 103.08-99.47
-- Week 3: Bearly Alive def. Shock Squad 97.73-93.26
-- Week 4: DSM-5 All Stars def. Love Hurts 107.04-102.47
+- Week 3: Eric def. Hank 98.13-98.11
+- Week 4: Adam def. Eric 72.44-70.28
+- Week 3: Andrew def. Jeremiah 103.08-99.47
+- Week 3: Matthew def. David 97.73-93.26
+- Week 4: Chad def. Hank 107.04-102.47
 
 ------------------------------------------------------------------------
 
