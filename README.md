@@ -210,6 +210,11 @@ three weeks, his average weekly finishing position would be (1 + 3 + 2)
 
 ![](README_files/figure-gfm/unnamed-chunk-24-1.png)<!-- -->
 
+Strength of schedule is calculated as the average projected score of
+your opponents. So if JP were to play three opponents with projected
+scores of 100, 110, and 120, his SOS rating would be (100 + 110 + 120) /
+3 = 110.
+
 ------------------------------------------------------------------------
 
 ### League Wide Optimal Scoring
