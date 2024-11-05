@@ -386,13 +386,13 @@ x = end_games |>
   pull(x)
 ```
 
-___
-
 - `r x[1]`
 - `r x[2]`
 - `r x[3]`
 - `r x[4]`
 - `r x[5]`
+
+___
 
 ### Closest Games
 
@@ -727,9 +727,7 @@ league_week_opt_long |>
 
 ___
 
-```{r}
 
-```
 
 
 

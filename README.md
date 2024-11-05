@@ -113,13 +113,13 @@ Travis Scott Burger Fantasy League 2025
 
 ### Biggest Blowouts
 
-------------------------------------------------------------------------
-
 - Week 5: Love Hurts def. Orthopedics PreOp 143.83-80.98
 - Week 6: DSM-5 All Stars def. Orthopedics PreOp 137.75-76.64
 - Week 2: cArOLinA pAntHErS def. Dakshots 137.81-82.82
 - Week 5: Hank’s Ass def. Shock Squad 165.1-111.25
 - Week 6: Hank’s Ass def. Bearly Alive 142.83-91.58
+
+------------------------------------------------------------------------
 
 ### Closest Games
 
