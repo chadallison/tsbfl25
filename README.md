@@ -37,6 +37,7 @@ library*
   Schedule](#win-percentage-by-strength-of-schedule)
 - [League Wide Optimal Scoring](#league-wide-optimal-scoring)
 - [Top Three Scoring](#top-three-scoring)
+- [Bottom Three Scoring](#bottom-three-scoring)
 - [Average Scoring in Wins](#average-scoring-in-wins)
 
 ------------------------------------------------------------------------
@@ -90,10 +91,10 @@ library*
 ### Fewest Points Scored in a Victory
 
 - Week 4: Adam def. Eric 72.44-70.28
+- Week 10: David def. Jeremiah 89.81-73.07
 - Week 8: Andrew def. Matthew 90.23-82.87
 - Week 1: Eric def. Andrew 91.4-68.57
 - Week 7: Chad def. Eric 91.6-62.28
-- Week 6: Jeremiah def. Eric 97.64-62.4
 
 ------------------------------------------------------------------------
 
@@ -121,11 +122,11 @@ library*
 
 ### Biggest Blowouts
 
+- Week 10: Adam def. Eric 146.44-81.23
 - Week 5: Hank def. Andrew 143.83-80.98
 - Week 6: Chad def. Andrew 137.75-76.64
 - Week 2: Josh def. Eric 137.81-82.82
 - Week 5: Adam def. David 165.1-111.25
-- Week 6: Adam def. Matthew 142.83-91.58
 
 ------------------------------------------------------------------------
 
@@ -161,21 +162,21 @@ library*
 
 ### Past Week One Player Merchants
 
-- Jalen Hurts: 26.3% of total points for Hank
-- De’Von Achane: 26% of total points for Andrew
-- J.K. Dobbins: 24.4% of total points for Matthew
-- Derrick Henry: 23.7% of total points for JP
-- Saquon Barkley: 23.7% of total points for Jeremiah
+- Ja’Marr Chase: 44.9% of total points for JP
+- Kyler Murray: 26.4% of total points for Matthew
+- Austin Ekeler: 24.1% of total points for Jeremiah
+- Jalen Hurts: 21.4% of total points for Hank
+- Lamar Jackson: 20.5% of total points for Adam
 
 ------------------------------------------------------------------------
 
 ### Full Season One Player Merchants
 
-- Lamar Jackson: 18.05% of total points for Adam
-- Derrick Henry: 17.64% of total points for JP
-- Baker Mayfield: 16.51% of total points for Jeremiah
-- James Cook: 16.04% of total points for Eric
-- Saquon Barkley: 15.45% of total points for Jeremiah
+- Lamar Jackson: 18.34% of total points for Adam
+- Derrick Henry: 17.15% of total points for JP
+- James Cook: 16.27% of total points for Eric
+- Baker Mayfield: 16.14% of total points for Jeremiah
+- Ja’Marr Chase: 15.66% of total points for JP
 
 ------------------------------------------------------------------------
 
@@ -237,8 +238,14 @@ scores of 100, 110, and 120, his SOS rating would be (100 + 110 + 120) /
 
 ------------------------------------------------------------------------
 
-### Average Scoring in Wins
+### Bottom Three Scoring
 
 ![](README_files/figure-gfm/unnamed-chunk-27-1.png)<!-- -->
+
+------------------------------------------------------------------------
+
+### Average Scoring in Wins
+
+![](README_files/figure-gfm/unnamed-chunk-28-1.png)<!-- -->
 
 ------------------------------------------------------------------------

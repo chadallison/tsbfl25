@@ -35,6 +35,7 @@ ___
 - [Win Percentage by Strength of Schedule]
 - [League Wide Optimal Scoring]
 - [Top Three Scoring]
+- [Bottom Three Scoring]
 - [Average Scoring in Wins]
 
 ___
@@ -773,6 +774,42 @@ select(end_games, week, team = win_team, score = win_score) |>
   coord_flip() +
   labs(x = NULL, y = "Count",
        title = "Most times finishing with a top three score",
+       subtitle = "Ties ordered by average score in those games") +
+  theme(axis.text.x = element_blank())
+```
+
+___
+
+### Bottom Three Scoring
+
+```{r echo = F}
+ms_ref = select(end_games, week, team = win_team, score = win_score) |>
+  rbind(select(end_games, week, team = lose_team, score = lose_score)) |>
+  group_by(week) |>
+  mutate(rk = rank(-score)) |>
+  ungroup() |>
+  filter(rk >= 8) |>
+  group_by(team) |>
+  summarise(ms = mean(score))
+
+select(end_games, week, team = win_team, score = win_score) |>
+  rbind(select(end_games, week, team = lose_team, score = lose_score)) |>
+  group_by(week) |>
+  mutate(rk = rank(-score)) |>
+  ungroup() |>
+  filter(rk >= 8) |>
+  count(team) |>
+  arrange(desc(n)) |>
+  inner_join(team_name_to_name, by = c("team" = "franchise_name")) |>
+  inner_join(ms_ref, by = "team") |>
+  arrange(desc(n), ms) |>
+  mutate(rn = row_number()) |>
+  ggplot(aes(reorder(first, -rn), n)) +
+  geom_col(fill = "springgreen4") +
+  geom_text(aes(label = n), size = 3, hjust = -0.75) +
+  coord_flip() +
+  labs(x = NULL, y = "Count",
+       title = "Most times finishing with a bottom three score",
        subtitle = "Ties ordered by average score in those games") +
   theme(axis.text.x = element_blank())
 ```
