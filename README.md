@@ -39,6 +39,8 @@ library*
 - [Top Three Scoring](#top-three-scoring)
 - [Bottom Three Scoring](#bottom-three-scoring)
 - [Average Scoring in Wins](#average-scoring-in-wins)
+- [Projected Records](#projected-records)
+- [Wins When Projected to Lose](#wins-when-projected-to-lose)
 
 ------------------------------------------------------------------------
 
@@ -247,5 +249,26 @@ scores of 100, 110, and 120, his SOS rating would be (100 + 110 + 120) /
 ### Average Scoring in Wins
 
 ![](README_files/figure-gfm/unnamed-chunk-28-1.png)<!-- -->
+
+------------------------------------------------------------------------
+
+### Projected Records
+
+![](README_files/figure-gfm/unnamed-chunk-29-1.png)<!-- -->
+
+------------------------------------------------------------------------
+
+### Wins When Projected to Lose
+
+- Matthew: 3 wins when projected to lose
+- Andrew: 2 wins when projected to lose
+- David: 2 wins when projected to lose
+- Eric: 2 wins when projected to lose
+- Hank: 2 wins when projected to lose
+- Jeremiah: 2 wins when projected to lose
+- Chad: 1 wins when projected to lose
+- JP: 1 wins when projected to lose
+- Josh: 1 wins when projected to lose
+- Adam: 0 wins when projected to lose
 
 ------------------------------------------------------------------------
