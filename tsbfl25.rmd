@@ -39,6 +39,7 @@ ___
 - [Average Scoring in Wins]
 - [Projected Records]
 - [Wins When Projected to Lose]
+- [Team Records vs League Median]
 
 ___
 
@@ -912,8 +913,44 @@ x = data.frame(win_team = all_teams) |>
 
 ___
 
+### Team Records vs League Median
 
+```{r echo = F}
+team_scores_weekly = select(end_games, week, team = win_team, score = win_score) |>
+  rbind(select(end_games, week, team = lose_team, score = lose_score))
 
+weekly_median_scores = team_scores_weekly |>
+  group_by(week) |>
+  summarise(med_score = median(score))
+
+team_records_vs_median = team_scores_weekly |>
+  inner_join(weekly_median_scores, by = "week") |>
+  mutate(win = ifelse(score > med_score, 1, 0),
+         loss = ifelse(score < med_score, 1, 0)) |>
+  group_by(team) |>
+  summarise(wins = sum(win),
+            losses = sum(loss)) |>
+  mutate(pct = round(wins / (wins + losses) * 100, 1),
+         record = paste0(wins, "-", losses)) |>
+  inner_join(team_records |>
+  select(team, pts_scored), by = "team") |>
+  inner_join(team_name_to_name, by = c("team" = "franchise_name")) |>
+  arrange(desc(pct), pts_scored)
+
+team_records_vs_median |>
+  mutate(first = factor(first, levels = rev(team_records_vs_median$first))) |>
+  ggplot(aes(first, pct)) +
+  geom_col(aes(fill = pct), show.legend = F) +
+  geom_text(aes(label = record), size = 3, hjust = -0.25) +
+  coord_flip(ylim = c(0, max(team_records_vs_median$pct) * 1.05)) +
+  scale_fill_gradient(low = "indianred3", high = "springgreen4") +
+  labs(x = NULL, y = NULL,
+       title = "Team Records vs. Weekly Median Score",
+       caption = "Tiebreaker = total points scored") +
+  theme(axis.text.x = element_blank())
+```
+
+___
 
 
 

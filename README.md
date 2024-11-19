@@ -41,6 +41,7 @@ library*
 - [Average Scoring in Wins](#average-scoring-in-wins)
 - [Projected Records](#projected-records)
 - [Wins When Projected to Lose](#wins-when-projected-to-lose)
+- [Team Records vs League Median](#team-records-vs-league-median)
 
 ------------------------------------------------------------------------
 
@@ -270,5 +271,11 @@ scores of 100, 110, and 120, his SOS rating would be (100 + 110 + 120) /
 - JP: 1 win when projected to lose
 - Josh: 1 win when projected to lose
 - Adam: 0 wins when projected to lose
+
+------------------------------------------------------------------------
+
+### Team Records vs League Median
+
+![](README_files/figure-gfm/unnamed-chunk-31-1.png)<!-- -->
 
 ------------------------------------------------------------------------
