@@ -893,7 +893,8 @@ x = data.frame(win_team = all_teams) |>
   count(win_team), by = "win_team") |>
   mutate(n = coalesce(n, 0)) |>
   inner_join(team_name_to_name, by = c("win_team" = "franchise_name")) |>
-  mutate(x = as.character(glue("{first}: {n} wins when projected to lose"))) |>
+  mutate(x = ifelse(n != 1, as.character(glue("{first}: {n} wins when projected to lose")),
+                    as.character(glue("{first}: {n} win when projected to lose")))) |>
   arrange(desc(n), first) |>
   pull(x)
 ```

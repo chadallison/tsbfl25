@@ -83,10 +83,10 @@ library*
 ### Most Points Scored in a Loss
 
 - Week 9: Josh def. Jeremiah 132.51-132.24
+- Week 11: David def. Matthew 159.65-129.89
+- Week 11: Eric def. Andrew 143.68-123.87
 - Week 3: JP def. Adam 136.12-122.98
 - Week 8: Chad def. JP 136.84-122.03
-- Week 8: Jeremiah def. Adam 131.87-121.79
-- Week 6: David def. Hank 143.83-120.26
 
 ------------------------------------------------------------------------
 
@@ -114,11 +114,11 @@ library*
 
 ### Highest Scoring Games
 
+- Week 11: David def. Matthew 159.65-129.89
 - Week 4: JP def. Andrew 162.54-118.23
 - Week 5: Adam def. David 165.1-111.25
+- Week 11: Eric def. Andrew 143.68-123.87
 - Week 9: Josh def. Jeremiah 132.51-132.24
-- Week 6: David def. Hank 143.83-120.26
-- Week 3: JP def. Adam 136.12-122.98
 
 ------------------------------------------------------------------------
 
@@ -146,9 +146,9 @@ library*
 
 - 165.1 (Adam, Week 5)
 - 162.54 (JP, Week 4)
+- 159.65 (David, Week 11)
 - 148.92 (Jeremiah, Week 7)
 - 148.33 (Adam, Week 9)
-- 147.4 (Hank, Week 8)
 
 ------------------------------------------------------------------------
 
@@ -164,21 +164,21 @@ library*
 
 ### Past Week One Player Merchants
 
-- Ja’Marr Chase: 44.9% of total points for JP
-- Kyler Murray: 26.4% of total points for Matthew
-- Austin Ekeler: 24.1% of total points for Jeremiah
-- Jalen Hurts: 21.4% of total points for Hank
-- Lamar Jackson: 20.5% of total points for Adam
+- Saquon Barkley: 33.6% of total points for Jeremiah
+- Jared Goff: 25.9% of total points for Josh
+- Amon-Ra St. Brown: 25.6% of total points for Matthew
+- Matthew Stafford: 25.5% of total points for Jeremiah
+- Joe Mixon: 21.5% of total points for David
 
 ------------------------------------------------------------------------
 
 ### Full Season One Player Merchants
 
-- Lamar Jackson: 18.34% of total points for Adam
-- Derrick Henry: 17.15% of total points for JP
-- James Cook: 16.27% of total points for Eric
-- Baker Mayfield: 16.14% of total points for Jeremiah
-- Ja’Marr Chase: 15.66% of total points for JP
+- Lamar Jackson: 17.66% of total points for Adam
+- Saquon Barkley: 16.63% of total points for Jeremiah
+- Derrick Henry: 16.53% of total points for JP
+- Ja’Marr Chase: 16.09% of total points for JP
+- James Cook: 15.66% of total points for Eric
 
 ------------------------------------------------------------------------
 
@@ -260,15 +260,15 @@ scores of 100, 110, and 120, his SOS rating would be (100 + 110 + 120) /
 
 ### Wins When Projected to Lose
 
+- Eric: 3 wins when projected to lose
 - Matthew: 3 wins when projected to lose
 - Andrew: 2 wins when projected to lose
 - David: 2 wins when projected to lose
-- Eric: 2 wins when projected to lose
 - Hank: 2 wins when projected to lose
 - Jeremiah: 2 wins when projected to lose
-- Chad: 1 wins when projected to lose
-- JP: 1 wins when projected to lose
-- Josh: 1 wins when projected to lose
+- Chad: 1 win when projected to lose
+- JP: 1 win when projected to lose
+- Josh: 1 win when projected to lose
 - Adam: 0 wins when projected to lose
 
 ------------------------------------------------------------------------
