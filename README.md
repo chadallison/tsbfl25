@@ -125,11 +125,11 @@ library*
 
 ### Biggest Blowouts
 
+- Week 12: Jeremiah def. Matthew 152.31-71.07
 - Week 10: Adam def. Eric 146.44-81.23
 - Week 5: Hank def. Andrew 143.83-80.98
 - Week 6: Chad def. Andrew 137.75-76.64
 - Week 2: Josh def. Eric 137.81-82.82
-- Week 5: Adam def. David 165.1-111.25
 
 ------------------------------------------------------------------------
 
@@ -148,8 +148,8 @@ library*
 - 165.1 (Adam, Week 5)
 - 162.54 (JP, Week 4)
 - 159.65 (David, Week 11)
+- 152.31 (Jeremiah, Week 12)
 - 148.92 (Jeremiah, Week 7)
-- 148.33 (Adam, Week 9)
 
 ------------------------------------------------------------------------
 
@@ -159,27 +159,27 @@ library*
 - 62.4 (Eric, Week 6)
 - 68.57 (Andrew, Week 1)
 - 70.28 (Eric, Week 4)
-- 72.44 (Adam, Week 4)
+- 71.07 (Matthew, Week 12)
 
 ------------------------------------------------------------------------
 
 ### Past Week One Player Merchants
 
-- Saquon Barkley: 33.6% of total points for Jeremiah
-- Jared Goff: 25.9% of total points for Josh
-- Amon-Ra St. Brown: 25.6% of total points for Matthew
-- Matthew Stafford: 25.5% of total points for Jeremiah
-- Joe Mixon: 21.5% of total points for David
+- Saquon Barkley: 29% of total points for Jeremiah
+- Patrick Mahomes: 25.1% of total points for Andrew
+- Josh Jacobs: 24.2% of total points for Adam
+- Nico Collins: 21.4% of total points for Chad
+- Tua Tagovailoa: 21.2% of total points for David
 
 ------------------------------------------------------------------------
 
 ### Full Season One Player Merchants
 
-- Lamar Jackson: 17.66% of total points for Adam
-- Saquon Barkley: 16.63% of total points for Jeremiah
-- Derrick Henry: 16.53% of total points for JP
-- Ja’Marr Chase: 16.09% of total points for JP
-- James Cook: 15.66% of total points for Eric
+- Saquon Barkley: 17.97% of total points for Jeremiah
+- Lamar Jackson: 17.65% of total points for Adam
+- Derrick Henry: 15.98% of total points for JP
+- Jalen Hurts: 15.45% of total points for Hank
+- Ja’Marr Chase: 14.62% of total points for JP
 
 ------------------------------------------------------------------------
 
@@ -261,12 +261,12 @@ scores of 100, 110, and 120, his SOS rating would be (100 + 110 + 120) /
 
 ### Wins When Projected to Lose
 
+- Andrew: 3 wins when projected to lose
+- David: 3 wins when projected to lose
 - Eric: 3 wins when projected to lose
+- Jeremiah: 3 wins when projected to lose
 - Matthew: 3 wins when projected to lose
-- Andrew: 2 wins when projected to lose
-- David: 2 wins when projected to lose
 - Hank: 2 wins when projected to lose
-- Jeremiah: 2 wins when projected to lose
 - Chad: 1 win when projected to lose
 - JP: 1 win when projected to lose
 - Josh: 1 win when projected to lose
