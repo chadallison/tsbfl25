@@ -42,6 +42,7 @@ library*
 - [Projected Records](#projected-records)
 - [Wins When Projected to Lose](#wins-when-projected-to-lose)
 - [Team Records vs League Median](#team-records-vs-league-median)
+- [Supreme Luck Merchant](#supreme-luck-merchant)
 
 ------------------------------------------------------------------------
 
@@ -277,5 +278,21 @@ scores of 100, 110, and 120, his SOS rating would be (100 + 110 + 120) /
 ### Team Records vs League Median
 
 ![](README_files/figure-gfm/unnamed-chunk-31-1.png)<!-- -->
+
+------------------------------------------------------------------------
+
+### Supreme Luck Merchant
+
+![](README_files/figure-gfm/unnamed-chunk-32-1.png)<!-- -->
+
+**Label numbers explained**: To calculate these overall values, I
+normalized both everyone’s strength of schedule ratings and their luck
+ratings so that they are on the same scale. Note that my calculation
+assumes these two are equal, i.e. strength of schedule and opponent
+scoring under average play an equal role in determining someone’s “luck”
+as we’re loosely defining it. Once I have these two normalized numbers,
+I subtract the normalized SOS score from the normalized luck score
+because a lower SOS is “luckier” so to speak. This then determines the
+overall number you see in parentheses next to everyone’s names.
 
 ------------------------------------------------------------------------

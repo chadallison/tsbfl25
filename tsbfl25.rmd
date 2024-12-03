@@ -40,6 +40,7 @@ ___
 - [Projected Records]
 - [Wins When Projected to Lose]
 - [Team Records vs League Median]
+- [Supreme Luck Merchant]
 
 ___
 
@@ -658,9 +659,9 @@ ___
 ### Chug Analysis
 
 ```{r echo = F}
-names = c("Josh", "Drew", "Hank", "David", "Josh")
-weeks = c(1, 1, 4, 6, 7)
-times = c(29, 13, 10, 9, 27)
+names = c("Josh", "Drew", "Hank", "David", "Josh", "Chad")
+weeks = c(1, 1, 4, 6, 7, 12)
+times = c(29, 13, 10, 9, 27, 16)
 
 data.frame(name = names, week = weeks, time = times) |>
   mutate(lab = paste0(name, " (Week ", week, ")"),
@@ -952,7 +953,40 @@ team_records_vs_median |>
 
 ___
 
+### Supreme Luck Merchant
 
+```{r echo = F}
+lucky = data.frame(team = all_teams) |>
+  mutate(sop = sapply(team, get_team_score_over_proj),
+         luck = sapply(team, get_team_opp_score_over_proj),
+         total = sop + luck) |>
+  inner_join(team_name_to_name, by = c("team" = "franchise_name")) |>
+  distinct(first, luck) |>
+  inner_join(sos_pct_data |>
+  distinct(first, sos), by = "first") |>
+  mutate(luck_scaled = scale(luck),
+         sos_scaled = scale(sos),
+         total = round(luck_scaled - sos_scaled, 3),
+         lbl = paste0(first, " (", total, ")"))
+
+lucky |>
+  ggplot(aes(sos, luck)) +
+  geom_point(aes(col = total), size = 4, shape = "square", show.legend = F) +
+  geom_vline(xintercept = mean(lucky$sos), linetype = "dashed", alpha = 0.5) +
+  geom_hline(yintercept = mean(lucky$luck), linetype = "dashed", alpha = 0.5) +
+  ggrepel::geom_text_repel(aes(label = lbl), size = 3) +
+  scale_color_gradient(low = "indianred3", high = "springgreen4") +
+  labs(x = "Strength of Schedule (Avg. Opponent Proj. Score)",
+       y = "Luck (Total Opponent Scoring Under Expected",
+       title = "Who is the supreme luck merchant?",
+       subtitle = "Note the x-axis is flipped so top-right is the 'luckiest' quadrant") +
+  scale_x_reverse(breaks = seq(100, 125, by = 1)) +
+  scale_y_continuous(breaks = seq(-125, 125, by = 25))
+```
+
+**Label numbers explained**: To calculate these overall values, I normalized both everyone's strength of schedule ratings and their luck ratings so that they are on the same scale. Note that my calculation assumes these two are equal, i.e. strength of schedule and opponent scoring under average play an equal role in determining someone's "luck" as we're loosely defining it. Once I have these two normalized numbers, I subtract the normalized SOS score from the normalized luck score because a lower SOS is "luckier" so to speak. This then determines the overall number you see in parentheses next to everyone's names.
+
+___
 
 
 
