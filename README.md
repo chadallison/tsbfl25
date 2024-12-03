@@ -85,9 +85,9 @@ library*
 
 - Week 9: Josh def. Jeremiah 132.51-132.24
 - Week 11: David def. Matthew 159.65-129.89
+- Week 13: JP def. David 140.14-124.22
 - Week 11: Eric def. Andrew 143.68-123.87
 - Week 3: JP def. Adam 136.12-122.98
-- Week 8: Chad def. JP 136.84-122.03
 
 ------------------------------------------------------------------------
 
@@ -165,21 +165,21 @@ library*
 
 ### Past Week One Player Merchants
 
-- Saquon Barkley: 29% of total points for Jeremiah
-- Patrick Mahomes: 25.1% of total points for Andrew
-- Josh Jacobs: 24.2% of total points for Adam
-- Nico Collins: 21.4% of total points for Chad
-- Tua Tagovailoa: 21.2% of total points for David
+- Brock Bowers: 27.6% of total points for Andrew
+- Josh Allen: 25.3% of total points for Chad
+- Russell Wilson: 22.6% of total points for Andrew
+- Saquon Barkley: 21.4% of total points for Jeremiah
+- Jayden Daniels: 18.3% of total points for JP
 
 ------------------------------------------------------------------------
 
 ### Full Season One Player Merchants
 
-- Saquon Barkley: 17.97% of total points for Jeremiah
-- Lamar Jackson: 17.65% of total points for Adam
-- Derrick Henry: 15.98% of total points for JP
-- Jalen Hurts: 15.45% of total points for Hank
-- Ja’Marr Chase: 14.62% of total points for JP
+- Saquon Barkley: 18.17% of total points for Jeremiah
+- Lamar Jackson: 17.52% of total points for Adam
+- Derrick Henry: 15.37% of total points for JP
+- Jalen Hurts: 15.21% of total points for Hank
+- Josh Allen: 15.1% of total points for Chad
 
 ------------------------------------------------------------------------
 
@@ -266,8 +266,8 @@ scores of 100, 110, and 120, his SOS rating would be (100 + 110 + 120) /
 - Eric: 3 wins when projected to lose
 - Jeremiah: 3 wins when projected to lose
 - Matthew: 3 wins when projected to lose
+- Chad: 2 wins when projected to lose
 - Hank: 2 wins when projected to lose
-- Chad: 1 win when projected to lose
 - JP: 1 win when projected to lose
 - Josh: 1 win when projected to lose
 - Adam: 0 wins when projected to lose
