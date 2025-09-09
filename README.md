@@ -43,6 +43,7 @@ library*
 - [Wins When Projected to Lose](#wins-when-projected-to-lose)
 - [Team Records vs League Median](#team-records-vs-league-median)
 - [Supreme Luck Merchant](#supreme-luck-merchant)
+- [Parlay Tracking](#parlay-tracking)
 
 ------------------------------------------------------------------------
 
@@ -294,5 +295,11 @@ as we’re loosely defining it. Once I have these two normalized numbers,
 I subtract the normalized SOS score from the normalized luck score
 because a lower SOS is “luckier” so to speak. This then determines the
 overall number you see in parentheses next to everyone’s names.
+
+------------------------------------------------------------------------
+
+### Parlay Tracking
+
+![](README_files/figure-gfm/unnamed-chunk-33-1.png)<!-- -->
 
 ------------------------------------------------------------------------

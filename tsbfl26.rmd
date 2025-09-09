@@ -41,6 +41,7 @@ ___
 - [Wins When Projected to Lose]
 - [Team Records vs League Median]
 - [Supreme Luck Merchant]
+- [Parlay Tracking]
 
 ___
 
@@ -50,6 +51,7 @@ library(tvthemes)
 library(ffscrapr)
 library(ggimage)
 library(glue)
+library(googlesheets4)
 
 theme_custom = theme_avatar() +
   theme(plot.title = element_text(hjust = 0.5),
@@ -109,6 +111,9 @@ team_records = end_games |>
 
 standings_vec = team_records$first
 all_teams = sort(unique(c(end_games$win_team, end_games$lose_team)))
+
+google_sheet_url = "https://docs.google.com/spreadsheets/d/1-yhwCwkph7TanT4R0oTC4d6Y2NwKbZ-m-ysbkxQx9hs/edit?usp=sharing"
+parlays = read_sheet(google_sheet_url, sheet = 1)
 ```
 
 ### Team Standings
@@ -521,6 +526,8 @@ ___
 
 ### Luckiest Teams This Past Week
 
+
+
 ```{r echo = F}
 true_proj_scores_weekly = ff_starters(conn, week = 1:max(end_games$week)) |>
   filter(!lineup_slot %in% c("BE", "IR")) |>
@@ -547,6 +554,8 @@ past_week_luck_data = end_with_proj |>
   inner_join(team_name_to_name, by = c("team" = "franchise_name")) |>
   mutate(poslab = ifelse(luck >= 0, round(luck, 1), ""),
          neglab = ifelse(luck < 0, round(luck, 1), ""))
+
+this_week_luck_merchant = past_week_luck_data |> slice_max(luck, n = 1, with_ties = F) |> pull(first)
 
 past_week_luck_data |>
   ggplot(aes(reorder(first, luck), luck)) +
@@ -993,6 +1002,24 @@ lucky |>
 
 ___
 
+### Parlay Tracking
+
+```{r echo = F}
+parlays |>
+  group_by(name) |>
+  summarise(bets = n(),
+            pct = mean(hit_flg)) |>
+  ggplot(aes(reorder(name, pct), pct)) +
+  geom_col(aes(fill = pct), show.legend = F) +
+  geom_text(aes(label = paste0(round(pct * 100, 1), "%")), size = 3, hjust = -0.25) +
+  scale_fill_gradient(low = "indianred3", high = "springgreen4") +
+  scale_y_continuous(breaks = seq(0, 1, by = 0.1), labels = scales::percent) +
+  coord_flip(ylim = c(0, 1.05)) +
+  labs(x = NULL, y = "Parlay leg win percentage",
+       title = "NO MORE BETTING ON BARES DOLPHINS ON PANTHERS")
+```
+
+___
 
 
 
