@@ -60,7 +60,7 @@ theme_custom = theme_avatar() +
 
 theme_set(theme_custom)
 
-conn = ff_connect(platform = "espn", league_id = "81518506", season = 2024)
+conn = ff_connect(platform = "espn", league_id = "81518506", season = 2025)
 
 id_to_name = ff_rosters(conn = conn) |>
   distinct(franchise_id, franchise_name)
@@ -108,7 +108,6 @@ team_records = end_games |>
   arrange(desc(win_pct), desc(pts_scored))
 
 standings_vec = team_records$first
-
 all_teams = sort(unique(c(end_games$win_team, end_games$lose_team)))
 ```
 
@@ -123,7 +122,7 @@ team_records |>
   scale_fill_gradient(low = "indianred3", high = "springgreen4") +
   geom_text(aes(label = record), size = 3, hjust = -0.25) +
   labs(x = NULL, y = NULL,
-       title = "2024 Travis Scott Burger Fantasy League Standings",
+       title = "2025 Travis Scott Burger Fantasy League Standings",
        caption = "Tiebreaker = total points scored") +
   theme(axis.text.x = element_blank())
 ```
@@ -186,7 +185,7 @@ team_records |>
        title = "Team points for vs. points against per game",
        subtitle = "Dashed lines represent league averages") +
   scale_x_continuous(breaks = seq(0, 200, by = 5)) +
-  scale_y_continuous(breaks = seq(0, 200, by = 2.5))
+  scale_y_continuous(breaks = seq(0, 200, by = 5))
 ```
 
 ___
@@ -310,26 +309,28 @@ ___
 
 ### Weekly Scoring Trends
 
+Coming next week
+
 ```{r echo = F}
-end_games |>
-  select(week, team = win_team, score = win_score) |>
-  rbind(end_games |>
-  select(week, team = lose_team, score = lose_score)) |>
-  group_by(team) |>
-  mutate(pct = score / sum(score)) |>
-  ungroup() |>
-  inner_join(team_records |>
-  distinct(team, pts_scored), by = "team") |>
-  inner_join(team_name_to_name, by = c("team" = "franchise_name")) |>
-  mutate(first = paste0(first, "\n(", pts_scored, ")")) |>
-  ggplot(aes(week, pct)) +
-  geom_line(aes(col = pts_scored), linewidth = 1.5, show.legend = F) +
-  scale_color_gradient(low = "indianred3", high = "springgreen4") +
-  facet_wrap(vars(first)) +
-  theme(axis.text = element_blank()) +
-  labs(x = "Week", y = "Percent of Total Points Scored",
-       title = "Weekly Scoring Trends",
-       subtitle = "Line color indicates total points scored")
+# end_games |>
+#   select(week, team = win_team, score = win_score) |>
+#   rbind(end_games |>
+#   select(week, team = lose_team, score = lose_score)) |>
+#   group_by(team) |>
+#   mutate(pct = score / sum(score)) |>
+#   ungroup() |>
+#   inner_join(team_records |>
+#   distinct(team, pts_scored), by = "team") |>
+#   inner_join(team_name_to_name, by = c("team" = "franchise_name")) |>
+#   mutate(first = paste0(first, "\n(", pts_scored, ")")) |>
+#   ggplot(aes(week, pct)) +
+#   geom_line(aes(col = pts_scored), linewidth = 1.5, show.legend = F) +
+#   scale_color_gradient(low = "indianred3", high = "springgreen4") +
+#   facet_wrap(vars(first)) +
+#   theme(axis.text = element_blank()) +
+#   labs(x = "Week", y = "Percent of Total Points Scored",
+#        title = "Weekly Scoring Trends",
+#        subtitle = "Line color indicates total points scored")
 ```
 
 ___
@@ -658,21 +659,23 @@ ___
 
 ### Chug Analysis
 
-```{r echo = F}
-names = c("Josh", "Drew", "Hank", "David", "Josh", "Chad")
-weeks = c(1, 1, 4, 6, 7, 12)
-times = c(29, 13, 10, 9, 27, 16)
+Where Adam chug?
 
-data.frame(name = names, week = weeks, time = times) |>
-  mutate(lab = paste0(name, " (Week ", week, ")"),
-         timelab = paste0(time, "s")) |>
-  ggplot(aes(reorder(lab, -time), time)) +
-  geom_col(fill = "saddlebrown") +
-  coord_flip(ylim = c(0, max(times) * 1.05)) +
-  geom_text(aes(label = timelab), size = 3, hjust = -0.25) +
-  labs(x = NULL, y = NULL,
-       title = "straight chugging it, and by it, let's justr say, well, my bervage") +
-  theme(axis.text.x = element_blank())
+```{r echo = F}
+# names = c("Josh", "Drew", "Hank", "David", "Josh", "Chad")
+# weeks = c(1, 1, 4, 6, 7, 12)
+# times = c(29, 13, 10, 9, 27, 16)
+# 
+# data.frame(name = names, week = weeks, time = times) |>
+#   mutate(lab = paste0(name, " (Week ", week, ")"),
+#          timelab = paste0(time, "s")) |>
+#   ggplot(aes(reorder(lab, -time), time)) +
+#   geom_col(fill = "saddlebrown") +
+#   coord_flip(ylim = c(0, max(times) * 1.05)) +
+#   geom_text(aes(label = timelab), size = 3, hjust = -0.25) +
+#   labs(x = NULL, y = NULL,
+#        title = "straight chugging it, and by it, let's justr say, well, my bervage") +
+#   theme(axis.text.x = element_blank())
 ```
 
 ___
@@ -712,38 +715,40 @@ ___
 
 ### League Wide Optimal Scoring
 
+Coming next week
+
 ```{r echo = F}
-league_week_opt = espn_potentialpoints(conn, weeks = 1:max(end_games$week)) |>
-  filter(!is.na(optimal_slot)) |>
-  group_by(week) |>
-  summarise(score = sum(player_score)) |>
-  inner_join(espn_potentialpoints(conn, weeks = 1:max(end_games$week)) |>
-  distinct(week, franchise_name, franchise_score) |>
-  group_by(week) |>
-  summarise(true = sum(franchise_score)), by = "week") |>
-  mutate(diff = score - true)
-
-league_week_opt_long = league_week_opt |>
-  pivot_longer(cols = c(score, true), names_to = "which", values_to = "pts") |>
-  mutate(which = ifelse(which == "score", "Optimal", "Actual"))
-
-midpoints = league_week_opt_long |>
-  pivot_wider(names_from = "which", values_from = "pts") |>
-  mutate(y_mid = (Optimal + Actual) / 2) |>
-  select(week, y_mid, diff)
-
-league_week_opt_long |>
-  mutate(which = factor(which, levels = c("Optimal", "Actual"))) |>
-  ggplot(aes(week, pts)) +
-  geom_line(aes(col = which), linewidth = 2) +
-  geom_text(data = midpoints, aes(x = week, y = y_mid, label = diff), size = 3.5) +
-  scale_color_manual(values = c("indianred3", "springgreen4")) +
-  labs(x = "Week", y = "Points", col = NULL,
-       title = "League-Wide Optimal vs. True Scoring",
-       subtitle = "Number between lines represents total points missed") +
-  scale_x_continuous(breaks = seq(1, 16, by = 1)) +
-  scale_y_continuous(breaks = seq(750, 1500, by = 50)) +
-  theme(legend.position = "right")
+# league_week_opt = espn_potentialpoints(conn, weeks = 1:max(end_games$week)) |>
+#   filter(!is.na(optimal_slot)) |>
+#   group_by(week) |>
+#   summarise(score = sum(player_score)) |>
+#   inner_join(espn_potentialpoints(conn, weeks = 1:max(end_games$week)) |>
+#   distinct(week, franchise_name, franchise_score) |>
+#   group_by(week) |>
+#   summarise(true = sum(franchise_score)), by = "week") |>
+#   mutate(diff = score - true)
+# 
+# league_week_opt_long = league_week_opt |>
+#   pivot_longer(cols = c(score, true), names_to = "which", values_to = "pts") |>
+#   mutate(which = ifelse(which == "score", "Optimal", "Actual"))
+# 
+# midpoints = league_week_opt_long |>
+#   pivot_wider(names_from = "which", values_from = "pts") |>
+#   mutate(y_mid = (Optimal + Actual) / 2) |>
+#   select(week, y_mid, diff)
+# 
+# league_week_opt_long |>
+#   mutate(which = factor(which, levels = c("Optimal", "Actual"))) |>
+#   ggplot(aes(week, pts)) +
+#   geom_line(aes(col = which), linewidth = 2) +
+#   geom_text(data = midpoints, aes(x = week, y = y_mid, label = diff), size = 3.5) +
+#   scale_color_manual(values = c("indianred3", "springgreen4")) +
+#   labs(x = "Week", y = "Points", col = NULL,
+#        title = "League-Wide Optimal vs. True Scoring",
+#        subtitle = "Number between lines represents total points missed") +
+#   scale_x_continuous(breaks = seq(1, 16, by = 1)) +
+#   scale_y_continuous(breaks = seq(750, 1500, by = 50)) +
+#   theme(legend.position = "right")
 ```
 
 ___

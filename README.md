@@ -84,27 +84,27 @@ library*
 
 ### Most Points Scored in a Loss
 
-- Week 9: Josh def. Jeremiah 132.51-132.24
-- Week 11: David def. Matthew 159.65-129.89
-- Week 13: JP def. David 140.14-124.22
-- Week 11: Eric def. Andrew 143.68-123.87
-- Week 3: JP def. Adam 136.12-122.98
+- Week 1: Josh def. Chad 109.88-107.08
+- Week 1: Matthew def. JP 117.63-102.72
+- Week 1: Adam def. David 129.28-101.59
+- Week 1: Andrew def. Hank 109.32-97.3
+- Week 1: Eric def. Isaac 90.32-70.53
 
 ------------------------------------------------------------------------
 
 ### Fewest Points Scored in a Victory
 
-- Week 4: Adam def. Eric 72.44-70.28
-- Week 10: David def. Jeremiah 89.81-73.07
-- Week 8: Andrew def. Matthew 90.23-82.87
-- Week 1: Eric def. Andrew 91.4-68.57
-- Week 7: Chad def. Eric 91.6-62.28
+- Week 1: Eric def. Isaac 90.32-70.53
+- Week 1: Andrew def. Hank 109.32-97.3
+- Week 1: Josh def. Chad 109.88-107.08
+- Week 1: Matthew def. JP 117.63-102.72
+- Week 1: Adam def. David 129.28-101.59
 
 ------------------------------------------------------------------------
 
 ### Weekly Scoring Trends
 
-![](README_files/figure-gfm/unnamed-chunk-10-1.png)<!-- -->
+Coming next week
 
 ------------------------------------------------------------------------
 
@@ -116,71 +116,71 @@ library*
 
 ### Highest Scoring Games
 
-- Week 11: David def. Matthew 159.65-129.89
-- Week 4: JP def. Andrew 162.54-118.23
-- Week 5: Adam def. David 165.1-111.25
-- Week 11: Eric def. Andrew 143.68-123.87
-- Week 9: Josh def. Jeremiah 132.51-132.24
+- Week 1: Adam def. David 129.28-101.59
+- Week 1: Matthew def. JP 117.63-102.72
+- Week 1: Josh def. Chad 109.88-107.08
+- Week 1: Andrew def. Hank 109.32-97.3
+- Week 1: Eric def. Isaac 90.32-70.53
 
 ------------------------------------------------------------------------
 
 ### Biggest Blowouts
 
-- Week 12: Jeremiah def. Matthew 152.31-71.07
-- Week 10: Adam def. Eric 146.44-81.23
-- Week 5: Hank def. Andrew 143.83-80.98
-- Week 6: Chad def. Andrew 137.75-76.64
-- Week 2: Josh def. Eric 137.81-82.82
+- Week 1: Adam def. David 129.28-101.59
+- Week 1: Eric def. Isaac 90.32-70.53
+- Week 1: Matthew def. JP 117.63-102.72
+- Week 1: Andrew def. Hank 109.32-97.3
+- Week 1: Josh def. Chad 109.88-107.08
 
 ------------------------------------------------------------------------
 
 ### Closest Games
 
-- Week 3: Eric def. Hank 98.13-98.11
-- Week 9: Josh def. Jeremiah 132.51-132.24
-- Week 9: JP def. Andrew 108.65-108.25
-- Week 9: Eric def. Matthew 98.07-96.36
-- Week 4: Adam def. Eric 72.44-70.28
+- Week 1: Josh def. Chad 109.88-107.08
+- Week 1: Andrew def. Hank 109.32-97.3
+- Week 1: Matthew def. JP 117.63-102.72
+- Week 1: Eric def. Isaac 90.32-70.53
+- Week 1: Adam def. David 129.28-101.59
 
 ------------------------------------------------------------------------
 
 ### Most Points Scored by One Team
 
-- 165.1 (Adam, Week 5)
-- 162.54 (JP, Week 4)
-- 159.65 (David, Week 11)
-- 152.31 (Jeremiah, Week 12)
-- 148.92 (Jeremiah, Week 7)
+- 129.28 (Adam, Week 1)
+- 117.63 (Matthew, Week 1)
+- 109.88 (Josh, Week 1)
+- 109.32 (Andrew, Week 1)
+- 107.08 (Chad, Week 1)
 
 ------------------------------------------------------------------------
 
 ### Fewest Points Scored by One Team
 
-- 62.28 (Eric, Week 7)
-- 62.4 (Eric, Week 6)
-- 68.57 (Andrew, Week 1)
-- 70.28 (Eric, Week 4)
-- 71.07 (Matthew, Week 12)
+- 70.53 (Isaac, Week 1)
+- 90.32 (Eric, Week 1)
+- 97.3 (Hank, Week 1)
+- 101.59 (David, Week 1)
+- 102.72 (JP, Week 1)
 
 ------------------------------------------------------------------------
 
 ### Past Week One Player Merchants
 
-- Brock Bowers: 27.6% of total points for Andrew
-- Josh Allen: 25.3% of total points for Chad
-- Russell Wilson: 22.6% of total points for Andrew
-- Saquon Barkley: 21.4% of total points for Jeremiah
-- Jayden Daniels: 18.3% of total points for JP
+- Josh Allen: 26.9% of total points for Adam
+- Lamar Jackson: 26.5% of total points for JP
+- Justin Fields: 24.9% of total points for Josh
+- Chuba Hubbard: 23.3% of total points for Isaac
+- Justin Herbert: 23.1% of total points for Chad
 
 ------------------------------------------------------------------------
 
 ### Full Season One Player Merchants
 
-- Saquon Barkley: 18.17% of total points for Jeremiah
-- Lamar Jackson: 17.52% of total points for Adam
-- Derrick Henry: 15.37% of total points for JP
-- Jalen Hurts: 15.21% of total points for Hank
-- Josh Allen: 15.1% of total points for Chad
+- Josh Allen: 26.93% of total points for Adam
+- Lamar Jackson: 26.55% of total points for JP
+- Justin Fields: 24.88% of total points for Josh
+- Chuba Hubbard: 23.25% of total points for Isaac
+- Justin Herbert: 23.1% of total points for Chad
 
 ------------------------------------------------------------------------
 
@@ -215,7 +215,7 @@ three weeks, his average weekly finishing position would be (1 + 3 + 2)
 
 ### Chug Analysis
 
-![](README_files/figure-gfm/unnamed-chunk-23-1.png)<!-- -->
+Where Adam chug?
 
 ------------------------------------------------------------------------
 
@@ -232,7 +232,7 @@ scores of 100, 110, and 120, his SOS rating would be (100 + 110 + 120) /
 
 ### League Wide Optimal Scoring
 
-![](README_files/figure-gfm/unnamed-chunk-25-1.png)<!-- -->
+Coming next week
 
 ------------------------------------------------------------------------
 
@@ -262,16 +262,16 @@ scores of 100, 110, and 120, his SOS rating would be (100 + 110 + 120) /
 
 ### Wins When Projected to Lose
 
-- Andrew: 3 wins when projected to lose
-- David: 3 wins when projected to lose
-- Eric: 3 wins when projected to lose
-- Jeremiah: 3 wins when projected to lose
-- Matthew: 3 wins when projected to lose
-- Chad: 2 wins when projected to lose
-- Hank: 2 wins when projected to lose
-- JP: 1 win when projected to lose
-- Josh: 1 win when projected to lose
 - Adam: 0 wins when projected to lose
+- Andrew: 0 wins when projected to lose
+- Chad: 0 wins when projected to lose
+- David: 0 wins when projected to lose
+- Eric: 0 wins when projected to lose
+- Hank: 0 wins when projected to lose
+- Isaac: 0 wins when projected to lose
+- JP: 0 wins when projected to lose
+- Josh: 0 wins when projected to lose
+- Matthew: 0 wins when projected to lose
 
 ------------------------------------------------------------------------
 
