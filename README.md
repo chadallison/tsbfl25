@@ -85,27 +85,29 @@ library*
 
 ### Most Points Scored in a Loss
 
+- Week 2: Matthew def. Isaac 130.85-126.71
 - Week 1: Josh def. Chad 109.88-107.08
 - Week 1: Matthew def. JP 117.63-102.72
+- Week 2: Eric def. Hank 115.41-102.45
 - Week 1: Adam def. David 129.28-101.59
-- Week 1: Andrew def. Hank 109.32-97.3
-- Week 1: Eric def. Isaac 90.32-70.53
 
 ------------------------------------------------------------------------
 
 ### Fewest Points Scored in a Victory
 
 - Week 1: Eric def. Isaac 90.32-70.53
+- Week 2: Andrew def. David 107.14-95.02
 - Week 1: Andrew def. Hank 109.32-97.3
 - Week 1: Josh def. Chad 109.88-107.08
-- Week 1: Matthew def. JP 117.63-102.72
-- Week 1: Adam def. David 129.28-101.59
+- Week 2: Eric def. Hank 115.41-102.45
 
 ------------------------------------------------------------------------
 
 ### Weekly Scoring Trends
 
-Coming next week
+<!-- Coming next week -->
+
+![](README_files/figure-gfm/unnamed-chunk-10-1.png)<!-- -->
 
 ------------------------------------------------------------------------
 
@@ -117,71 +119,71 @@ Coming next week
 
 ### Highest Scoring Games
 
+- Week 2: Matthew def. Isaac 130.85-126.71
 - Week 1: Adam def. David 129.28-101.59
 - Week 1: Matthew def. JP 117.63-102.72
-- Week 1: Josh def. Chad 109.88-107.08
-- Week 1: Andrew def. Hank 109.32-97.3
-- Week 1: Eric def. Isaac 90.32-70.53
+- Week 2: Eric def. Hank 115.41-102.45
+- Week 2: JP def. Josh 129.07-88.75
 
 ------------------------------------------------------------------------
 
 ### Biggest Blowouts
 
+- Week 2: Chad def. Adam 130.57-56.67
+- Week 2: JP def. Josh 129.07-88.75
 - Week 1: Adam def. David 129.28-101.59
 - Week 1: Eric def. Isaac 90.32-70.53
 - Week 1: Matthew def. JP 117.63-102.72
-- Week 1: Andrew def. Hank 109.32-97.3
-- Week 1: Josh def. Chad 109.88-107.08
 
 ------------------------------------------------------------------------
 
 ### Closest Games
 
 - Week 1: Josh def. Chad 109.88-107.08
+- Week 2: Matthew def. Isaac 130.85-126.71
 - Week 1: Andrew def. Hank 109.32-97.3
-- Week 1: Matthew def. JP 117.63-102.72
-- Week 1: Eric def. Isaac 90.32-70.53
-- Week 1: Adam def. David 129.28-101.59
+- Week 2: Andrew def. David 107.14-95.02
+- Week 2: Eric def. Hank 115.41-102.45
 
 ------------------------------------------------------------------------
 
 ### Most Points Scored by One Team
 
+- 130.85 (Matthew, Week 2)
+- 130.57 (Chad, Week 2)
 - 129.28 (Adam, Week 1)
-- 117.63 (Matthew, Week 1)
-- 109.88 (Josh, Week 1)
-- 109.32 (Andrew, Week 1)
-- 107.08 (Chad, Week 1)
+- 129.07 (JP, Week 2)
+- 126.71 (Isaac, Week 2)
 
 ------------------------------------------------------------------------
 
 ### Fewest Points Scored by One Team
 
+- 56.67 (Adam, Week 2)
 - 70.53 (Isaac, Week 1)
+- 88.75 (Josh, Week 2)
 - 90.32 (Eric, Week 1)
-- 97.3 (Hank, Week 1)
-- 101.59 (David, Week 1)
-- 102.72 (JP, Week 1)
+- 95.02 (David, Week 2)
 
 ------------------------------------------------------------------------
 
 ### Past Week One Player Merchants
 
-- Josh Allen: 26.9% of total points for Adam
-- Lamar Jackson: 26.5% of total points for JP
-- Justin Fields: 24.9% of total points for Josh
-- Chuba Hubbard: 23.3% of total points for Isaac
-- Justin Herbert: 23.1% of total points for Chad
+- Amon-Ra St. Brown: 39.1% of total points for Josh
+- Ja’Marr Chase: 25.6% of total points for Eric
+- Malik Nabers: 25.4% of total points for Matthew
+- Jared Goff: 23.7% of total points for JP
+- Tee Higgins: 23.1% of total points for Adam
 
 ------------------------------------------------------------------------
 
 ### Full Season One Player Merchants
 
-- Josh Allen: 26.93% of total points for Adam
-- Lamar Jackson: 26.55% of total points for JP
-- Justin Fields: 24.88% of total points for Josh
-- Chuba Hubbard: 23.25% of total points for Isaac
-- Justin Herbert: 23.1% of total points for Chad
+- Josh Allen: 24.29% of total points for Adam
+- Lamar Jackson: 22.14% of total points for JP
+- Amon-Ra St. Brown: 20.74% of total points for Josh
+- Jonathan Taylor: 20.18% of total points for Isaac
+- Christian McCaffrey: 19.53% of total points for David
 
 ------------------------------------------------------------------------
 
@@ -233,7 +235,9 @@ scores of 100, 110, and 120, his SOS rating would be (100 + 110 + 120) /
 
 ### League Wide Optimal Scoring
 
-Coming next week
+<!-- Coming next week -->
+
+![](README_files/figure-gfm/unnamed-chunk-25-1.png)<!-- -->
 
 ------------------------------------------------------------------------
 
@@ -263,14 +267,14 @@ Coming next week
 
 ### Wins When Projected to Lose
 
+- Eric: 1 win when projected to lose
+- JP: 1 win when projected to lose
 - Adam: 0 wins when projected to lose
 - Andrew: 0 wins when projected to lose
 - Chad: 0 wins when projected to lose
 - David: 0 wins when projected to lose
-- Eric: 0 wins when projected to lose
 - Hank: 0 wins when projected to lose
 - Isaac: 0 wins when projected to lose
-- JP: 0 wins when projected to lose
 - Josh: 0 wins when projected to lose
 - Matthew: 0 wins when projected to lose
 
