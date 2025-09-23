@@ -44,6 +44,9 @@ library*
 - [Team Records vs League Median](#team-records-vs-league-median)
 - [Supreme Luck Merchant](#supreme-luck-merchant)
 - [Parlay Tracking](#parlay-tracking)
+- [Opponent Adjusted PPG](#opponent-adjusted-ppg)
+- [Opponent Scoring Compared to Adjusted
+  PPG](#opponent-scoring-compared-to-adjusted-ppg)
 
 ------------------------------------------------------------------------
 
@@ -86,10 +89,10 @@ library*
 ### Most Points Scored in a Loss
 
 - Week 2: Matthew def. Isaac 130.85-126.71
+- Week 3: Hank def. David 127.23-116.63
 - Week 1: Josh def. Chad 109.88-107.08
 - Week 1: Matthew def. JP 117.63-102.72
 - Week 2: Eric def. Hank 115.41-102.45
-- Week 1: Adam def. David 129.28-101.59
 
 ------------------------------------------------------------------------
 
@@ -99,7 +102,7 @@ library*
 - Week 2: Andrew def. David 107.14-95.02
 - Week 1: Andrew def. Hank 109.32-97.3
 - Week 1: Josh def. Chad 109.88-107.08
-- Week 2: Eric def. Hank 115.41-102.45
+- Week 3: Andrew def. Isaac 114.52-57.86
 
 ------------------------------------------------------------------------
 
@@ -120,20 +123,20 @@ library*
 ### Highest Scoring Games
 
 - Week 2: Matthew def. Isaac 130.85-126.71
+- Week 3: Hank def. David 127.23-116.63
 - Week 1: Adam def. David 129.28-101.59
+- Week 3: Adam def. Josh 134.37-90.02
 - Week 1: Matthew def. JP 117.63-102.72
-- Week 2: Eric def. Hank 115.41-102.45
-- Week 2: JP def. Josh 129.07-88.75
 
 ------------------------------------------------------------------------
 
 ### Biggest Blowouts
 
 - Week 2: Chad def. Adam 130.57-56.67
+- Week 3: Chad def. Matthew 118.57-60.76
+- Week 3: Andrew def. Isaac 114.52-57.86
+- Week 3: Adam def. Josh 134.37-90.02
 - Week 2: JP def. Josh 129.07-88.75
-- Week 1: Adam def. David 129.28-101.59
-- Week 1: Eric def. Isaac 90.32-70.53
-- Week 1: Matthew def. JP 117.63-102.72
 
 ------------------------------------------------------------------------
 
@@ -141,49 +144,49 @@ library*
 
 - Week 1: Josh def. Chad 109.88-107.08
 - Week 2: Matthew def. Isaac 130.85-126.71
+- Week 3: Hank def. David 127.23-116.63
 - Week 1: Andrew def. Hank 109.32-97.3
 - Week 2: Andrew def. David 107.14-95.02
-- Week 2: Eric def. Hank 115.41-102.45
 
 ------------------------------------------------------------------------
 
 ### Most Points Scored by One Team
 
+- 134.37 (Adam, Week 3)
 - 130.85 (Matthew, Week 2)
 - 130.57 (Chad, Week 2)
 - 129.28 (Adam, Week 1)
 - 129.07 (JP, Week 2)
-- 126.71 (Isaac, Week 2)
 
 ------------------------------------------------------------------------
 
 ### Fewest Points Scored by One Team
 
 - 56.67 (Adam, Week 2)
+- 57.86 (Isaac, Week 3)
+- 60.76 (Matthew, Week 3)
 - 70.53 (Isaac, Week 1)
 - 88.75 (Josh, Week 2)
-- 90.32 (Eric, Week 1)
-- 95.02 (David, Week 2)
 
 ------------------------------------------------------------------------
 
 ### Past Week One Player Merchants
 
-- Amon-Ra St. Brown: 39.1% of total points for Josh
-- Ja’Marr Chase: 25.6% of total points for Eric
-- Malik Nabers: 25.4% of total points for Matthew
-- Jared Goff: 23.7% of total points for JP
-- Tee Higgins: 23.1% of total points for Adam
+- Jonathan Taylor: 54.1% of total points for Isaac
+- Vikings D/ST: 25.9% of total points for Hank
+- David Montgomery: 22.8% of total points for JP
+- Davante Adams: 22.6% of total points for Isaac
+- Caleb Williams: 22.4% of total points for David
 
 ------------------------------------------------------------------------
 
 ### Full Season One Player Merchants
 
-- Josh Allen: 24.29% of total points for Adam
-- Lamar Jackson: 22.14% of total points for JP
-- Amon-Ra St. Brown: 20.74% of total points for Josh
-- Jonathan Taylor: 20.18% of total points for Isaac
-- Christian McCaffrey: 19.53% of total points for David
+- Jonathan Taylor: 27.87% of total points for Isaac
+- Lamar Jackson: 21.03% of total points for JP
+- Josh Allen: 20.62% of total points for Adam
+- Amon-Ra St. Brown: 20.23% of total points for Josh
+- Caleb Williams: 20.16% of total points for David
 
 ------------------------------------------------------------------------
 
@@ -218,7 +221,7 @@ three weeks, his average weekly finishing position would be (1 + 3 + 2)
 
 ### Chug Analysis
 
-Where Adam chug?
+Where literally anyone chug?
 
 ------------------------------------------------------------------------
 
@@ -305,5 +308,35 @@ overall number you see in parentheses next to everyone’s names.
 ### Parlay Tracking
 
 ![](README_files/figure-gfm/unnamed-chunk-33-1.png)<!-- -->
+
+------------------------------------------------------------------------
+
+### Opponent Adjusted PPG
+
+Description under the plot after this one
+
+![](README_files/figure-gfm/unnamed-chunk-34-1.png)<!-- -->
+
+------------------------------------------------------------------------
+
+### Opponent Scoring Compared to Adjusted PPG
+
+![](README_files/figure-gfm/unnamed-chunk-35-1.png)<!-- -->
+
+This one is a work in progress and another pseudo-attempt at
+visualizing/quantifying strength of schedule. The motivation behind it
+is to get average opponent PPG in games where they are not playing you.
+For example, suppose I am playing Hank. His “adjusted PPG” would be his
+PPG in games he has played against everyone else but me. So if Hank
+scored 100 against me, 110 against David, 120 against JP, 80 against
+Adam, and 95 against Josh, his “adjusted PPG” would be (110 + 120 + 80 +
+95) / 4 = 101.25. If you wanted to, you could go a step further with
+this and say that given that number, Hank scoring 100 against me would
+be him under performing by 1.25 points compared to his “adjusted PPG” of
+101.25. That is how the y-axis is calculated. *If you made it this far
+and are reading this, I love you.* I haven’t yet messed with flipping
+axes, so for now, further right would indicate tougher competition, on
+average, and higher would indicate your opponent scoring higher than
+“expected” given their adjusted PPG.
 
 ------------------------------------------------------------------------

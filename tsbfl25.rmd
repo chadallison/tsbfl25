@@ -42,6 +42,8 @@ ___
 - [Team Records vs League Median]
 - [Supreme Luck Merchant]
 - [Parlay Tracking]
+- [Opponent Adjusted PPG]
+- [Opponent Scoring Compared to Adjusted PPG]
 
 ___
 
@@ -669,7 +671,7 @@ ___
 
 ### Chug Analysis
 
-Where Adam chug?
+Where literally anyone chug?
 
 ```{r echo = F}
 # names = c("Josh", "Drew", "Hank", "David", "Josh", "Chad")
@@ -750,7 +752,7 @@ league_week_opt_long |>
   mutate(which = factor(which, levels = c("Optimal", "Actual"))) |>
   ggplot(aes(week, pts)) +
   geom_line(aes(col = which), linewidth = 2) +
-  geom_text(data = midpoints, aes(x = week, y = y_mid, label = diff), size = 3.5) +
+  geom_text(data = midpoints, aes(x = week, y = y_mid, label = round(diff, 2)), size = 3.5) +
   scale_color_manual(values = c("indianred3", "springgreen4")) +
   labs(x = "Week", y = "Points", col = NULL,
        title = "League-Wide Optimal vs. True Scoring",
@@ -1020,10 +1022,81 @@ parlays |>
 
 ___
 
+### Opponent Adjusted PPG
 
+Description under the plot after this one
 
+```{r echo = F}
+indiv_results = end_games |>
+  select(team = win_team, opp = lose_team, score = win_score, opp_score = lose_score) |>
+  bind_rows(
+    end_games |>
+      select(team = lose_team, opp = win_team, score = lose_score, opp_score = win_score)
+  ) |>
+  arrange(team, opp)
 
+get_opp_adj_ppg = function(tm, f_opp) {
+  x = indiv_results |>
+    filter(team == f_opp & opp != tm) |>
+    pull(score)
+  
+  return(mean(x))
+}
 
+adj_ppg_data = indiv_results |>
+  rowwise() |>
+  mutate(opp_adj_ppg = get_opp_adj_ppg(tm = team, f_opp = opp)) |>
+  ungroup() |>
+  group_by(team) |>
+  summarise(avg_adj_opp_ppg = round(mean(opp_adj_ppg), 2))
+
+adj_ppg_data |>
+  ggplot(aes(reorder(team, avg_adj_opp_ppg), avg_adj_opp_ppg)) +
+  geom_col(aes(fill = avg_adj_opp_ppg), show.legend = F) +
+  coord_flip(ylim = c(0, max(adj_ppg_data$avg_adj_opp_ppg) * 1.1)) +
+  scale_fill_gradient(high = "indianred3", low = "springgreen4") +
+  geom_text(aes(label = avg_adj_opp_ppg), size = 3, hjust = -0.25) +
+  scale_y_continuous(breaks = seq(0, 150, by = 10)) +
+  labs(x = NULL, y = "Avg. Adj. Opponent PPG",
+       title = "Adjusted opponent PPG",
+       subtitle = "Work in progress - see description below")
+```
+
+___
+
+### Opponent Scoring Compared to Adjusted PPG
+
+```{r echo = F}
+favorable_results = indiv_results |>
+  rowwise() |>
+  mutate(opp_adj_ppg = get_opp_adj_ppg(tm = team, f_opp = opp)) |>
+  ungroup() |>
+  mutate(favor = opp_adj_ppg - opp_score) |>
+  group_by(team) |>
+  summarise(favor = mean(favor))
+
+adj_ppg_data |>
+  inner_join(favorable_results, by = "team") |>
+  inner_join(team_name_to_name, by = c("team" = "franchise_name")) |>
+  mutate(adj_scaled = scale(avg_adj_opp_ppg),
+         favor_scaled = scale(favor),
+         score = adj_scaled + favor_scaled) |>
+  ggplot(aes(avg_adj_opp_ppg, -favor)) +
+  geom_point(shape = "square", size = 5, show.legend = F) +
+  ggrepel::geom_text_repel(aes(label = first), size = 3, max.overlaps = 10) +
+  geom_vline(xintercept = mean(adj_ppg_data$avg_adj_opp_ppg), linetype = "dashed", alpha = 0.5) +
+  geom_hline(yintercept = 0, linetype = "dashed", alpha = 0.5) +
+  scale_x_continuous(breaks = seq(0, 150, by = 5)) +
+  scale_y_continuous(breaks = seq(-100, 100, by = 10)) +
+  labs(x = "Avg. opponent adj. PPG",
+       y = "Avg. opponent scoring over/under adj. PPG",
+       title = "Opponent scoring compared to adjusted PPG",
+       subtitle = "Please read description below")
+```
+
+This one is a work in progress and another pseudo-attempt at visualizing/quantifying strength of schedule. The motivation behind it is to get average opponent PPG in games where they are not playing you. For example, suppose I am playing Hank. His "adjusted PPG" would be his PPG in games he has played against everyone else but me. So if Hank scored 100 against me, 110 against David, 120 against JP, 80 against Adam, and 95 against Josh, his "adjusted PPG" would be (110 + 120 + 80 + 95) / 4 = 101.25. If you wanted to, you could go a step further with this and say that given that number, Hank scoring 100 against me would be him under performing by 1.25 points compared to his "adjusted PPG" of 101.25. That is how the y-axis is calculated. *If you made it this far and are reading this, I love you.* I haven't yet messed with flipping axes, so for now, further right would indicate tougher competition, on average, and higher would indicate your opponent scoring higher than "expected" given their adjusted PPG.
+
+___
 
 
 
