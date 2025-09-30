@@ -47,6 +47,8 @@ library*
 - [Opponent Adjusted PPG](#opponent-adjusted-ppg)
 - [Opponent Scoring Compared to Adjusted
   PPG](#opponent-scoring-compared-to-adjusted-ppg)
+- [Team Scoring Ranges](#team-scoring-ranges)
+- [Team Points Against Ranges](#team-points-against-ranges)
 
 ------------------------------------------------------------------------
 
@@ -88,21 +90,21 @@ library*
 
 ### Most Points Scored in a Loss
 
+- Week 4: Eric def. David 147.5-126.72
 - Week 2: Matthew def. Isaac 130.85-126.71
-- Week 3: Hank def. David 127.23-116.63
-- Week 1: Josh def. Chad 109.88-107.08
-- Week 1: Matthew def. JP 117.63-102.72
-- Week 2: Eric def. Hank 115.41-102.45
+- Week 4: Andrew def. Chad 142.01-119.84
+- Week 4: Isaac def. Hank 131.22-117.83
+- Week 4: Josh def. Matthew 151.77-117.17
 
 ------------------------------------------------------------------------
 
 ### Fewest Points Scored in a Victory
 
 - Week 1: Eric def. Isaac 90.32-70.53
+- Week 4: Adam def. JP 96.47-85.75
 - Week 2: Andrew def. David 107.14-95.02
 - Week 1: Andrew def. Hank 109.32-97.3
 - Week 1: Josh def. Chad 109.88-107.08
-- Week 3: Andrew def. Isaac 114.52-57.86
 
 ------------------------------------------------------------------------
 
@@ -122,11 +124,11 @@ library*
 
 ### Highest Scoring Games
 
+- Week 4: Eric def. David 147.5-126.72
+- Week 4: Josh def. Matthew 151.77-117.17
+- Week 4: Andrew def. Chad 142.01-119.84
 - Week 2: Matthew def. Isaac 130.85-126.71
-- Week 3: Hank def. David 127.23-116.63
-- Week 1: Adam def. David 129.28-101.59
-- Week 3: Adam def. Josh 134.37-90.02
-- Week 1: Matthew def. JP 117.63-102.72
+- Week 4: Isaac def. Hank 131.22-117.83
 
 ------------------------------------------------------------------------
 
@@ -145,18 +147,18 @@ library*
 - Week 1: Josh def. Chad 109.88-107.08
 - Week 2: Matthew def. Isaac 130.85-126.71
 - Week 3: Hank def. David 127.23-116.63
+- Week 4: Adam def. JP 96.47-85.75
 - Week 1: Andrew def. Hank 109.32-97.3
-- Week 2: Andrew def. David 107.14-95.02
 
 ------------------------------------------------------------------------
 
 ### Most Points Scored by One Team
 
+- 151.77 (Josh, Week 4)
+- 147.5 (Eric, Week 4)
+- 142.01 (Andrew, Week 4)
 - 134.37 (Adam, Week 3)
-- 130.85 (Matthew, Week 2)
-- 130.57 (Chad, Week 2)
-- 129.28 (Adam, Week 1)
-- 129.07 (JP, Week 2)
+- 131.22 (Isaac, Week 4)
 
 ------------------------------------------------------------------------
 
@@ -166,27 +168,27 @@ library*
 - 57.86 (Isaac, Week 3)
 - 60.76 (Matthew, Week 3)
 - 70.53 (Isaac, Week 1)
-- 88.75 (Josh, Week 2)
+- 85.75 (JP, Week 4)
 
 ------------------------------------------------------------------------
 
 ### Past Week One Player Merchants
 
-- Jonathan Taylor: 54.1% of total points for Isaac
-- Vikings D/ST: 25.9% of total points for Hank
-- David Montgomery: 22.8% of total points for JP
-- Davante Adams: 22.6% of total points for Isaac
-- Caleb Williams: 22.4% of total points for David
+- Josh Jacobs: 25.2% of total points for Hank
+- Ashton Jeanty: 24.8% of total points for Isaac
+- Josh Allen: 23.6% of total points for Adam
+- Bijan Robinson: 22.3% of total points for Matthew
+- Emeka Egbuka: 21.1% of total points for JP
 
 ------------------------------------------------------------------------
 
 ### Full Season One Player Merchants
 
-- Jonathan Taylor: 27.87% of total points for Isaac
-- Lamar Jackson: 21.03% of total points for JP
-- Josh Allen: 20.62% of total points for Adam
-- Amon-Ra St. Brown: 20.23% of total points for Josh
-- Caleb Williams: 20.16% of total points for David
+- Jonathan Taylor: 21.54% of total points for Isaac
+- Josh Allen: 21.31% of total points for Adam
+- Lamar Jackson: 19.05% of total points for JP
+- Jalen Hurts: 18.76% of total points for Adam
+- Puka Nacua: 18.71% of total points for Andrew
 
 ------------------------------------------------------------------------
 
@@ -270,14 +272,14 @@ scores of 100, 110, and 120, his SOS rating would be (100 + 110 + 120) /
 
 ### Wins When Projected to Lose
 
-- Eric: 1 win when projected to lose
+- Eric: 2 wins when projected to lose
+- Andrew: 1 win when projected to lose
+- Isaac: 1 win when projected to lose
 - JP: 1 win when projected to lose
 - Adam: 0 wins when projected to lose
-- Andrew: 0 wins when projected to lose
 - Chad: 0 wins when projected to lose
 - David: 0 wins when projected to lose
 - Hank: 0 wins when projected to lose
-- Isaac: 0 wins when projected to lose
 - Josh: 0 wins when projected to lose
 - Matthew: 0 wins when projected to lose
 
@@ -338,5 +340,17 @@ and are reading this, I love you.* I haven’t yet messed with flipping
 axes, so for now, further right would indicate tougher competition, on
 average, and higher would indicate your opponent scoring higher than
 “expected” given their adjusted PPG.
+
+------------------------------------------------------------------------
+
+### Team Scoring Ranges
+
+![](README_files/figure-gfm/unnamed-chunk-36-1.png)<!-- -->
+
+------------------------------------------------------------------------
+
+### Team Points Against Ranges
+
+![](README_files/figure-gfm/unnamed-chunk-37-1.png)<!-- -->
 
 ------------------------------------------------------------------------

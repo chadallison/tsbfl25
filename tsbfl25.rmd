@@ -44,6 +44,8 @@ ___
 - [Parlay Tracking]
 - [Opponent Adjusted PPG]
 - [Opponent Scoring Compared to Adjusted PPG]
+- [Team Scoring Ranges]
+- [Team Points Against Ranges]
 
 ___
 
@@ -1098,8 +1100,72 @@ This one is a work in progress and another pseudo-attempt at visualizing/quantif
 
 ___
 
+### Team Scoring Ranges
+
+```{r echo = F}
+game_results = end_games |>
+  select(week, team = win_team, opp = lose_team, score = win_score, opp_score = lose_score) |>
+  bind_rows(
+    end_games |>
+      select(week, team = lose_team, opp = win_team, score = lose_score, opp_score = win_score)
+  ) |>
+  arrange(team, week)
+
+team_ranges = game_results |>
+  group_by(team) |>
+  summarise(min_score = min(score),
+            max_score = max(score),
+            avg_score = round(mean(score), 2),
+            sd_score = round(sd(score), 2)) |>
+  mutate(range = max_score - min_score,
+         min_range = avg_score - sd_score,
+         max_range = avg_score + sd_score) |>
+  inner_join(team_name_to_name, by = c("team" = "franchise_name"))
+
+team_ranges |>
+  mutate(first = as.character(glue("{first} ({round(avg_score, 1)})"))) |>
+  ggplot(aes(reorder(first, avg_score))) +
+  geom_segment(aes(xend = reorder(first, avg_score), y = min_score, yend = max_score, col = avg_score), linewidth = 10, show.legend = F) +
+  geom_text(aes(y = min_score, label = round(min_score, 1)), hjust = 1.25, size = 3) +
+  geom_text(aes(y = max_score, label = round(max_score, 1)), hjust = -0.25, size = 3) +
+  coord_flip(ylim = c(min(team_ranges$min_score) * 0.9, max(team_ranges$max_score) * 1.1)) +
+  labs(x = NULL, y = "Points Scored", title = "Team scoring ranges",
+       subtitle = "Number next to name represents average score") +
+  scale_y_continuous(breaks = seq(0, max(team_ranges$max_score) * 1.25, by = 10)) +
+  scale_color_gradient(low = "indianred3", high = "springgreen4")
+```
 
 
+___
+
+### Team Points Against Ranges
+
+```{r echo = F}
+team_allowed = game_results |>
+  group_by(team) |>
+  summarise(min_allowed = min(opp_score),
+            max_allowed = max(opp_score),
+            avg_allowed = round(mean(opp_score), 2),
+            sd_allowed = round(sd(opp_score), 2)) |>
+  mutate(range = max_allowed - min_allowed,
+         min_range = avg_allowed - sd_allowed,
+         max_range = avg_allowed + sd_allowed) |>
+  inner_join(team_name_to_name, by = c("team" = "franchise_name"))
+
+team_allowed |>
+  mutate(first = as.character(glue("{first} ({round(avg_allowed, 1)})"))) |>
+  ggplot(aes(reorder(first, avg_allowed))) +
+  geom_segment(aes(xend = reorder(first, avg_allowed), y = min_allowed, yend = max_allowed, col = avg_allowed), linewidth = 10, show.legend = F) +
+  geom_text(aes(y = min_allowed, label = round(min_allowed, 1)), hjust = 1.25, size = 3) +
+  geom_text(aes(y = max_allowed, label = round(max_allowed, 1)), hjust = -0.25, size = 3) +
+  coord_flip(ylim = c(min(team_allowed$min_allowed) * 0.9, max(team_allowed$max_allowed) * 1.1)) +
+  labs(x = NULL, y = "Points Allowed", title = "Team points against ranges",
+       subtitle = "Number next to name represents average points against") +
+  scale_y_continuous(breaks = seq(0, max(team_allowed$max_allowed) * 1.25, by = 10)) +
+  scale_color_gradient(low = "springgreen4", high = "indianred3")
+```
+
+___
 
 
 
