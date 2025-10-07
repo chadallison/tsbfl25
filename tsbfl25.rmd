@@ -27,9 +27,9 @@ ___
 - [Fewest Points Scored by One Team]
 - [Past Week One Player Merchants]
 - [Full Season One Player Merchants]
-- [Luckiest Teams This Past Week]
-- [Luckiest Teams Season Long]
-- [Self Luck and Opponent Luck]
+<!-- - [Luckiest Teams This Past Week] -->
+<!-- - [Luckiest Teams Season Long] -->
+<!-- - [Self Luck and Opponent Luck] -->
 - [Average Weekly Finishing Position]
 - [Chug Analysis]
 - [Win Percentage by Strength of Schedule]
@@ -37,7 +37,7 @@ ___
 - [Top Three Scoring]
 - [Bottom Three Scoring]
 - [Average Scoring in Wins]
-- [Projected Records]
+<!-- - [Projected Records] -->
 - [Wins When Projected to Lose]
 - [Team Records vs League Median]
 - [Supreme Luck Merchant]
@@ -46,6 +46,7 @@ ___
 - [Opponent Scoring Compared to Adjusted PPG]
 - [Team Scoring Ranges]
 - [Team Points Against Ranges]
+- [Team Point Differentials]
 
 ___
 
@@ -529,9 +530,7 @@ x = ff_starters(conn, week = 1:max(end_games$week)) |>
 
 ___
 
-### Luckiest Teams This Past Week
-
-
+<!-- ### Luckiest Teams This Past Week -->
 
 ```{r echo = F}
 true_proj_scores_weekly = ff_starters(conn, week = 1:max(end_games$week)) |>
@@ -560,25 +559,27 @@ past_week_luck_data = end_with_proj |>
   mutate(poslab = ifelse(luck >= 0, round(luck, 1), ""),
          neglab = ifelse(luck < 0, round(luck, 1), ""))
 
-this_week_luck_merchant = past_week_luck_data |> slice_max(luck, n = 1, with_ties = F) |> pull(first)
+this_week_luck_merchant = past_week_luck_data |>
+  slice_max(luck, n = 1, with_ties = F) |>
+  pull(first)
 
-past_week_luck_data |>
-  ggplot(aes(reorder(first, luck), luck)) +
-  geom_col(aes(fill = luck), show.legend = F) +
-  coord_flip(ylim = c(min(past_week_luck_data$luck) * 1.05,
-                      max(past_week_luck_data$luck) * 1.05)) +
-  scale_fill_gradient(low = "indianred3", high = "springgreen4") +
-  geom_text(aes(label = poslab), size = 3, hjust = -0.25) +
-  geom_text(aes(label = neglab), size = 3, hjust = 1.25) +
-  labs(x = NULL, y = "Luck",
-       title = "Who were the luckiest and unluckiest teams this past week?",
-       subtitle = "Opponent-based luck only") +
-  theme(axis.text.x = element_blank())
+# past_week_luck_data |>
+#   ggplot(aes(reorder(first, luck), luck)) +
+#   geom_col(aes(fill = luck), show.legend = F) +
+#   coord_flip(ylim = c(min(past_week_luck_data$luck) * 1.05,
+#                       max(past_week_luck_data$luck) * 1.05)) +
+#   scale_fill_gradient(low = "indianred3", high = "springgreen4") +
+#   geom_text(aes(label = poslab), size = 3, hjust = -0.25) +
+#   geom_text(aes(label = neglab), size = 3, hjust = 1.25) +
+#   labs(x = NULL, y = "Luck",
+#        title = "Who were the luckiest and unluckiest teams this past week?",
+#        subtitle = "Opponent-based luck only") +
+#   theme(axis.text.x = element_blank())
 ```
 
-___
+<!-- ___ -->
 
-### Luckiest Teams Season Long
+<!-- ### Luckiest Teams Season Long -->
 
 ```{r echo = F}
 full_szn_luck = end_with_proj |>
@@ -592,23 +593,23 @@ full_szn_luck = end_with_proj |>
   mutate(poslab = ifelse(luck >= 0, round(luck, 1), ""),
          neglab = ifelse(luck < 0, round(luck, 1), ""))
 
-full_szn_luck |>
-  ggplot(aes(reorder(first, luck), luck)) +
-  geom_col(aes(fill = luck), show.legend = F) +
-  coord_flip(ylim = c(min(full_szn_luck$luck) * 1.05,
-                      max(full_szn_luck$luck) * 1.05)) +
-  scale_fill_gradient(low = "indianred3", high = "springgreen4") +
-  geom_text(aes(label = poslab), size = 3, hjust = -0.25) +
-  geom_text(aes(label = neglab), size = 3, hjust = 1.25) +
-  labs(x = NULL, y = "Luck",
-       title = "Who are the luckiest and unluckiest teams season-long?",
-       subtitle = "Opponent-based luck only") +
-  theme(axis.text.x = element_blank())
+# full_szn_luck |>
+#   ggplot(aes(reorder(first, luck), luck)) +
+#   geom_col(aes(fill = luck), show.legend = F) +
+#   coord_flip(ylim = c(min(full_szn_luck$luck) * 1.05,
+#                       max(full_szn_luck$luck) * 1.05)) +
+#   scale_fill_gradient(low = "indianred3", high = "springgreen4") +
+#   geom_text(aes(label = poslab), size = 3, hjust = -0.25) +
+#   geom_text(aes(label = neglab), size = 3, hjust = 1.25) +
+#   labs(x = NULL, y = "Luck",
+#        title = "Who are the luckiest and unluckiest teams season-long?",
+#        subtitle = "Opponent-based luck only") +
+#   theme(axis.text.x = element_blank())
 ```
 
-___
+<!-- ___ -->
 
-### Self Luck and Opponent Luck
+<!-- ### Self Luck and Opponent Luck -->
 
 ```{r echo = F}
 get_team_score_over_proj = function(tm) {
@@ -623,26 +624,26 @@ get_team_opp_score_over_proj = function(tm) {
   return(sum(c(w, l ) * -1))
 }
 
-data.frame(team = all_teams) |>
-  mutate(sop = sapply(team, get_team_score_over_proj),
-         luck = sapply(team, get_team_opp_score_over_proj),
-         total = sop + luck) |>
-  inner_join(team_name_to_name, by = c("team" = "franchise_name")) |>
-  ggplot(aes(sop, luck)) +
-  geom_point(aes(col = total), shape = "square", size = 4, show.legend = F) +
-  ggrepel::geom_text_repel(aes(label = first), size = 3.5, max.overlaps = 10) +
-  scale_color_gradient(low = "indianred3", high = "springgreen4") +
-  geom_vline(xintercept = 0, linetype = "dashed", alpha = 0.5) +
-  geom_hline(yintercept = 0, linetype = "dashed", alpha = 0.5) +
-  labs(x = "Scoring Over Expected",
-       y = "Opponent Scoring Under Expected",
-       title = "Who is a ball knower and who is a luck merchant?",
-       subtitle = "Unless people request it, this is replacing the 'full luck' stuff") +
-  scale_x_continuous(breaks = seq(-250, 250, by = 20)) +
-  scale_y_continuous(breaks = seq(-250, 250, by = 20))
+# data.frame(team = all_teams) |>
+#   mutate(sop = sapply(team, get_team_score_over_proj),
+#          luck = sapply(team, get_team_opp_score_over_proj),
+#          total = sop + luck) |>
+#   inner_join(team_name_to_name, by = c("team" = "franchise_name")) |>
+#   ggplot(aes(sop, luck)) +
+#   geom_point(aes(col = total), shape = "square", size = 4, show.legend = F) +
+#   ggrepel::geom_text_repel(aes(label = first), size = 3.5, max.overlaps = 10) +
+#   scale_color_gradient(low = "indianred3", high = "springgreen4") +
+#   geom_vline(xintercept = 0, linetype = "dashed", alpha = 0.5) +
+#   geom_hline(yintercept = 0, linetype = "dashed", alpha = 0.5) +
+#   labs(x = "Scoring Over Expected",
+#        y = "Opponent Scoring Under Expected",
+#        title = "Who is a ball knower and who is a luck merchant?",
+#        subtitle = "Unless people request it, this is replacing the 'full luck' stuff") +
+#   scale_x_continuous(breaks = seq(-250, 250, by = 20)) +
+#   scale_y_continuous(breaks = seq(-250, 250, by = 20))
 ```
 
-___
+<!-- ___ -->
 
 ### Average Weekly Finishing Position
 
@@ -859,7 +860,7 @@ end_games |>
 
 ___
 
-### Projected Records
+<!-- ### Projected Records -->
 
 ```{r echo = F}
 weekly_proj_wl = end_with_proj |>
@@ -886,20 +887,20 @@ proj_plot = weekly_proj_wl |>
   inner_join(team_total_proj, by = c("team" = "franchise_name")) |>
   arrange(desc(win_pct), desc(score))
 
-proj_plot |>
-  mutate(first = factor(first, levels = rev(proj_plot$first))) |>
-  ggplot(aes(first, win_pct)) +
-  geom_col(aes(fill = win_pct), show.legend = F) +
-  coord_flip(ylim = c(0, max(proj_plot$win_pct) * 1.05)) +
-  geom_text(aes(label = record), size = 3, hjust = -0.25) +
-  scale_fill_gradient(low = "indianred3", high = "springgreen4") +
-  labs(x = NULL, y = NULL,
-       title = "Projected Records",
-       subtitle = "Tiebreaker = total points scored") +
-  theme(axis.text.x = element_blank())
+# proj_plot |>
+#   mutate(first = factor(first, levels = rev(proj_plot$first))) |>
+#   ggplot(aes(first, win_pct)) +
+#   geom_col(aes(fill = win_pct), show.legend = F) +
+#   coord_flip(ylim = c(0, max(proj_plot$win_pct) * 1.05)) +
+#   geom_text(aes(label = record), size = 3, hjust = -0.25) +
+#   scale_fill_gradient(low = "indianred3", high = "springgreen4") +
+#   labs(x = NULL, y = NULL,
+#        title = "Projected Records",
+#        subtitle = "Tiebreaker = total points scored") +
+#   theme(axis.text.x = element_blank())
 ```
 
-___
+<!-- ___ -->
 
 ### Wins When Projected to Lose
 
@@ -1167,8 +1168,35 @@ team_allowed |>
 
 ___
 
+### Team Point Differentials
 
+```{r echo = F}
+diff_data = end_games |>
+  select(week, team = win_team, score = win_score, opp = lose_team, opp_score = lose_score) |>
+  bind_rows(
+    end_games |>
+      select(week, team = lose_team, score = lose_score, opp = win_team, opp_score = win_score)
+  ) |>
+  arrange(team, week) |>
+  mutate(diff = score - opp_score) |>
+  group_by(team) |>
+  summarise(avg_diff = mean(diff),
+            net_diff = sum(diff)) |>
+  inner_join(team_name_to_name, by = c("team" = "franchise_name"))
 
+diff_data |>
+  ggplot(aes(reorder(first, avg_diff), avg_diff)) +
+  geom_col(aes(fill = avg_diff), show.legend = F) +
+  geom_text(aes(label = round(net_diff, 1), hjust = ifelse(net_diff >= 0, -0.25, 1.25)), size = 3) +
+  coord_flip(ylim = c(min(diff_data$avg_diff) * 1.05, max(diff_data$avg_diff) * 1.05)) +
+  scale_fill_gradient(high = "springgreen4", low = "indianred3") +
+  labs(x = NULL, y = "Avg. point differential",
+       title = "Team point differentials",
+       subtitle = "x-axis = avg. diff; labels = net diff") +
+  scale_y_continuous(breaks = seq(-50, 50, by = 5))
+```
+
+___
 
 
 
