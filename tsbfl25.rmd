@@ -47,6 +47,7 @@ ___
 - [Team Scoring Ranges]
 - [Team Points Against Ranges]
 - [Team Point Differentials]
+- [Points Scored by Position]
 
 ___
 
@@ -182,7 +183,7 @@ ___
 
 ```{r echo = F}
 team_ppg_papg = team_records |>
-  transmute(ppg = pts_scored / gp, papg = pts_against / gp)
+  transmute(team, ppg = pts_scored / gp, papg = pts_against / gp)
 
 team_records |>
   transmute(first, ppg = pts_scored / gp, papg = pts_against / gp, diff = ppg - papg) |>
@@ -1198,7 +1199,32 @@ diff_data |>
 
 ___
 
+### Points Scored by Position
 
+```{r echo = F}
+espn_potentialpoints(conn, weeks = 1:max(end_games$week)) |>
+  filter(!actual_slot %in% c("BE", "IR")) |>
+  group_by(franchise_name, pos = player_pos) |>
+  summarise(pts = sum(player_score), .groups = "drop") |>
+  mutate(total_pts = sum(pts), .by = "franchise_name") |>
+  mutate(pct_pts = pts / total_pts) |>
+  mutate(max_pct = max(pct_pts), .by = "franchise_name") |>
+  mutate(pos = factor(pos, levels = rev(c("QB", "RB", "WR", "TE", "DST", "K")))) |>
+  inner_join(team_name_to_name, by = "franchise_name") |>
+  ggplot(aes(reorder(first, max_pct), pct_pts, fill = pos)) +
+  geom_col() +
+  geom_text(aes(label = scales::percent(pct_pts, accuracy = 1)), position = position_stack(vjust = 0.5), size = 3) +
+  scale_y_continuous(breaks = seq(0, 1, by = 0.1), labels = scales::percent) +
+  coord_flip() +
+  guides(fill = guide_legend(reverse = T)) +
+  theme(legend.position = "right") +
+  labs(x = NULL, y = "Percent of total points scored", fill = NULL,
+       title = "Points scored by position",
+       subtitle = "Ordered by highest percentage of points scored from one position") +
+  scale_fill_manual(values = c("#8C6A43", "#C6A15B", "#B46A55", "#4B6C8B", "#708D57", "#9B89B3"))
+```
+
+___
 
 
 

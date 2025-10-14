@@ -50,6 +50,7 @@ library*
 - [Team Scoring Ranges](#team-scoring-ranges)
 - [Team Points Against Ranges](#team-points-against-ranges)
 - [Team Point Differentials](#team-point-differentials)
+- [Points Scored by Position](#points-scored-by-position)
 
 ------------------------------------------------------------------------
 
@@ -91,21 +92,21 @@ library*
 
 ### Most Points Scored in a Loss
 
+- Week 6: Hank def. Chad 153.14-130.53
 - Week 4: Eric def. David 147.5-126.72
 - Week 2: Matthew def. Isaac 130.85-126.71
 - Week 5: Andrew def. Eric 130.56-121.72
 - Week 4: Andrew def. Chad 142.01-119.84
-- Week 4: Isaac def. Hank 131.22-117.83
 
 ------------------------------------------------------------------------
 
 ### Fewest Points Scored in a Victory
 
 - Week 1: Eric def. Isaac 90.32-70.53
+- Week 6: JP def. Andrew 91.14-80.01
 - Week 4: Adam def. JP 96.47-83.75
 - Week 5: Adam def. Matthew 104.49-96.43
 - Week 2: Andrew def. David 107.14-95.02
-- Week 1: Andrew def. Hank 109.32-97.3
 
 ------------------------------------------------------------------------
 
@@ -125,11 +126,11 @@ library*
 
 ### Highest Scoring Games
 
+- Week 6: Hank def. Chad 153.14-130.53
 - Week 4: Eric def. David 147.5-126.72
 - Week 5: JP def. Chad 162.16-108.12
 - Week 4: Josh def. Matthew 151.77-117.17
 - Week 4: Andrew def. Chad 142.01-119.84
-- Week 2: Matthew def. Isaac 130.85-126.71
 
 ------------------------------------------------------------------------
 
@@ -156,10 +157,10 @@ library*
 ### Most Points Scored by One Team
 
 - 162.16 (JP, Week 5)
+- 153.14 (Hank, Week 6)
 - 151.77 (Josh, Week 4)
 - 147.5 (Eric, Week 4)
 - 142.01 (Andrew, Week 4)
-- 140.61 (Josh, Week 5)
 
 ------------------------------------------------------------------------
 
@@ -169,27 +170,27 @@ library*
 - 57.86 (Isaac, Week 3)
 - 60.76 (Matthew, Week 3)
 - 70.53 (Isaac, Week 1)
-- 83.75 (JP, Week 4)
+- 80.01 (Andrew, Week 6)
 
 ------------------------------------------------------------------------
 
 ### Past Week One Player Merchants
 
-- Rico Dowdle: 27.2% of total points for Hank
-- Jonathan Taylor: 23.7% of total points for Isaac
-- Patrick Mahomes: 21.8% of total points for Chad
-- Ja’Marr Chase: 21.4% of total points for Eric
-- Dak Prescott: 21.3% of total points for Eric
+- Bijan Robinson: 31.1% of total points for Matthew
+- Drake Maye: 30.8% of total points for Andrew
+- Jaxon Smith-Njigba: 28.7% of total points for JP
+- Drake London: 24.9% of total points for David
+- Cam Skattebo: 22.3% of total points for Adam
 
 ------------------------------------------------------------------------
 
 ### Full Season One Player Merchants
 
-- Jonathan Taylor: 22.07% of total points for Isaac
-- Josh Allen: 20.28% of total points for Adam
-- Christian McCaffrey: 18.85% of total points for David
-- Jalen Hurts: 18.2% of total points for Adam
-- Puka Nacua: 17.89% of total points for Andrew
+- Jonathan Taylor: 21.91% of total points for Isaac
+- Christian McCaffrey: 18.9% of total points for David
+- Patrick Mahomes: 18.42% of total points for Chad
+- Josh Allen: 18.19% of total points for Adam
+- Bijan Robinson: 17.86% of total points for Matthew
 
 ------------------------------------------------------------------------
 
@@ -265,14 +266,14 @@ scores of 100, 110, and 120, his SOS rating would be (100 + 110 + 120) /
 
 ### Wins When Projected to Lose
 
-- Eric: 2 wins when projected to lose
-- JP: 2 wins when projected to lose
+- Eric: 3 wins when projected to lose
+- JP: 3 wins when projected to lose
+- Adam: 1 win when projected to lose
 - Andrew: 1 win when projected to lose
+- Hank: 1 win when projected to lose
 - Isaac: 1 win when projected to lose
-- Adam: 0 wins when projected to lose
 - Chad: 0 wins when projected to lose
 - David: 0 wins when projected to lose
-- Hank: 0 wins when projected to lose
 - Josh: 0 wins when projected to lose
 - Matthew: 0 wins when projected to lose
 
@@ -351,5 +352,11 @@ average, and higher would indicate your opponent scoring higher than
 ### Team Point Differentials
 
 ![](README_files/figure-gfm/unnamed-chunk-38-1.png)<!-- -->
+
+------------------------------------------------------------------------
+
+### Points Scored by Position
+
+![](README_files/figure-gfm/unnamed-chunk-39-1.png)<!-- -->
 
 ------------------------------------------------------------------------
