@@ -50,7 +50,10 @@ library*
 - [Team Scoring Ranges](#team-scoring-ranges)
 - [Team Points Against Ranges](#team-points-against-ranges)
 - [Team Point Differentials](#team-point-differentials)
+- [Points Scored and Point
+  Differentials](#points-scored-and-point-differentials)
 - [Points Scored by Position](#points-scored-by-position)
+- [Cumulative Score Differentials](#cumulative-score-differentials)
 
 ------------------------------------------------------------------------
 
@@ -105,8 +108,8 @@ library*
 - Week 1: Eric def. Isaac 90.32-70.53
 - Week 6: JP def. Andrew 91.14-80.01
 - Week 4: Adam def. JP 96.47-83.75
+- Week 7: Hank def. JP 102.48-63.42
 - Week 5: Adam def. Matthew 104.49-96.43
-- Week 2: Andrew def. David 107.14-95.02
 
 ------------------------------------------------------------------------
 
@@ -126,21 +129,21 @@ library*
 
 ### Highest Scoring Games
 
+- Week 7: Eric def. Adam 179.39-109.87
 - Week 6: Hank def. Chad 153.14-130.53
 - Week 4: Eric def. David 147.5-126.72
 - Week 5: JP def. Chad 162.16-108.12
 - Week 4: Josh def. Matthew 151.77-117.17
-- Week 4: Andrew def. Chad 142.01-119.84
 
 ------------------------------------------------------------------------
 
 ### Biggest Blowouts
 
+- Week 7: Isaac def. Josh 151.95-48.5
 - Week 2: Chad def. Adam 130.57-56.67
+- Week 7: Eric def. Adam 179.39-109.87
 - Week 3: Chad def. Matthew 118.57-60.76
 - Week 3: Andrew def. Isaac 114.52-57.86
-- Week 5: JP def. Chad 162.16-108.12
-- Week 3: Adam def. Josh 134.37-90.02
 
 ------------------------------------------------------------------------
 
@@ -148,49 +151,49 @@ library*
 
 - Week 1: Josh def. Chad 109.88-107.08
 - Week 2: Matthew def. Isaac 130.85-126.71
+- Week 7: Matthew def. Andrew 116.01-111.47
 - Week 5: Adam def. Matthew 104.49-96.43
 - Week 5: Andrew def. Eric 130.56-121.72
-- Week 3: Hank def. David 127.23-116.63
 
 ------------------------------------------------------------------------
 
 ### Most Points Scored by One Team
 
+- 179.39 (Eric, Week 7)
 - 162.16 (JP, Week 5)
 - 153.14 (Hank, Week 6)
+- 151.95 (Isaac, Week 7)
 - 151.77 (Josh, Week 4)
-- 147.5 (Eric, Week 4)
-- 142.01 (Andrew, Week 4)
 
 ------------------------------------------------------------------------
 
 ### Fewest Points Scored by One Team
 
+- 48.5 (Josh, Week 7)
 - 56.67 (Adam, Week 2)
 - 57.86 (Isaac, Week 3)
 - 60.76 (Matthew, Week 3)
-- 70.53 (Isaac, Week 1)
-- 80.01 (Andrew, Week 6)
+- 63.42 (JP, Week 7)
 
 ------------------------------------------------------------------------
 
 ### Past Week One Player Merchants
 
-- Bijan Robinson: 31.1% of total points for Matthew
-- Drake Maye: 30.8% of total points for Andrew
-- Jaxon Smith-Njigba: 28.7% of total points for JP
-- Drake London: 24.9% of total points for David
-- Cam Skattebo: 22.3% of total points for Adam
+- Amon-Ra St. Brown: 36.3% of total points for Josh
+- Jaxon Smith-Njigba: 35.2% of total points for JP
+- Christian McCaffrey: 30.3% of total points for David
+- Javonte Williams: 28.9% of total points for JP
+- Jahmyr Gibbs: 23.6% of total points for Chad
 
 ------------------------------------------------------------------------
 
 ### Full Season One Player Merchants
 
-- Jonathan Taylor: 21.91% of total points for Isaac
-- Christian McCaffrey: 18.9% of total points for David
-- Patrick Mahomes: 18.42% of total points for Chad
-- Josh Allen: 18.19% of total points for Adam
-- Bijan Robinson: 17.86% of total points for Matthew
+- Jonathan Taylor: 21.83% of total points for Isaac
+- Christian McCaffrey: 20.61% of total points for David
+- Patrick Mahomes: 17.94% of total points for Chad
+- Bijan Robinson: 17.52% of total points for Matthew
+- Jalen Hurts: 17.42% of total points for Adam
 
 ------------------------------------------------------------------------
 
@@ -270,9 +273,9 @@ scores of 100, 110, and 120, his SOS rating would be (100 + 110 + 120) /
 - JP: 3 wins when projected to lose
 - Adam: 1 win when projected to lose
 - Andrew: 1 win when projected to lose
+- Chad: 1 win when projected to lose
 - Hank: 1 win when projected to lose
 - Isaac: 1 win when projected to lose
-- Chad: 0 wins when projected to lose
 - David: 0 wins when projected to lose
 - Josh: 0 wins when projected to lose
 - Matthew: 0 wins when projected to lose
@@ -355,8 +358,20 @@ average, and higher would indicate your opponent scoring higher than
 
 ------------------------------------------------------------------------
 
-### Points Scored by Position
+### Points Scored and Point Differentials
 
 ![](README_files/figure-gfm/unnamed-chunk-39-1.png)<!-- -->
+
+------------------------------------------------------------------------
+
+### Points Scored by Position
+
+![](README_files/figure-gfm/unnamed-chunk-40-1.png)<!-- -->
+
+------------------------------------------------------------------------
+
+### Cumulative Score Differentials
+
+![](README_files/figure-gfm/unnamed-chunk-41-1.png)<!-- -->
 
 ------------------------------------------------------------------------

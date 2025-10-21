@@ -47,7 +47,9 @@ ___
 - [Team Scoring Ranges]
 - [Team Points Against Ranges]
 - [Team Point Differentials]
+- [Points Scored and Point Differentials]
 - [Points Scored by Position]
+- [Cumulative Score Differentials]
 
 ___
 
@@ -68,7 +70,11 @@ theme_custom = theme_avatar() +
 
 theme_set(theme_custom)
 
-conn = ff_connect(platform = "espn", league_id = "81518506", season = 2025)
+conn = ff_connect(
+  platform = "espn",
+  league_id = "81518506",
+  season = 2025
+)
 
 id_to_name = ff_rosters(conn = conn) |>
   distinct(franchise_id, franchise_name)
@@ -121,6 +127,14 @@ all_teams = sort(unique(c(end_games$win_team, end_games$lose_team)))
 gs4_auth("chadallison1999@gmail.com")
 google_sheet_url = "https://docs.google.com/spreadsheets/d/1-yhwCwkph7TanT4R0oTC4d6Y2NwKbZ-m-ysbkxQx9hs/edit?usp=sharing"
 parlays = read_sheet(google_sheet_url, sheet = 1)
+
+team_divisions = tibble(
+  name = c("Andrew", "Eric", "Adam", "Isaac", "David",
+           "Hank", "JP", "Josh", "Chad", "Matthew"),
+  division = c(rep("Tar Heel", 5), rep("Wolfpack", 5))
+) |>
+  inner_join(team_name_to_name, by = c("name" = "first")) |>
+  arrange(division, name)
 ```
 
 ### Team Standings
@@ -1199,6 +1213,31 @@ diff_data |>
 
 ___
 
+### Points Scored and Point Differentials
+
+```{r echo = F}
+plot_data = team_ppg_papg |>
+  inner_join(diff_data, by = "team") |>
+  mutate(fitted = predict(lm(avg_diff ~ ppg, data = pick(ppg, avg_diff))),
+         dist_from_line = avg_diff - fitted)
+
+plot_data |>
+  ggplot(aes(ppg, avg_diff)) +
+  geom_point(aes(color = dist_from_line), shape = "square", size = 4, show.legend = F) +
+  geom_vline(xintercept = mean(team_ppg_papg$ppg), linetype = "dashed", alpha = 0.5) +
+  geom_hline(yintercept = 0, linetype = "dashed", alpha = 0.5) +
+  geom_line(stat = "smooth", method = "lm", formula = y ~ x, linetype = "dashed", alpha = 0.5) +
+  ggrepel::geom_text_repel(aes(label = first), size = 3.5, max.overlaps = 10) +
+  scale_color_gradient(low = "indianred3", high = "springgreen4") +
+  scale_x_continuous(breaks = seq(0, 200, by = 2)) +
+  scale_y_continuous(breaks = seq(-50, 50, by = 5)) +
+  labs(x = "Points scored per game",
+       y = "Avg. score differential",
+       title = "Point differentials by points scored")
+```
+
+___
+
 ### Points Scored by Position
 
 ```{r echo = F}
@@ -1226,8 +1265,37 @@ espn_potentialpoints(conn, weeks = 1:max(end_games$week)) |>
 
 ___
 
+### Cumulative Score Differentials
 
+```{r echo = F}
+end_long = end_games |>
+  select(week, team = win_team, score = win_score, opp = lose_team, opp_score = lose_score) |>
+  bind_rows(
+    end_games |>
+      select(week, team = lose_team, score = lose_score, opp = win_team, opp_score = win_score)
+  ) |>
+  mutate(margin = score - opp_score) |>
+  arrange(team, week)
 
+end_long |>
+  mutate(cum_diff = cumsum(margin), .by = "team") |>
+  inner_join(team_divisions, by = c("team" = "franchise_name")) |>
+  group_by(team, name) |>
+  mutate(last_week = week == max(week)) |>
+  ungroup() |>
+  ggplot(aes(week, cum_diff, color = name)) +
+  geom_line(linewidth = 2, na.rm = T) +
+  geom_hline(yintercept = 0, linetype = "dashed", alpha = 0.5) +
+  ggrepel::geom_text_repel(
+    data = \(df) dplyr::filter(df, last_week), aes(label = name),
+    direction = "y", hjust = 0, nudge_x = 0.1, segment.color = NA, size = 3.5, show.legend = F) +
+  scale_x_continuous(expand = expansion(mult = c(0, 0.1))) +
+  labs(x = "Game week", y = "Cumulative score differential",
+       title = "Cumulative score differentials") +
+  theme(legend.position = "none")
+```
+
+___
 
 
 
