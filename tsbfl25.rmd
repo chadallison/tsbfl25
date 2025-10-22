@@ -50,6 +50,11 @@ ___
 - [Points Scored and Point Differentials]
 - [Points Scored by Position]
 - [Cumulative Score Differentials]
+- [Percent of Points Scored by Week]
+- [Top Point Scorers]
+- [Top Point Scorers Among QBs]
+- [Top Point Scorers Among RBs]
+- [Top Point Scorers Among WRs]
 
 ___
 
@@ -1289,7 +1294,7 @@ end_long |>
   ggrepel::geom_text_repel(
     data = \(df) dplyr::filter(df, last_week), aes(label = name),
     direction = "y", hjust = 0, nudge_x = 0.1, segment.color = NA, size = 3.5, show.legend = F) +
-  scale_x_continuous(expand = expansion(mult = c(0, 0.1))) +
+  scale_x_continuous(breaks = seq(1, 17, by = 1)) +
   labs(x = "Game week", y = "Cumulative score differential",
        title = "Cumulative score differentials") +
   theme(legend.position = "none")
@@ -1297,10 +1302,126 @@ end_long |>
 
 ___
 
+### Percent of Points Scored by Week
 
+```{r echo = F}
+end_long |>
+  mutate(pct = score / sum(score), .by = "team",
+         week = paste0("W", week),
+         week = factor(week, levels = rev(paste0("W", 1:max(end_games$week))))) |>
+  select(week, team, score, pct) |>
+  ggplot(aes(team, pct)) +
+  geom_col(aes(fill = week)) +
+  geom_text(aes(label = scales::percent(pct, accuracy = 1)), 
+            position = position_stack(vjust = 0.5), size = 3, alpha = 0.5) +
+  guides(fill = guide_legend(reverse = T, nrow = 1)) +
+  coord_flip() +
+  labs(x = NULL, y = "Percent of total points scored", fill = NULL,
+       title = "Percent of total points scored by week") +
+  scale_y_continuous(breaks = seq(0, 1, by = 0.1), labels = scales::percent)
+```
 
+___
 
+### Top Point Scorers
 
+```{r echo = F}
+players_current_teams = espn_potentialpoints(conn, weeks = 1:max(end_games$week)) |>
+  slice_max(week, n = 1, with_ties = T) |>
+  distinct(player_name, team = franchise_name)
+
+top_point_scorers = espn_potentialpoints(conn, weeks = 1:max(end_games$week)) |>
+  filter(!actual_slot %in% c("BE", "IR")) |>
+  group_by(player_name) |>
+  summarise(pts = sum(player_score)) |>
+  inner_join(players_current_teams, by = "player_name") |>
+  inner_join(team_name_to_name, by = c("team" = "franchise_name")) |>
+  slice_max(pts, n = 10, with_ties = T)
+
+top_point_scorers |>
+  ggplot(aes(reorder(player_name, pts), pts)) +
+  geom_col(aes(fill = first)) +
+  geom_text(aes(label = pts), size = 3, hjust = -0.25) +
+  coord_flip(ylim = c(0, max(top_point_scorers$pts) * 1.05)) +
+  labs(x = NULL, y = "Total points scored", fill = NULL,
+       title = "Season-long top point scorers",
+       subtitle = "All positions; only when in starting lineup") +
+  theme(legend.position = "right")
+```
+
+___
+
+### Top Point Scorers Among QBs
+
+```{r echo = F}
+top_qb_scorers = espn_potentialpoints(conn, weeks = 1:max(end_games$week)) |>
+  filter(actual_slot == "QB") |>
+  group_by(player_name) |>
+  summarise(pts = sum(player_score)) |>
+  inner_join(players_current_teams, by = "player_name") |>
+  inner_join(team_name_to_name, by = c("team" = "franchise_name")) |>
+  slice_max(pts, n = 10, with_ties = T)
+
+top_qb_scorers |>
+  ggplot(aes(reorder(player_name, pts), pts)) +
+  geom_col(aes(fill = first)) +
+  geom_text(aes(label = pts), size = 3, hjust = -0.25) +
+  coord_flip(ylim = c(0, max(top_qb_scorers$pts) * 1.05)) +
+  labs(x = NULL, y = "Total points scored", fill = NULL,
+       title = "Season-long top point scorers among QBs",
+       subtitle = "Only when in starting lineup") +
+  theme(legend.position = "right")
+```
+
+___
+
+### Top Point Scorers Among RBs
+
+```{r echo = F}
+top_rb_scorers = espn_potentialpoints(conn, weeks = 1:max(end_games$week)) |>
+  filter(str_detect(actual_slot, "RB")) |>
+  group_by(player_name) |>
+  summarise(pts = sum(player_score)) |>
+  inner_join(players_current_teams, by = "player_name") |>
+  inner_join(team_name_to_name, by = c("team" = "franchise_name")) |>
+  slice_max(pts, n = 10, with_ties = T)
+
+top_rb_scorers |>
+  ggplot(aes(reorder(player_name, pts), pts)) +
+  geom_col(aes(fill = first)) +
+  geom_text(aes(label = pts), size = 3, hjust = -0.25) +
+  coord_flip(ylim = c(0, max(top_rb_scorers$pts) * 1.05)) +
+  labs(x = NULL, y = "Total points scored", fill = NULL,
+       title = "Season-long top point scorers among RBs",
+       subtitle = "Only when in starting lineup") +
+  theme(legend.position = "right")
+```
+
+___
+
+### Top Point Scorers Among WRs
+
+```{r echo = F}
+top_wr_scorers = espn_potentialpoints(conn, weeks = 1:max(end_games$week)) |>
+  filter(str_detect(actual_slot, "WR")) |>
+  group_by(player_name) |>
+  summarise(pts = sum(player_score)) |>
+  inner_join(players_current_teams, by = "player_name") |>
+  inner_join(team_name_to_name, by = c("team" = "franchise_name")) |>
+  slice_max(pts, n = 10, with_ties = T)
+
+top_wr_scorers |>
+  ggplot(aes(reorder(player_name, pts), pts)) +
+  geom_col(aes(fill = first)) +
+  geom_text(aes(label = pts), size = 3, hjust = -0.25) +
+  coord_flip(ylim = c(0, max(top_wr_scorers$pts) * 1.05)) +
+  labs(x = NULL, y = "Total points scored", fill = NULL,
+       title = "Season-long top point scorers among WRs",
+       subtitle = "Only when in starting lineup") +
+  theme(legend.position = "right")
+```
+
+___
 
 
 

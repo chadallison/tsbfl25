@@ -54,6 +54,11 @@ library*
   Differentials](#points-scored-and-point-differentials)
 - [Points Scored by Position](#points-scored-by-position)
 - [Cumulative Score Differentials](#cumulative-score-differentials)
+- [Percent of Points Scored by Week](#percent-of-points-scored-by-week)
+- [Top Point Scorers](#top-point-scorers)
+- [Top Point Scorers Among QBs](#top-point-scorers-among-qbs)
+- [Top Point Scorers Among RBs](#top-point-scorers-among-rbs)
+- [Top Point Scorers Among WRs](#top-point-scorers-among-wrs)
 
 ------------------------------------------------------------------------
 
@@ -373,5 +378,35 @@ average, and higher would indicate your opponent scoring higher than
 ### Cumulative Score Differentials
 
 ![](README_files/figure-gfm/unnamed-chunk-41-1.png)<!-- -->
+
+------------------------------------------------------------------------
+
+### Percent of Points Scored by Week
+
+![](README_files/figure-gfm/unnamed-chunk-42-1.png)<!-- -->
+
+------------------------------------------------------------------------
+
+### Top Point Scorers
+
+![](README_files/figure-gfm/unnamed-chunk-43-1.png)<!-- -->
+
+------------------------------------------------------------------------
+
+### Top Point Scorers Among QBs
+
+![](README_files/figure-gfm/unnamed-chunk-44-1.png)<!-- -->
+
+------------------------------------------------------------------------
+
+### Top Point Scorers Among RBs
+
+![](README_files/figure-gfm/unnamed-chunk-45-1.png)<!-- -->
+
+------------------------------------------------------------------------
+
+### Top Point Scorers Among WRs
+
+![](README_files/figure-gfm/unnamed-chunk-46-1.png)<!-- -->
 
 ------------------------------------------------------------------------
