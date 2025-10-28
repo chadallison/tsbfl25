@@ -104,7 +104,7 @@ library*
 - Week 4: Eric def. David 147.5-126.72
 - Week 2: Matthew def. Isaac 130.85-126.71
 - Week 5: Andrew def. Eric 130.56-121.72
-- Week 4: Andrew def. Chad 142.01-119.84
+- Week 8: Chad def. Isaac 147.08-120.86
 
 ------------------------------------------------------------------------
 
@@ -114,7 +114,7 @@ library*
 - Week 6: JP def. Andrew 91.14-80.01
 - Week 4: Adam def. JP 96.47-83.75
 - Week 7: Hank def. JP 102.48-63.42
-- Week 5: Adam def. Matthew 104.49-96.43
+- Week 8: Eric def. Josh 103.55-101.68
 
 ------------------------------------------------------------------------
 
@@ -148,17 +148,17 @@ library*
 - Week 2: Chad def. Adam 130.57-56.67
 - Week 7: Eric def. Adam 179.39-109.87
 - Week 3: Chad def. Matthew 118.57-60.76
-- Week 3: Andrew def. Isaac 114.52-57.86
+- Week 8: Matthew def. Hank 122.9-65.42
 
 ------------------------------------------------------------------------
 
 ### Closest Games
 
+- Week 8: Eric def. Josh 103.55-101.68
 - Week 1: Josh def. Chad 109.88-107.08
 - Week 2: Matthew def. Isaac 130.85-126.71
 - Week 7: Matthew def. Andrew 116.01-111.47
 - Week 5: Adam def. Matthew 104.49-96.43
-- Week 5: Andrew def. Eric 130.56-121.72
 
 ------------------------------------------------------------------------
 
@@ -184,21 +184,21 @@ library*
 
 ### Past Week One Player Merchants
 
-- Amon-Ra St. Brown: 36.3% of total points for Josh
-- Jaxon Smith-Njigba: 35.2% of total points for JP
-- Christian McCaffrey: 30.3% of total points for David
-- Javonte Williams: 28.9% of total points for JP
-- Jahmyr Gibbs: 23.6% of total points for Chad
+- Saquon Barkley: 31.3% of total points for Andrew
+- Daniel Jones: 31.3% of total points for Hank
+- Jonathan Taylor: 30.1% of total points for Isaac
+- Jordan Love: 29.3% of total points for David
+- De’Von Achane: 26.9% of total points for Hank
 
 ------------------------------------------------------------------------
 
 ### Full Season One Player Merchants
 
-- Jonathan Taylor: 21.83% of total points for Isaac
-- Christian McCaffrey: 20.61% of total points for David
-- Patrick Mahomes: 17.94% of total points for Chad
-- Bijan Robinson: 17.52% of total points for Matthew
-- Jalen Hurts: 17.42% of total points for Adam
+- Jonathan Taylor: 22.96% of total points for Isaac
+- Christian McCaffrey: 19.56% of total points for David
+- Jalen Hurts: 17.33% of total points for Adam
+- Patrick Mahomes: 17.31% of total points for Chad
+- Drake Maye: 17.09% of total points for Andrew
 
 ------------------------------------------------------------------------
 
@@ -227,7 +227,7 @@ three weeks, his average weekly finishing position would be (1 + 3 + 2)
 
 ### Chug Analysis
 
-Where literally anyone chug?
+![](README_files/figure-gfm/unnamed-chunk-23-1.png)<!-- -->
 
 ------------------------------------------------------------------------
 
@@ -274,16 +274,16 @@ scores of 100, 110, and 120, his SOS rating would be (100 + 110 + 120) /
 
 ### Wins When Projected to Lose
 
+- JP: 4 wins when projected to lose
 - Eric: 3 wins when projected to lose
-- JP: 3 wins when projected to lose
+- Chad: 2 wins when projected to lose
 - Adam: 1 win when projected to lose
 - Andrew: 1 win when projected to lose
-- Chad: 1 win when projected to lose
 - Hank: 1 win when projected to lose
 - Isaac: 1 win when projected to lose
+- Matthew: 1 win when projected to lose
 - David: 0 wins when projected to lose
 - Josh: 0 wins when projected to lose
-- Matthew: 0 wins when projected to lose
 
 ------------------------------------------------------------------------
 

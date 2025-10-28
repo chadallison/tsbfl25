@@ -694,23 +694,21 @@ ___
 
 ### Chug Analysis
 
-Where literally anyone chug?
-
 ```{r echo = F}
-# names = c("Josh", "Drew", "Hank", "David", "Josh", "Chad")
-# weeks = c(1, 1, 4, 6, 7, 12)
-# times = c(29, 13, 10, 9, 27, 16)
-# 
-# data.frame(name = names, week = weeks, time = times) |>
-#   mutate(lab = paste0(name, " (Week ", week, ")"),
-#          timelab = paste0(time, "s")) |>
-#   ggplot(aes(reorder(lab, -time), time)) +
-#   geom_col(fill = "saddlebrown") +
-#   coord_flip(ylim = c(0, max(times) * 1.05)) +
-#   geom_text(aes(label = timelab), size = 3, hjust = -0.25) +
-#   labs(x = NULL, y = NULL,
-#        title = "straight chugging it, and by it, let's justr say, well, my bervage") +
-#   theme(axis.text.x = element_blank())
+drinker = c("Drew")
+time = c(8.6)
+
+tibble(drinker, time) |>
+  mutate(chug_num = row_number(), .by = "drinker") |>
+  mutate(drinker = paste0(drinker, " (Chug #", chug_num, ")")) |>
+  ggplot(aes(drinker, time)) +
+  geom_col(fill = "#E3A562") +
+  geom_text(aes(label = time), size = 3.5, hjust = -0.25) +
+  coord_flip(ylim = c(0, max(time) * 1.05)) +
+  scale_y_continuous(breaks = seq(0, 30, by = 1)) +
+  labs(x = NULL,
+       y = "Chug time (seconds)",
+       title = "The rest of you are cowards")
 ```
 
 ___
