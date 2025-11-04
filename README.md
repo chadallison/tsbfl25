@@ -112,9 +112,9 @@ library*
 
 - Week 1: Eric def. Isaac 90.32-70.53
 - Week 6: JP def. Andrew 91.14-80.01
+- Week 9: Chad def. Josh 95.75-92.97
 - Week 4: Adam def. JP 96.47-83.75
 - Week 7: Hank def. JP 102.48-63.42
-- Week 8: Eric def. Josh 103.55-101.68
 
 ------------------------------------------------------------------------
 
@@ -136,39 +136,39 @@ library*
 
 - Week 7: Eric def. Adam 179.39-109.87
 - Week 6: Hank def. Chad 153.14-130.53
+- Week 9: David def. Matthew 178.49-97.32
 - Week 4: Eric def. David 147.5-126.72
 - Week 5: JP def. Chad 162.16-108.12
-- Week 4: Josh def. Matthew 151.77-117.17
 
 ------------------------------------------------------------------------
 
 ### Biggest Blowouts
 
 - Week 7: Isaac def. Josh 151.95-48.5
+- Week 9: David def. Matthew 178.49-97.32
 - Week 2: Chad def. Adam 130.57-56.67
 - Week 7: Eric def. Adam 179.39-109.87
 - Week 3: Chad def. Matthew 118.57-60.76
-- Week 8: Matthew def. Hank 122.9-65.42
 
 ------------------------------------------------------------------------
 
 ### Closest Games
 
 - Week 8: Eric def. Josh 103.55-101.68
+- Week 9: Isaac def. Eric 114.29-112.34
+- Week 9: Chad def. Josh 95.75-92.97
 - Week 1: Josh def. Chad 109.88-107.08
 - Week 2: Matthew def. Isaac 130.85-126.71
-- Week 7: Matthew def. Andrew 116.01-111.47
-- Week 5: Adam def. Matthew 104.49-96.43
 
 ------------------------------------------------------------------------
 
 ### Most Points Scored by One Team
 
 - 179.39 (Eric, Week 7)
+- 178.49 (David, Week 9)
 - 162.16 (JP, Week 5)
 - 153.14 (Hank, Week 6)
 - 151.95 (Isaac, Week 7)
-- 151.77 (Josh, Week 4)
 
 ------------------------------------------------------------------------
 
@@ -184,21 +184,21 @@ library*
 
 ### Past Week One Player Merchants
 
-- Saquon Barkley: 31.3% of total points for Andrew
-- Daniel Jones: 31.3% of total points for Hank
-- Jonathan Taylor: 30.1% of total points for Isaac
-- Jordan Love: 29.3% of total points for David
-- De’Von Achane: 26.9% of total points for Hank
+- Joe Flacco: 28% of total points for Josh
+- Justin Herbert: 26.3% of total points for Chad
+- Rico Dowdle: 25.9% of total points for Hank
+- Brock Bowers: 22.6% of total points for David
+- Tee Higgins: 22.4% of total points for Adam
 
 ------------------------------------------------------------------------
 
 ### Full Season One Player Merchants
 
-- Jonathan Taylor: 22.96% of total points for Isaac
-- Christian McCaffrey: 19.56% of total points for David
-- Jalen Hurts: 17.33% of total points for Adam
-- Patrick Mahomes: 17.31% of total points for Chad
-- Drake Maye: 17.09% of total points for Andrew
+- Jonathan Taylor: 21.01% of total points for Isaac
+- Christian McCaffrey: 19.26% of total points for David
+- Patrick Mahomes: 16.53% of total points for Chad
+- Drake Maye: 16.47% of total points for Andrew
+- Josh Allen: 16.08% of total points for Adam
 
 ------------------------------------------------------------------------
 
@@ -276,9 +276,9 @@ scores of 100, 110, and 120, his SOS rating would be (100 + 110 + 120) /
 
 - JP: 4 wins when projected to lose
 - Eric: 3 wins when projected to lose
+- Adam: 2 wins when projected to lose
+- Andrew: 2 wins when projected to lose
 - Chad: 2 wins when projected to lose
-- Adam: 1 win when projected to lose
-- Andrew: 1 win when projected to lose
 - Hank: 1 win when projected to lose
 - Isaac: 1 win when projected to lose
 - Matthew: 1 win when projected to lose
