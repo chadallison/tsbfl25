@@ -695,13 +695,13 @@ ___
 ### Chug Analysis
 
 ```{r echo = F}
-drinker = c("Drew")
-time = c(8.6)
+drinker = c("Drew", "Hank")
+time = c(8.6, 13.2)
 
 tibble(drinker, time) |>
   mutate(chug_num = row_number(), .by = "drinker") |>
   mutate(drinker = paste0(drinker, " (Chug #", chug_num, ")")) |>
-  ggplot(aes(drinker, time)) +
+  ggplot(aes(reorder(drinker, -time), time)) +
   geom_col(fill = "#E3A562") +
   geom_text(aes(label = time), size = 3.5, hjust = -0.25) +
   coord_flip(ylim = c(0, max(time) * 1.05)) +
