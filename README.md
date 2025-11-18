@@ -38,8 +38,7 @@ library*
 - [League Wide Optimal Scoring](#league-wide-optimal-scoring)
 - [Top Three Scoring](#top-three-scoring)
 - [Bottom Three Scoring](#bottom-three-scoring)
-- [Average Scoring in Wins](#average-scoring-in-wins)
-  <!-- - [Projected Records] -->
+  <!-- - [Average Scoring in Wins] --> <!-- - [Projected Records] -->
 - [Wins When Projected to Lose](#wins-when-projected-to-lose)
 - [Team Records vs League Median](#team-records-vs-league-median)
 - [Supreme Luck Merchant](#supreme-luck-merchant)
@@ -59,6 +58,8 @@ library*
 - [Top Point Scorers Among QBs](#top-point-scorers-among-qbs)
 - [Top Point Scorers Among RBs](#top-point-scorers-among-rbs)
 - [Top Point Scorers Among WRs](#top-point-scorers-among-wrs)
+- [Team Scoring Over Projected](#team-scoring-over-projected)
+- [Player Scoring Over Projected](#player-scoring-over-projected)
 
 ------------------------------------------------------------------------
 
@@ -184,21 +185,21 @@ library*
 
 ### Past Week One Player Merchants
 
-- Jonathan Taylor: 36.1% of total points for Isaac
-- Jahmyr Gibbs: 29.7% of total points for Chad
-- De’Von Achane: 24.2% of total points for Hank
-- Caleb Williams: 23.7% of total points for David
-- Matthew Stafford: 22.2% of total points for Matthew
+- Bryce Young: 31.7% of total points for Hank
+- Josh Allen: 27.9% of total points for Adam
+- Bijan Robinson: 27.5% of total points for Andrew
+- Trey McBride: 24.8% of total points for Eric
+- Tetairoa McMillan: 23.7% of total points for Matthew
 
 ------------------------------------------------------------------------
 
 ### Full Season One Player Merchants
 
-- Jonathan Taylor: 22.78% of total points for Isaac
-- Christian McCaffrey: 18.82% of total points for David
-- De’Von Achane: 16.59% of total points for Hank
-- Drake Maye: 16.43% of total points for Andrew
-- Josh Allen: 16.32% of total points for Adam
+- Jonathan Taylor: 21.57% of total points for Isaac
+- Christian McCaffrey: 19.29% of total points for David
+- Josh Allen: 17.62% of total points for Adam
+- De’Von Achane: 16.97% of total points for Hank
+- Drake Maye: 16.07% of total points for Andrew
 
 ------------------------------------------------------------------------
 
@@ -262,11 +263,9 @@ scores of 100, 110, and 120, his SOS rating would be (100 + 110 + 120) /
 
 ------------------------------------------------------------------------
 
-### Average Scoring in Wins
+<!-- ### Average Scoring in Wins -->
 
-![](README_files/figure-gfm/unnamed-chunk-28-1.png)<!-- -->
-
-------------------------------------------------------------------------
+<!-- ___ -->
 
 <!-- ### Projected Records -->
 
@@ -275,14 +274,14 @@ scores of 100, 110, and 120, his SOS rating would be (100 + 110 + 120) /
 ### Wins When Projected to Lose
 
 - JP: 4 wins when projected to lose
+- Chad: 3 wins when projected to lose
 - Eric: 3 wins when projected to lose
 - Adam: 2 wins when projected to lose
 - Andrew: 2 wins when projected to lose
-- Chad: 2 wins when projected to lose
 - Hank: 2 wins when projected to lose
+- Matthew: 2 wins when projected to lose
 - Isaac: 1 win when projected to lose
 - Josh: 1 win when projected to lose
-- Matthew: 1 win when projected to lose
 - David: 0 wins when projected to lose
 
 ------------------------------------------------------------------------
@@ -408,5 +407,17 @@ average, and higher would indicate your opponent scoring higher than
 ### Top Point Scorers Among WRs
 
 ![](README_files/figure-gfm/unnamed-chunk-46-1.png)<!-- -->
+
+------------------------------------------------------------------------
+
+### Team Scoring Over Projected
+
+![](README_files/figure-gfm/unnamed-chunk-47-1.png)<!-- -->
+
+------------------------------------------------------------------------
+
+### Player Scoring Over Projected
+
+![](README_files/figure-gfm/unnamed-chunk-48-1.png)<!-- -->
 
 ------------------------------------------------------------------------

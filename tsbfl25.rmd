@@ -36,7 +36,7 @@ ___
 - [League Wide Optimal Scoring]
 - [Top Three Scoring]
 - [Bottom Three Scoring]
-- [Average Scoring in Wins]
+<!-- - [Average Scoring in Wins] -->
 <!-- - [Projected Records] -->
 - [Wins When Projected to Lose]
 - [Team Records vs League Median]
@@ -55,6 +55,8 @@ ___
 - [Top Point Scorers Among QBs]
 - [Top Point Scorers Among RBs]
 - [Top Point Scorers Among WRs]
+- [Team Scoring Over Projected]
+- [Player Scoring Over Projected]
 
 ___
 
@@ -857,26 +859,26 @@ select(end_games, week, team = win_team, score = win_score) |>
 
 ___
 
-### Average Scoring in Wins
+<!-- ### Average Scoring in Wins -->
 
 ```{r echo = F}
-end_games |>
-  group_by(win_team) |>
-  summarise(ws = mean(win_score),
-            ls = mean(lose_score)) |>
-  inner_join(team_name_to_name, by = c("win_team" = "franchise_name")) |>
-  ggplot(aes(ws, ls)) +
-  geom_point(aes(col = ws), size = 4, shape = "square", show.legend = F) +
-  ggrepel::geom_text_repel(aes(label = first), size = 3, max.overlaps = 10) +
-  geom_line(stat = "smooth", method = "lm", formula = y ~ x, linetype = "dashed") +
-  labs(x = "Average Score in Wins", y = "Average Opponent Score in Wins",
-       title = "Who needs their opponent to stink in order to win?") +
-  scale_x_continuous(breaks = seq(50, 200, by = 5)) +
-  scale_y_continuous(breaks = seq(50, 200, by = 5)) +
-  scale_color_gradient(low = "indianred3", high = "springgreen4")
+# end_games |>
+#   group_by(win_team) |>
+#   summarise(ws = mean(win_score),
+#             ls = mean(lose_score)) |>
+#   inner_join(team_name_to_name, by = c("win_team" = "franchise_name")) |>
+#   ggplot(aes(ws, ls)) +
+#   geom_point(aes(col = ws), size = 4, shape = "square", show.legend = F) +
+#   ggrepel::geom_text_repel(aes(label = first), size = 3, max.overlaps = 10) +
+#   geom_line(stat = "smooth", method = "lm", formula = y ~ x, linetype = "dashed") +
+#   labs(x = "Average Score in Wins", y = "Average Opponent Score in Wins",
+#        title = "Who needs their opponent to stink in order to win?") +
+#   scale_x_continuous(breaks = seq(50, 200, by = 5)) +
+#   scale_y_continuous(breaks = seq(50, 200, by = 5)) +
+#   scale_color_gradient(low = "indianred3", high = "springgreen4")
 ```
 
-___
+<!-- ___ -->
 
 <!-- ### Projected Records -->
 
@@ -1417,6 +1419,64 @@ top_wr_scorers |>
        title = "Season-long top point scorers among WRs",
        subtitle = "Only when in starting lineup") +
   theme(legend.position = "right")
+```
+
+___
+
+### Team Scoring Over Projected
+
+```{r echo = F}
+base_proj = ff_starters(conn, week = 1:max(end_games$week)) |>
+  filter(!lineup_slot %in% c("BE", "IR")) |>
+  group_by(franchise_name) |>
+  summarise(true_score = sum(player_score),
+            proj_score = sum(projected_score)) |>
+  mutate(true_over_proj = round(true_score - proj_score, 2)) |>
+  inner_join(team_name_to_name, by = "franchise_name")
+
+base_proj |>
+  ggplot(aes(reorder(first, true_over_proj), true_over_proj)) +
+  geom_col(aes(fill = true_over_proj), show.legend = F) +
+  geom_text(aes(label = true_over_proj, y = ifelse(true_over_proj >= 0, true_over_proj + 0.5, true_over_proj - 0.5),
+                hjust = ifelse(true_over_proj >= 0, -0.2, 1.2)), size = 3) +
+  scale_fill_gradient(low = "indianred3", high = "springgreen4") +
+  coord_flip(ylim = c(min(base_proj$true_over_proj) * 1.1, max(base_proj$true_over_proj) * 1.1)) +
+  scale_y_continuous(breaks = seq(-200, 200, by = 20)) +
+  labs(x = NULL, y = "Score Over Projected",
+       title = "Season-long scoring over projections",
+       subtitle = "Ball knowledge or luck merchants?")
+```
+
+___
+
+### Player Scoring Over Projected
+
+```{r echo = F}
+player_proj = ff_starters(conn, week = 1:max(end_games$week)) |>
+  filter(!lineup_slot %in% c("BE", "IR")) |>
+  group_by(player_name) |>
+  summarise(true_score = sum(player_score),
+            proj_score = sum(projected_score)) |>
+  mutate(true_over_proj = round(true_score - proj_score, 2))
+
+player_proj |>
+  arrange(desc(true_over_proj)) |>
+  slice_head(n = 10) |>
+  bind_rows(
+    player_proj |>
+      arrange(desc(true_over_proj)) |>
+      slice_tail(n = 10)
+  ) |>
+  ggplot(aes(reorder(player_name, true_over_proj), true_over_proj)) +
+  geom_col(aes(fill = true_over_proj), show.legend = F) +
+  geom_text(aes(label = true_over_proj, y = ifelse(true_over_proj >= 0, true_over_proj + 0.5, true_over_proj - 0.5),
+                hjust = ifelse(true_over_proj >= 0, -0.255, 1.2)), size = 3) +
+  coord_flip(ylim = c(min(player_proj$true_over_proj) * 1.1, max(player_proj$true_over_proj) * 1.1)) +
+  scale_fill_gradient(low = "indianred3", high = "springgreen4") +
+  scale_y_continuous(breaks = seq(-200, 200, by = 10)) +
+  labs(x = NULL, y = "Score Over Projected",
+       title = "Season-long scoring over/under projections",
+       subtitle = "Top/bottom ten only")
 ```
 
 ___
