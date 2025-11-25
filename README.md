@@ -53,7 +53,7 @@ library*
   Differentials](#points-scored-and-point-differentials)
 - [Points Scored by Position](#points-scored-by-position)
 - [Cumulative Score Differentials](#cumulative-score-differentials)
-- [Percent of Points Scored by Week](#percent-of-points-scored-by-week)
+  <!-- - [Percent of Points Scored by Week] -->
 - [Top Point Scorers](#top-point-scorers)
 - [Top Point Scorers Among QBs](#top-point-scorers-among-qbs)
 - [Top Point Scorers Among RBs](#top-point-scorers-among-rbs)
@@ -105,7 +105,7 @@ library*
 - Week 6: Hank def. Chad 153.14-130.53
 - Week 4: Eric def. David 147.5-126.72
 - Week 2: Matthew def. Isaac 130.85-126.71
-- Week 5: Andrew def. Eric 130.56-121.72
+- Week 12: Chad def. JP 153.82-122.26
 
 ------------------------------------------------------------------------
 
@@ -113,9 +113,9 @@ library*
 
 - Week 1: Eric def. Isaac 90.32-70.53
 - Week 6: JP def. Andrew 91.14-80.01
+- Week 12: Andrew def. Josh 94.41-79.18
 - Week 9: Chad def. Josh 95.75-92.97
 - Week 4: Adam def. JP 96.47-83.75
-- Week 10: David def. Andrew 96.63-96.34
 
 ------------------------------------------------------------------------
 
@@ -137,9 +137,9 @@ library*
 
 - Week 7: Eric def. Adam 179.39-109.87
 - Week 6: Hank def. Chad 153.14-130.53
+- Week 12: Chad def. JP 153.82-122.26
 - Week 4: Eric def. David 147.5-126.72
 - Week 10: Hank def. Eric 155.24-118.81
-- Week 9: David def. Matthew 178.49-94.32
 
 ------------------------------------------------------------------------
 
@@ -168,8 +168,8 @@ library*
 - 179.39 (Eric, Week 7)
 - 178.49 (David, Week 9)
 - 162.16 (JP, Week 5)
+- 156.24 (David, Week 12)
 - 155.24 (Hank, Week 10)
-- 153.14 (Hank, Week 6)
 
 ------------------------------------------------------------------------
 
@@ -185,21 +185,21 @@ library*
 
 ### Past Week One Player Merchants
 
-- Bryce Young: 31.7% of total points for Hank
-- Josh Allen: 27.9% of total points for Adam
-- Bijan Robinson: 27.5% of total points for Andrew
-- Trey McBride: 24.8% of total points for Eric
-- Tetairoa McMillan: 23.7% of total points for Matthew
+- Jahmyr Gibbs: 32.4% of total points for Chad
+- Amon-Ra St. Brown: 32.1% of total points for Josh
+- Jaxon Smith-Njigba: 27.1% of total points for JP
+- Dak Prescott: 23.2% of total points for Eric
+- Packers D/ST: 22.2% of total points for Andrew
 
 ------------------------------------------------------------------------
 
 ### Full Season One Player Merchants
 
-- Jonathan Taylor: 21.57% of total points for Isaac
-- Christian McCaffrey: 19.29% of total points for David
-- Josh Allen: 17.62% of total points for Adam
-- De’Von Achane: 16.97% of total points for Hank
-- Drake Maye: 16.07% of total points for Andrew
+- Jonathan Taylor: 19.95% of total points for Isaac
+- Christian McCaffrey: 18.84% of total points for David
+- Josh Allen: 16.37% of total points for Adam
+- Jaxon Smith-Njigba: 16.01% of total points for JP
+- Drake Maye: 15.91% of total points for Andrew
 
 ------------------------------------------------------------------------
 
@@ -273,8 +273,8 @@ scores of 100, 110, and 120, his SOS rating would be (100 + 110 + 120) /
 
 ### Wins When Projected to Lose
 
+- Chad: 4 wins when projected to lose
 - JP: 4 wins when projected to lose
-- Chad: 3 wins when projected to lose
 - Eric: 3 wins when projected to lose
 - Adam: 2 wins when projected to lose
 - Andrew: 2 wins when projected to lose
@@ -380,11 +380,9 @@ average, and higher would indicate your opponent scoring higher than
 
 ------------------------------------------------------------------------
 
-### Percent of Points Scored by Week
+<!-- ### Percent of Points Scored by Week -->
 
-![](README_files/figure-gfm/unnamed-chunk-42-1.png)<!-- -->
-
-------------------------------------------------------------------------
+<!-- ___ -->
 
 ### Top Point Scorers
 
