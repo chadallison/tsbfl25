@@ -101,11 +101,11 @@ library*
 
 ### Most Points Scored in a Loss
 
+- Week 13: David def. Isaac 146.84-139.6
 - Week 10: JP def. Isaac 134.48-133.17
 - Week 6: Hank def. Chad 153.14-130.53
 - Week 4: Eric def. David 147.5-126.72
 - Week 2: Matthew def. Isaac 130.85-126.71
-- Week 12: Chad def. JP 153.82-122.26
 
 ------------------------------------------------------------------------
 
@@ -114,8 +114,8 @@ library*
 - Week 1: Eric def. Isaac 90.32-70.53
 - Week 6: JP def. Andrew 91.14-80.01
 - Week 12: Andrew def. Josh 94.41-79.18
+- Week 13: JP def. Josh 95.66-42.61
 - Week 9: Chad def. Josh 95.75-92.97
-- Week 4: Adam def. JP 96.47-83.75
 
 ------------------------------------------------------------------------
 
@@ -136,10 +136,10 @@ library*
 ### Highest Scoring Games
 
 - Week 7: Eric def. Adam 179.39-109.87
+- Week 13: David def. Isaac 146.84-139.6
 - Week 6: Hank def. Chad 153.14-130.53
 - Week 12: Chad def. JP 153.82-122.26
 - Week 4: Eric def. David 147.5-126.72
-- Week 10: Hank def. Eric 155.24-118.81
 
 ------------------------------------------------------------------------
 
@@ -175,31 +175,31 @@ library*
 
 ### Fewest Points Scored by One Team
 
+- 42.61 (Josh, Week 13)
 - 48.5 (Josh, Week 7)
 - 56.67 (Adam, Week 2)
 - 57.86 (Isaac, Week 3)
 - 60.76 (Matthew, Week 3)
-- 63.42 (JP, Week 7)
 
 ------------------------------------------------------------------------
 
 ### Past Week One Player Merchants
 
-- Jahmyr Gibbs: 32.4% of total points for Chad
-- Amon-Ra St. Brown: 32.1% of total points for Josh
-- Jaxon Smith-Njigba: 27.1% of total points for JP
-- Dak Prescott: 23.2% of total points for Eric
-- Packers D/ST: 22.2% of total points for Andrew
+- Kyren Williams: 31% of total points for Josh
+- Seahawks D/ST: 27.5% of total points for Hank
+- Patrick Mahomes: 24% of total points for Chad
+- Bijan Robinson: 21.8% of total points for Andrew
+- Marcus Mariota: 21.3% of total points for Matthew
 
 ------------------------------------------------------------------------
 
 ### Full Season One Player Merchants
 
-- Jonathan Taylor: 19.95% of total points for Isaac
-- Christian McCaffrey: 18.84% of total points for David
-- Josh Allen: 16.37% of total points for Adam
-- Jaxon Smith-Njigba: 16.01% of total points for JP
-- Drake Maye: 15.91% of total points for Andrew
+- Jonathan Taylor: 18.98% of total points for Isaac
+- Christian McCaffrey: 18.07% of total points for David
+- Josh Allen: 16.34% of total points for Adam
+- Drake Maye: 15.73% of total points for Andrew
+- De’Von Achane: 15.71% of total points for Hank
 
 ------------------------------------------------------------------------
 
@@ -275,14 +275,14 @@ scores of 100, 110, and 120, his SOS rating would be (100 + 110 + 120) /
 
 - Chad: 4 wins when projected to lose
 - JP: 4 wins when projected to lose
+- Andrew: 3 wins when projected to lose
 - Eric: 3 wins when projected to lose
 - Adam: 2 wins when projected to lose
-- Andrew: 2 wins when projected to lose
 - Hank: 2 wins when projected to lose
 - Matthew: 2 wins when projected to lose
+- David: 1 win when projected to lose
 - Isaac: 1 win when projected to lose
 - Josh: 1 win when projected to lose
-- David: 0 wins when projected to lose
 
 ------------------------------------------------------------------------
 
