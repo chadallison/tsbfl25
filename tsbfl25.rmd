@@ -697,8 +697,8 @@ ___
 ### Chug Analysis
 
 ```{r echo = F}
-drinker = c("Drew", "Hank")
-time = c(8.6, 13.2)
+drinker = c("Drew", "Hank", "Adam", "Josh")
+time = c(8.6, 13.2, 13.0, 30.6)
 
 tibble(drinker, time) |>
   mutate(chug_num = row_number(), .by = "drinker") |>
